@@ -28,7 +28,7 @@ app.get('/track', function(req, res) {
 
   connection.query('INSERT INTO people (name, age, address) VALUES (?, ?, ?)', [name, time, useragent], function(err, result) {
       if (err) throw err
-    });
+    }); 
 
 });
 
