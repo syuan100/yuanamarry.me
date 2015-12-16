@@ -11,7 +11,6 @@ var connection = mysql.createConnection({
 
 connection.query('USE test_database');
 
-app.set('port', 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -21,8 +20,5 @@ app.get('/', function(req, res){
     res.render('users', {users : rows});
   });
 });
-
-app.listen(app.get('port'));
-console.log('Express server listening on port ' + app.get('port'));
 
 module.exports = app;
