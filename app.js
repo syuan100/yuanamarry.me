@@ -33,10 +33,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.get('/', function(req, res){
-//   connection.query('SELECT * FROM users', function(err, rows){
-//     res.render('users', {users : rows});
-//   });
-// });
+app.get('/', function(req, res){
+  connection.query('SELECT * FROM people', function(err, rows){
+    res.render('users', {name : rows});
+  });
+});
 
 module.exports = app;
