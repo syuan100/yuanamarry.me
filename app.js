@@ -19,6 +19,8 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 });
 
+connection.query('ALTER TABLE `amt` MODIFY COLUMN `id_amt` INT auto_increment');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -31,12 +33,15 @@ app.get('/', function(req, res){
 
 app.get('/track', function(req, res) {
   var name = req.param('name');
-  var time = new Date()
-  // time = time.toString();
+  var time = new Date();
+  time = time.toString(); 
   var useragent = req.headers['user-agent'];
 
   connection.query('INSERT INTO people (name, age, address) VALUES (?, ?, ?)', [name, time, useragent], function(err, result) {
-      if (err) throw err
+      if (err) {
+      } else {
+        res.render('success');
+      }
     }); 
 
 });
