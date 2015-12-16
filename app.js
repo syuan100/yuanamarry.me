@@ -36,7 +36,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
     res.render('index', {users : rows});
-    console.log(rows);
   });
 });
 
