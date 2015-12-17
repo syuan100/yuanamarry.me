@@ -21,16 +21,16 @@ connection.connect(function(err) {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')), function(req, res, next){
+  console.log("req: " + req);
+  console.log("res: " + res);
+  console.log("next: " + next);
+});
 
 app.get('/', function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
     res.render('index', {users : rows});
   });
-});
-
-app.get('/stylesheets*', function(req, res) {
-  console.log("got something");
 });
 
 module.exports = app;
