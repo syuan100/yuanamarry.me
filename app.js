@@ -1,7 +1,15 @@
+/////////////////
+// SETUP
+/////////////////
+
 var express = require('express');
 var path = require('path');
 var mysql = require('mysql');
 var app = express();
+
+/////////////////
+// DATABASE STUFF
+/////////////////
 
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -19,19 +27,33 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 });
 
+/////////////////
+// VIEWS
+/////////////////
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+/////////////////
+// STATIC FILES
+/////////////////
+
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/', function(req, res){
+
+/////////////////
+// TRACKER LOGIC
+/////////////////
+
+// basic auth (unsecure)
+var auth = express.basicAuth('charlie', 'candymountain');
+
+app.get('/tracking', auth, function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
-    res.render('index', {users : rows});
+    res.render('tracking', {users : rows});
   });
 });
 
 app.get('/tracker/*',function(req,res){
-  console.log(req.query.name);
-  console.log(req);
   res.sendfile(path.join(__dirname, req.path));
 });
 
