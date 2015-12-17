@@ -32,7 +32,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/stylesheets*', function(req, res) {
-  console.log("got something");/
+  console.log("got something");
 });
 
 module.exports = app;
