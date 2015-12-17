@@ -19,8 +19,6 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 });
 
-connection.query('ALTER TABLE `people` MODIFY COLUMN `id` INT auto_increment');
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
