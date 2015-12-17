@@ -31,8 +31,8 @@ app.get('/', function(req, res){
   });
 });
 
-app.get('/public*', function(req, res) {
-  console.log("got something");
-});
+// app.get('/public*', function(req, res) {
+//   console.log("got something");/
+// });
 
 module.exports = app;
