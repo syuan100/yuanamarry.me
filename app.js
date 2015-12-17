@@ -30,7 +30,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/tracker/*',function(req,res){
-  console.log(req.name);
+  console.log(req.query.name);
   res.sendfile(path.join(__dirname, req.path));
 });
 
