@@ -31,7 +31,7 @@ app.get('/', function(req, res){
 
 app.get('/tracker/*',function(req,res){
   console.log(req.name);
-  res.sendfile(req.path);
+  res.sendfile(path.join(__dirname, req.path);
 });
 
 module.exports = app;
