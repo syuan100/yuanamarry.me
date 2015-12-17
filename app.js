@@ -31,19 +31,8 @@ app.get('/', function(req, res){
   });
 });
 
-app.get('/track', function(req, res) {
-  var name = req.param('name');
-  var time = new Date();
-  time = time.toString(); 
-  var useragent = req.headers['user-agent'];
-
-  connection.query('INSERT INTO people (name, age, address) VALUES (?, ?, ?)', [name, time, useragent], function(err, result) {
-      if (err) {
-      } else {
-        res.render('success');
-      }
-    }); 
-
+app.get('/public*', function(req, res) {
+  console.log("got something");
 });
 
 module.exports = app;
