@@ -5,6 +5,7 @@
 var express = require('express');
 var path = require('path');
 var mysql = require('mysql');
+var basicAuth = require('basic-auth-connect');
 var app = express();
 
 /////////////////
@@ -45,14 +46,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 /////////////////
 
 // basic auth (unsecure)
-var auth = express.basicAuth('charlie', 'candymountain');
+var auth = basicAuth('charlie', 'candymountain');
 
+// tracking results
 app.get('/tracking', auth, function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
     res.render('tracking', {users : rows});
   });
 });
 
+// route to serve tracker image
 app.get('/tracker/*',function(req,res){
   res.sendfile(path.join(__dirname, req.path));
 });
