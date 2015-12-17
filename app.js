@@ -21,18 +21,17 @@ connection.connect(function(err) {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/*', function(req, res, next){
-  console.log("req: " + req);
-  console.log("res: " + res);
-  next();
-});
-
 app.get('/', function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
     res.render('index', {users : rows});
   });
+});
+
+app.get('/tracker/*',function(req,res){
+  console.log(req.name);
+  res.sendfile('app'+req.path);
 });
 
 module.exports = app;
