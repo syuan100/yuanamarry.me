@@ -48,11 +48,12 @@ a {
 .row {
   padding: 5px 0;
   height: 30px;
-  font-size: 300;
+  font-weight: 300;
 }
 
 .row.first {
-  font-size: 400;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .cell {
