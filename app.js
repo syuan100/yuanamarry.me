@@ -65,7 +65,7 @@ var upload = multer({
 var testRecipient = { name: 'Jason', email: 'jason@jason.com', std: 'Sent', invitation: 'Not Sent', rsvp: 'None' };
 var recipients = [testRecipient];
 
-app.post('/admin/csv/upload', upload.single(), function(req, res, next) { 
+app.post('/admin/csv/upload', upload.any(), function(req, res, next) { 
   console.log(req.file);
   next();
 });
