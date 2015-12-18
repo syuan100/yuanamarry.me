@@ -68,9 +68,9 @@ var recipients = [testRecipient];
 
 app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) { 
   var tmpFile = req.file.filename;
-  
+
   csv
-   .fromPath('/uploads/' + tmpFile + '.csv')
+   .fromPath('/uploads/' + tmpFile)
    .on("data", function(data){
        console.log(data);
    })
