@@ -34,7 +34,7 @@ a {
 
 .half {
   width: 50%;
-  margin: 0 20px;
+  padding: 0 20px;
 }
 
 .left {
@@ -44,4 +44,14 @@ a {
 .right {
   float: right;
 }
+
+.row {
+  margin: 10px 0;
+}
+
+.cell {
+  float: left;
+  width: 20%;
+}
+
 
