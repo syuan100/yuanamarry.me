@@ -9,6 +9,12 @@ html
       .header
         | Tracking
       .email-list.left.half
+        .row.first
+            .cell.name Name
+            .cell.email Email
+            .cell.std.center STD
+            .cell.invitation.center Invite
+            .cell.rsvp.center RSVP
         - each recipient in recipients
           .row
             .cell.name=recipient.name
@@ -23,6 +29,7 @@ html
           input.upload-dialog(type="file")
         .compose-email
           | Compose an email to send to recipients
+          br
           br
           textarea.html-area(rows="30", cols="70")
           br
