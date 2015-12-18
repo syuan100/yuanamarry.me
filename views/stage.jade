@@ -13,14 +13,17 @@ html
           .row
             .cell.name=recipient.name
             .cell.email=recipient.email
-            .cell.std=recipient.std
-            .cell.invitation=recipient.invitation
-            .cell.rsvp=recipient.rsvp
+            .cell.std.center=recipient.std
+            .cell.invitation.center=recipient.invitation
+            .cell.rsvp.center=recipient.rsvp
       .action-area.right.half
         .upload-csv
-          | Upload CSV for recipients (First Name, Last Name, Email)
+          | Upload CSV of recipients (First Name, Last Name, Email)
+          br
           input.upload-dialog(type="file")
         .compose-email
           | Compose an email to send to recipients
+          br
           textarea.html-area(rows="30", cols="70")
+          br
           input.html-submit(type="submit", title="Preview Email")

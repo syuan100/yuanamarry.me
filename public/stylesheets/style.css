@@ -46,12 +46,17 @@ a {
 }
 
 .row {
-  margin: 10px 0;
+  padding: 5px 0;
+  height: 30px;
 }
 
 .cell {
   float: left;
   width: 20%;
+}
+
+.center {
+  text-align: center;
 }
 
 
