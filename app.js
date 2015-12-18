@@ -6,6 +6,7 @@ var express = require('express');
 var path = require('path');
 var mysql = require('mysql');
 var multer = require('multer');
+var csv = require("fast-csv");
 var basicAuth = require('basic-auth-connect');
 var app = express();
 
@@ -66,8 +67,15 @@ var testRecipient = { name: 'Jason', email: 'jason@jason.com', std: 'Sent', invi
 var recipients = [testRecipient];
 
 app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) { 
-  console.log(req.file);
-  res.status(204).end();
+  var tmpFile = req.file.filename;
+  csv
+   .fromPath('/uploads/' + tmpFile);
+   .on("data", function(data){
+       console.log(data);
+   })
+   .on("end", function(){
+       console.log("done");
+   });
 });
 
 app.get('/admin/stage', auth, function(req, res){
