@@ -47,6 +47,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 // TRACKER LOGIC
 /////////////////
 
+// Guest Object
+var Guest = function(name, email, std, invitation, rsvp){
+  this.name = name;
+  this.email = email;
+  this.std = std;
+  this.invitation = invitation;
+  this.rsvp = rsvp;
+};
+
+
 // basic auth (unsecure)
 var auth = basicAuth('charlie', 'candymountain');
 
@@ -72,11 +82,14 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
   csv
    .fromPath('public/uploads/' + tmpFile)
    .on("data", function(data){
-       console.log(data);
+       var newGuest = new Guest(data[0], data[1], "Not Yet", "Not Yet", "Not Yet");
+       console.log(newGuest);
    })
    .on("end", function(){
        console.log("done");
    });
+
+
 });
 
 app.get('/admin/stage', auth, function(req, res){
