@@ -58,15 +58,16 @@ app.get('/admin/tracking', auth, function(req, res){
 
 // tracked emails
 var upload = multer({
-  dest: 'uploads/',
+  dest: __dirname + '/uploads',
   limits: {fileSize: 500000, files:1},
-});
+});./
 
 var testRecipient = { name: 'Jason', email: 'jason@jason.com', std: 'Sent', invitation: 'Not Sent', rsvp: 'None' };
 var recipients = [testRecipient];
 
-app.post('/admin/csv/upload', upload.any(), function(req, res) { 
+app.post('/admin/csv/upload', upload.single(), function(req, res, next) { 
   console.log(req.file);
+  next();
 });
 
 app.get('/admin/stage', auth, function(req, res){
