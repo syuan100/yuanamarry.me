@@ -49,10 +49,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 var auth = basicAuth('charlie', 'candymountain');
 
 // tracking results
-app.get('/tracking', auth, function(req, res){
+app.get('/admin/tracking', auth, function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
     res.render('tracking', {users : rows});
   });
+});
+
+// tracked emails
+var testRecipient = { name: 'Jason', email: 'jason@jason.com', std: 'Sent', invitation: 'Not Sent', rsvp: 'None' };
+var recipients = [testRecipient];
+
+app.get('/admin/stage', auth, function(req, res){
+  res.render('stage', {recipients: recipients});
 });
 
 // route to serve tracker image
