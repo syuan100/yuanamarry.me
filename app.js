@@ -57,7 +57,7 @@ app.get('/admin/tracking', auth, function(req, res){
 });
 
 // tracked emails
-var uploading = multer({
+var upload = multer({
   dest: __dirname + './public/csv/',
   limits: {fileSize: 500000, files:1},
 });
@@ -65,14 +65,12 @@ var uploading = multer({
 var testRecipient = { name: 'Jason', email: 'jason@jason.com', std: 'Sent', invitation: 'Not Sent', rsvp: 'None' };
 var recipients = [testRecipient];
 
-app.post('/admin/stage', uploading, function(req, res) { 
+app.post('/admin/stage', upload.single('csv'), function(req, res) { 
 
 });
 
 app.get('/admin/stage', auth, function(req, res){
   res.render('stage', {recipients: recipients});
-
-
 });
 
 // route to serve tracker image
