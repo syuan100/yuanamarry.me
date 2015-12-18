@@ -58,7 +58,7 @@ app.get('/admin/tracking', auth, function(req, res){
 
 // tracked emails
 var upload = multer({
-  dest: '/public/csv',
+  dest: path.join(__dirname, 'public', 'csv'),
   limits: {fileSize: 500000, files:1},
 });
 
