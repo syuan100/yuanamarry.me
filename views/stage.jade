@@ -17,7 +17,9 @@ html
             .cell.rsvp=recipient.rsvp
       .action-area.right.half
         .upload-csv
+          | Upload CSV for recipients (First Name, Last Name, Email)
           input.upload-dialog(type="file")
         .compose-email
-          texarea.html-area(rows="30", cols="70")
+          | Compose an email to send to recipients
+          textarea.html-area(rows="30", cols="70")
           input.html-submit(type="submit", title="Preview Email")
