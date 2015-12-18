@@ -60,7 +60,7 @@ app.get('/admin/tracking', auth, function(req, res){
 var upload = multer({
   dest: __dirname + '/uploads',
   limits: {fileSize: 500000, files:1},
-});./
+});
 
 var testRecipient = { name: 'Jason', email: 'jason@jason.com', std: 'Sent', invitation: 'Not Sent', rsvp: 'None' };
 var recipients = [testRecipient];
