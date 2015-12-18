@@ -26,7 +26,7 @@ html
         .upload-csv
           | Upload CSV of recipients (First Name, Last Name, Email)
           br
-          form(action="/admin/csv/upload", method="POST", enctype="multipart/form-data", name="csvfile")
+          form(action="/admin/stage", method="POST", enctype="multipart/form-data", name="csvfile")
             input.upload-dialog(type="file", name="csvfile")
             br
             input(type="submit", value="Upload CSV", name="csvfile")
