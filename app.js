@@ -59,7 +59,7 @@ app.get('/admin/tracking', auth, function(req, res){
 
 // tracked emails
 var upload = multer({
-  dest: 'uploads/',
+  dest: 'public/uploads/',
   limits: {fileSize: 500000, files:1},
 });
 
@@ -67,9 +67,8 @@ var testRecipient = { name: 'Jason', email: 'jason@jason.com', std: 'Sent', invi
 var recipients = [testRecipient];
 
 app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) { 
-  var tmpFile = req.file.filename;
   csv
-   .fromPath('/uploads/' + tmpFile)
+   .fromPath('/uploads/' + tmpFile + '.csv')
    .on("data", function(data){
        console.log(data);
    })
