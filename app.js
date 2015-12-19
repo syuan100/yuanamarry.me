@@ -100,15 +100,16 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
       var query = 'SELECT * FROM people WHERE email=\'' + guestEmail + '\';';
 
       connection.query(query, function(err, rows){
-        if (!rows){
-          var insertQuery = 'INSERT INTO people (name, email, std, invitation, rsvp) VALUES (?, ?, ?, ?, ?);';
-          connection.query(insertQuery, [newGuest.name, newGuest.email, newGuest.std, newGuest.invitation, newGuest.rsvp], function(err, result) {
-            if (err) throw err
-            console.log(result);
-          });
-        } else {
-          console.log(newGuest.name + ' is already in the database.');
-        }
+        console.log(rows);
+        // if (!rows){
+        //   var insertQuery = 'INSERT INTO people (name, email, std, invitation, rsvp) VALUES (?, ?, ?, ?, ?);';
+        //   connection.query(insertQuery, [newGuest.name, newGuest.email, newGuest.std, newGuest.invitation, newGuest.rsvp], function(err, result) {
+        //     if (err) throw err
+        //     console.log(result);
+        //   });
+        // } else {
+        //   console.log(newGuest.name + ' is already in the database.');
+        // }
       });
    })
    .on("end", function(){
