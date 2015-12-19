@@ -85,7 +85,7 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
       var guestName = data[0];
       var guestEmail = data[1];
       var newGuest = new Guest(guestName, guestEmail, "Not Yet", "Not Yet", "Not Yet");
-      var query = 'SELECT * FROM people WHERE email=' + guestEmail;
+      var query = 'SELECT * FROM people WHERE email=\'' + guestEmail + '\';';
 
       connection.query(query, function(err, rows){
         console.log(err);
@@ -96,6 +96,7 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
        console.log("done");
    });
 
+   next();
 
 });
 
