@@ -103,7 +103,7 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
        console.log("done");
    });
 
-   res.sendStatus(204);
+   res.status(204);
 
 });
 
