@@ -26,8 +26,19 @@ connection.connect(function(err) {
     console.error('error connecting: ' + err.stack);
     return;
   }
-
   console.log('connected as id ' + connection.threadId);
+
+  var tableExistsQuery = "SHOW TABLES LIKE 'people'";
+
+  connection.query(tableExistsQuery, function(err, result){
+    console.log(result);
+  });
+
+  // var tableCreationQuery = 'CREATE TABLE people(id int primary key, name varchar(255), email varchar(255), std varchar(255), invitation varchar(255), rsvp varchar(255))';
+  // connection.query(tableCreationQuery, function(err, result) {
+  //   if (err) throw err
+  //   return;
+  // });
 });
 
 /////////////////
