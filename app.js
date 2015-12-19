@@ -33,7 +33,7 @@ connection.connect(function(err) {
   connection.query(tableExistsQuery, function(err, result){
     console.log(result);
     if (!result.length) {
-      var tableCreationQuery = 'CREATE TABLE people(id int primary key, name varchar(255), email varchar(255), std varchar(255), invitation varchar(255), rsvp varchar(255))';
+      var tableCreationQuery = 'CREATE TABLE people(id int primary key, name varchar(255), email varchar(255), std varchar(255), invitation varchar(255), rsvp varchar(255));';
       connection.query(tableCreationQuery, function(err, result) {
         if (err) throw err
         return;
