@@ -17,30 +17,29 @@ var app = express();
 var ses = new AWS.SES({region: 'us-west-2'});
 
 var params = {
-  Destination: { /* required */
+  Destination: {
     ToAddresses: [
-      'syuan100@gmail.com',
-      /* more items */
+      'gracejiras@gmail.com',
     ]
   },
-  Message: { /* required */
-    Body: { /* required */
+  Message: { 
+    Body: { 
       Html: {
-        Data: '<b>testing ses service</b>', /* required */
+        Data: '<b>i luh u grace</b>', 
       },
       Text: {
-        Data: 'testing ses service', /* required */
+        Data: 'testing ses service', 
       }
     },
-    Subject: { /* required */
-      Data: 'Test Subject', /* required */
+    Subject: { 
+      Data: 'free succulents',
     }
   },
   Source: 'no-rely@yuanamarry.me'
 };
 ses.sendEmail(params, function(err, data) {
-  if (err) console.log(err, err.stack); // an error occurred
-  else     console.log(data);           // successful response
+  if (err) console.log(err, err.stack); 
+  else     console.log(data);          
 });
 
 /////////////////
