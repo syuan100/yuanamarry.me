@@ -8,6 +8,7 @@ var mysql = require('mysql');
 var multer = require('multer');
 var csv = require("fast-csv");
 var basicAuth = require('basic-auth-connect');
+var fs = require('fs');
 var SMTPServer = require('smtp-server').SMTPServer;
 var app = express();
 
