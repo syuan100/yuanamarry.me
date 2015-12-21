@@ -8,29 +8,7 @@ var mysql = require('mysql');
 var multer = require('multer');
 var csv = require("fast-csv");
 var basicAuth = require('basic-auth-connect');
-var fs = require('fs');
-var SMTPServer = require('smtp-server').SMTPServer;
 var app = express();
-
-/////////////////
-// EMAIL STUFF
-/////////////////
-
-var email   = require("emailjs");
-var server  = email.server.connect({
-   user:    "AKIAIAIHU6IFNEBHVWIA", 
-   password:"AqSa48O+xBBA8rt2v6RcuipFFYuxPOprFUWIYX40jkM4", 
-   host:    "email-smtp.us-west-2.amazonaws.com", 
-   tls:     true
-});
-
-// send the message and get a callback with an error or details of the message that was sent
-server.send({
-   text:    "i hope this works", 
-   from:    "you <no-reply@yuanamarry.me>", 
-   to:      "someone <gracejiras@gmail.com>",
-   subject: "testing emailjs"
-}, function(err, message) { console.log(err || message); });
 
 /////////////////
 // DATABASE STUFF
