@@ -17,7 +17,7 @@ html
         .html-preview!=tmpHtml
       .sendees.right.half
         .selector
-          | Email for
+          h2 Email for
           br
           input(type="radio", name="std", value="std")
           | Save-the-Dates
@@ -28,8 +28,12 @@ html
           input(type="radio", name="general", value="general")
           | General
           br
+          br
           | Custom list
           br
           input(type="text" name="custom-emails")
-        form(action="/admin/stage/sendmail", method="POST", enctype="multipart/form-data", name="sendmail")
-          input(type="submit", title="Send Emails")
+        .email-list
+          h2 Final Email List
+          form(action="/admin/stage/sendmail", method="POST", enctype="multipart/form-data", name="sendmail")
+            select(id="final-emails", size="20", multiple)
+            input(type="submit", title="Send Emails")
