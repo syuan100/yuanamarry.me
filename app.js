@@ -7,8 +7,41 @@ var path = require('path');
 var mysql = require('mysql');
 var multer = require('multer');
 var csv = require("fast-csv");
+var AWS = require('aws-sdk');
 var basicAuth = require('basic-auth-connect');
 var app = express();
+
+/////////////////
+// EMAIL STUFF
+/////////////////
+var ses = new AWS.SES();
+
+var params = {
+  Destination: { /* required */
+    ToAddresses: [
+      'syuan100@gmail.com',
+      /* more items */
+    ]
+  },
+  Message: { /* required */
+    Body: { /* required */
+      Html: {
+        Data: '<b>testing ses service</b>', /* required */
+      },
+      Text: {
+        Data: 'testing ses service', /* required */
+      }
+    },
+    Subject: { /* required */
+      Data: 'Test Subject', /* required */
+    }
+  },
+  Source: 'no-rely@yuanamarry.me'
+};
+ses.sendEmail(params, function(err, data) {
+  if (err) console.log(err, err.stack); // an error occurred
+  else     console.log(data);           // successful response
+});
 
 /////////////////
 // DATABASE STUFF
