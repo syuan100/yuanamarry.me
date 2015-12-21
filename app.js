@@ -185,11 +185,11 @@ app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res,
 
 app.get('/admin/api/sendees', auth, function(req, res){
   if (req.query.type === 'std') {
-    connection.query('SELECT * FROM people WHERE NOT std = \'Not Yet\'', function(err, rows){
+    connection.query('SELECT * FROM people WHERE std = \'Not Yet\'', function(err, rows){
       res.json(rows);
     });
   } else if (req.query.type === 'invitation') {
-    connection.query('SELECT * FROM people WHERE NOT invitation = \'Not Yet\'', function(err, rows){
+    connection.query('SELECT * FROM people WHERE invitation = \'Not Yet\'', function(err, rows){
       res.json(rows);
     });
   } else {

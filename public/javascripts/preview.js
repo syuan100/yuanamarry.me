@@ -27,22 +27,21 @@ $(document).ready(function(){
 
   $("input[value='custom']").click(function(){
     $("#final-emails").empty();
-    $("#final-emails").prop('disabled', 'disabled');
   });
 
   $("input[value='std'").click(function(){
+    $("#final-emails").empty();
     sendeeCall("std");
-    $("#final-emails").prop('disabled', false);
   });
 
   $("input[value='invitation'").click(function(){
+    $("#final-emails").empty();
     sendeeCall("invitation");
-    $("#final-emails").prop('disabled', false);
   });
 
   $("input[value='general'").click(function(){
+    $("#final-emails").empty();
     sendeeCall("general");
-    $("#final-emails").prop('disabled', false);
   });
 
 });
