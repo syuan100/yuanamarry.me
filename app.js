@@ -14,7 +14,7 @@ var app = express();
 /////////////////
 // EMAIL STUFF
 /////////////////
-var ses = new AWS.SES();
+var ses = new AWS.SES({region: 'us-west-2'});
 
 var params = {
   Destination: { /* required */
