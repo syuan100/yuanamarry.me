@@ -11,6 +11,20 @@ var basicAuth = require('basic-auth-connect');
 var app = express();
 
 /////////////////
+// SETUP EMAIL
+/////////////////
+var ImapServer = require('imap-server');
+var server = ImapServer();
+ 
+// use plugin 
+var plugins = require('imap-server/plugins');
+server.use(plugins.announce);
+/* use more builtin or custom plugins... */
+ 
+var net = require('net');
+net.createServer(server).listen(process.env.IMAP_PORT || 143);
+
+/////////////////
 // DATABASE STUFF
 /////////////////
 
