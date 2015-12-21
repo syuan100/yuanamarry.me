@@ -183,16 +183,11 @@ app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res,
 
 });
 
-var formatEmails = function(rows) {
-  console.log("rows: ");
-  console.log(rows);
-};
-
 app.get('/admin/api/sendees', auth, function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
-    var sendees = formatEmails(rows);
+    // var sendees = formatEmails(rows);
+    res.json(rows);
   }); 
-  res.json({ test: 1 });
 });
 
 
