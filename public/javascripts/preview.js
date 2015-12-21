@@ -1,8 +1,10 @@
-var populateEmailList = function(data){
-  console.log(data);
-};
-
 $(document).ready(function(){
+  var populateEmailList = function(data){
+    $.each(data, function(i, e){
+      $("#final-emails").append("<option id=" + e.id + ">" + e.name + " (" + e.email + ")</option>");
+    });
+  };
+
   /* initial load */
   $("input[value='general']").click();
 
