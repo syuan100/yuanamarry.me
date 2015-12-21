@@ -177,6 +177,8 @@ app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res,
 
   tmpHtml = tmpHtml.replace(/\|\!IMAGE\!\|/g, imgTag);
 
+  console.log(tmpHtml);
+
   res.render('preview', {tmpHtml: tmpHtml});
 
 });
