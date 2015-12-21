@@ -104,18 +104,17 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
           var insertQuery = 'INSERT INTO people (name, email, std, invitation, rsvp) VALUES (?, ?, ?, ?, ?);';
           connection.query(insertQuery, [newGuest.name, newGuest.email, newGuest.std, newGuest.invitation, newGuest.rsvp], function(err, result) {
             if (err) throw err
-            console.log(result);
+
           });
         } else {
           console.log(newGuest.name + ' is already in the database.');
         }
       });
-   })
-   .on("end", function(){
-       console.log("done");
    });
 
-   res.status(204);
+  connection.query('SELECT * FROM people', function(err, rows){
+    res.render('stage', {recipients: rows});
+  }); 
 
 });
 
