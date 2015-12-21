@@ -39,7 +39,7 @@ var app = express();
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'callwetip1',
+  password : 'root',
   database : 'test_database'
 });
 
