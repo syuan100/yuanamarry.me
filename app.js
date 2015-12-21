@@ -175,7 +175,7 @@ app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res,
   var tmpFile = req.file.filename;
 
   console.log(tmpHtml);
-  consle.log(tmpFile);
+  console.log(tmpFile);
 
   res.render('preview');
 
