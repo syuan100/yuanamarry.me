@@ -172,12 +172,12 @@ var imageUpload = multer({
 
 app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res, next) { 
   var tmpHtml = req.body.html_area;
-  var tmpFile = req.file.filename;
-  var imgTag = '<img src=\'/images/' + tmpFile + '\' />';
-
-  tmpHtml = tmpHtml.replace(/\|\!IMAGE\!\|/g, imgTag);
-  
-  console.log(req.file);
+  if (req.file){
+    var tmpFile = req.file.filename;
+    var imgTag = '<img src=\'/images/' + tmpFile + '\' />';
+    tmpHtml = tmpHtml.replace(/\|\!IMAGE\!\|/g, imgTag);
+    console.log(req.file);
+  }
 
   res.render('preview', {tmpHtml: tmpHtml});
 
