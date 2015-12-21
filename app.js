@@ -170,7 +170,7 @@ var imageUpload = multer({
   limits: {fileSize: 50000000, files:1},
 });
 
-app.post('/admin/stage', imageUpload.single('image'), function(req, res, next) { 
+app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res, next) { 
   var tmpHtml = req.body.html_area;
   var tmpFile = req.file.filename;
 
