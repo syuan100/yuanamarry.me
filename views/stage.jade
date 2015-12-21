@@ -35,6 +35,8 @@ html
         .compose-email
           | Compose an email to send to recipients
           br
-          textarea.html-area(rows="30", cols="70")
-          br
-          input.html-submit(type="submit", title="Preview Email")
+          form(action="/admin/stage/preview", method="POST", enctype="multipart/form-data", name="preview")
+            textarea.html-area(rows="30", cols="70", name="html_area")
+            br
+            input.upload-dialog(type="file", name="image")
+            input.html-submit(type="submit", title="Preview Email")

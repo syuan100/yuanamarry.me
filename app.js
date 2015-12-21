@@ -16,31 +16,31 @@ var app = express();
 /////////////////
 var ses = new AWS.SES({region: 'us-west-2'});
 
-var params = {
-  Destination: {
-    ToAddresses: [
-      'gracejiras@gmail.com',
-    ]
-  },
-  Message: { 
-    Body: { 
-      Html: {
-        Data: '<b>i luh u grace</b>', 
-      },
-      Text: {
-        Data: 'testing ses service', 
-      }
-    },
-    Subject: { 
-      Data: 'free succulents',
-    }
-  },
-  Source: 'no-rely@yuanamarry.me'
-};
-ses.sendEmail(params, function(err, data) {
-  if (err) console.log(err, err.stack); 
-  else     console.log(data);          
-});
+// var params = {
+//   Destination: {
+//     ToAddresses: [
+//       'gracejiras@gmail.com',
+//     ]
+//   },
+//   Message: { 
+//     Body: { 
+//       Html: {
+//         Data: '<b>i luh u grace</b>', 
+//       },
+//       Text: {
+//         Data: 'testing ses service', 
+//       }
+//     },
+//     Subject: { 
+//       Data: 'free succulents',
+//     }
+//   },
+//   Source: 'no-rely@yuanamarry.me'
+// };
+// ses.sendEmail(params, function(err, data) {
+//   if (err) console.log(err, err.stack); 
+//   else     console.log(data);          
+// });
 
 /////////////////
 // DATABASE STUFF
@@ -142,11 +142,10 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
           console.log(newGuest.name + ' is already in the database.');
         }
       });
-   });
-
-  connection.query('SELECT * FROM people', function(err, rows){
-    res.render('stage', {recipients: rows});
-  }); 
+    })
+    .on("end", function(){
+      res.redirect('/admin/stage');
+    });
 
 });
 
@@ -160,5 +159,27 @@ app.get('/admin/stage', auth, function(req, res){
 app.get('/tracker/*',function(req,res){
   res.sendfile(path.join(__dirname, req.path));
 });
+
+/////////////////
+// PREVIEW
+/////////////////
+
+// tracked emails
+var imageUpload = multer({
+  dest: 'images/',
+  limits: {fileSize: 50000000, files:1},
+});
+
+app.post('/admin/stage', imageUpload.single('image'), function(req, res, next) { 
+  var tmpHtml = req.body.html_area;
+  var tmpFile = req.file.filename;
+
+  console.log(tmpHtml);
+  consle.log(tmpFile);
+
+  res.render('preview');
+
+});
+
 
 module.exports = app;
