@@ -191,8 +191,8 @@ var formatEmails = function(rows) {
 app.get('/admin/api/sendees', auth, function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
     var sendees = formatEmails(rows);
-    return sendees;
   }); 
+  res.json({ test: 1 });
 });
 
 
