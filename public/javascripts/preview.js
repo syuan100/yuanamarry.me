@@ -1,3 +1,6 @@
 $(document).ready(function(){
-  console.log("hi");
+  /* only allow one radio button at a time */
+
+  /* initial load */
+  $("input[name='general']").click();
 });
