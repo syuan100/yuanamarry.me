@@ -119,7 +119,9 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
 });
 
 app.get('/admin/stage', auth, function(req, res){
-  res.render('stage', {recipients: recipients});
+  connection.query('SELECT * FROM people', function(err, rows){
+    res.render('stage', {recipients: rows});
+  }); 
 });
 
 // route to serve tracker image
