@@ -19,8 +19,8 @@ var app = express();
 // This example starts a SMTP server using TLS with your own certificate and key
 var server = new SMTPServer({
     secure: true,
-    key: fs.readFileSync('private.key'),
-    cert: fs.readFileSync('server.crt')
+    key: fs.readFileSync('sec/domain.key'),
+    cert: fs.readFileSync('sec/domain.crt')
 });
 server.listen(465);
 
