@@ -8,21 +8,20 @@ var mysql = require('mysql');
 var multer = require('multer');
 var csv = require("fast-csv");
 var basicAuth = require('basic-auth-connect');
+var SMTPServer = require('smtp-server').SMTPServer;
 var app = express();
 
 /////////////////
 // SETUP EMAIL
 /////////////////
-var ImapServer = require('imap-server');
-var server = ImapServer();
- 
-// use plugin 
-var plugins = require('imap-server/plugins');
-server.use(plugins.announce);
-/* use more builtin or custom plugins... */
- 
-var net = require('net');
-net.createServer(server).listen(process.env.IMAP_PORT || 143);
+
+// This example starts a SMTP server using TLS with your own certificate and key
+var server = new SMTPServer({
+    secure: true,
+    key: fs.readFileSync('private.key'),
+    cert: fs.readFileSync('server.crt')
+});
+server.listen(465);
 
 /////////////////
 // DATABASE STUFF
