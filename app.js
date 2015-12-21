@@ -184,10 +184,19 @@ app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res,
 });
 
 app.get('/admin/api/sendees', auth, function(req, res){
-  connection.query('SELECT * FROM people', function(err, rows){
-    // var sendees = formatEmails(rows);
-    res.json(rows);
-  }); 
+  if (req.query.type === 'std') {
+    connection.query('SELECT * FROM people WHERE NOT std = \'Not Yet\'', function(err, rows){
+      res.json(rows);
+    });
+  } else if (req.query.type === 'invitation') {
+    connection.query('SELECT * FROM people WHERE NOT invitation = \'Not Yet\'', function(err, rows){
+      res.json(rows);
+    });
+  } else {
+    connection.query('SELECT * FROM people', function(err, rows){
+      res.json(rows);
+    });
+  }
 });
 
 
