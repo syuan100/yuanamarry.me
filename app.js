@@ -166,18 +166,18 @@ app.get('/tracker/*',function(req,res){
 
 // tracked emails
 var imageUpload = multer({
-  dest: 'images/',
+  dest: 'public/images/',
   limits: {fileSize: 50000000, files:1},
 });
 
 app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res, next) { 
   var tmpHtml = req.body.html_area;
   var tmpFile = req.file.filename;
-  var imgTag = '<img src=\'' + tmpFile + '\' />';
+  var imgTag = '<img src=\'/images/' + tmpFile + '\' />';
 
   tmpHtml = tmpHtml.replace(/\|\!IMAGE\!\|/g, imgTag);
-
-  console.log(tmpHtml);
+  
+  console.log(req.file);
 
   res.render('preview', {tmpHtml: tmpHtml});
 
