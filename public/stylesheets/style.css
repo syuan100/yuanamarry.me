@@ -133,3 +133,18 @@ input.subject {
   margin-bottom: 20px;
 }
 
+.results-box {
+  background: white;
+  height: 75px;
+  overflow: scroll;
+  margin: 14px;
+}
+
+.success-text {
+  color: #0d7212;
+}
+
+.error-text {
+  color: #dd0000;
+}
+
