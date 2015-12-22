@@ -24,7 +24,7 @@ $(document).ready(function(){
     });
   });
 
-  $(".delete-row .close").click(function(){
+  $(".delete-row .cancel").click(function(){
     $(".preview-container").fadeOut();
   });
 
