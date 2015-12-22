@@ -15,7 +15,7 @@ html
         br
         br
         .html-preview!=tmpHtml
-        .send-preview-button.button= Send Preview
+        .send-preview-button.button Send Preview
       .sendees.right.half
         .selector
           h2 Email for
@@ -37,4 +37,4 @@ html
           form(action="/admin/stage/sendmail", method="POST", enctype="multipart/form-data", name="sendmail")
             select(id="final-emails", size="20", multiple)
             br
-            .send-mail-button.button= Send Email
+            .send-mail-button.button Send Email
