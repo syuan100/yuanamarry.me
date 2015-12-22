@@ -48,11 +48,11 @@ $(document).ready(function(){
 
   /* Send Preview */
   $(".send-preview-button").click(function(){
-    $(".preview-box").fadeIn();
+    $(".preview-container").fadeIn();
   });
 
   $(".cancel-preview-button").click(function(){
-    $(".preview-box").fadeOut();
+    $(".preview-container").fadeOut();
   });
 
 });
