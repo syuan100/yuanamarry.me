@@ -16,6 +16,9 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// basic auth (unsecure)
+var auth = basicAuth('charlie', 'candymountain');
+
 /////////////////
 // EMAIL STUFF
 /////////////////
@@ -91,8 +94,6 @@ app.post('/admin/api/delete', auth, function(req, res){
   }
 });
 
-
-
 /////////////////
 // VIEWS
 /////////////////
@@ -119,9 +120,6 @@ var Guest = function(name, email, std, invitation, rsvp){
   this.rsvp = rsvp;
 };
 
-
-// basic auth (unsecure)
-var auth = basicAuth('charlie', 'candymountain');
 
 // tracking results
 app.get('/admin/tracking', auth, function(req, res){
