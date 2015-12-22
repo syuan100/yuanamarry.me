@@ -47,7 +47,7 @@ $(document).ready(function(){
   });
 
   /* Send Preview */
-  $(".send-preview-email-button").click(function(){
+  $(".send-preview-button").click(function(){
     $(".preview-container").fadeIn();
   });
 
