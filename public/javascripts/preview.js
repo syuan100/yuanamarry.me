@@ -1,7 +1,9 @@
 $(document).ready(function(){
+  var $finalEmails = $("#final-emails");
+
   var populateEmailList = function(data){
     $.each(data, function(i, e){
-      $("#final-emails").append("<option id=" + e.id + ">" + e.name + " (" + e.email + ")</option>");
+      $finalEmails.append("<option id=" + e.id + ">" + e.name + " (" + e.email + ")</option>");
     });
   };
 
@@ -26,22 +28,27 @@ $(document).ready(function(){
   sendeeCall("general");
 
   $("input[value='custom']").click(function(){
-    $("#final-emails").empty();
+    $finalEmails.empty();
   });
 
   $("input[value='std'").click(function(){
-    $("#final-emails").empty();
+    $finalEmails.empty();
     sendeeCall("std");
   });
 
   $("input[value='invitation'").click(function(){
-    $("#final-emails").empty();
+    $finalEmails.empty();
     sendeeCall("invitation");
   });
 
   $("input[value='general'").click(function(){
-    $("#final-emails").empty();
+    $finalEmails.empty();
     sendeeCall("general");
+  });
+
+  /* Send Preview */
+  $(".send-preview-button").click(function(){
+    
   });
 
 });
