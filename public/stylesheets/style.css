@@ -110,7 +110,6 @@ a {
   margin-top: 200px;
   background-color: #c0f0d8;
   width: 400px;
-  height: 200px;
   padding: 40px;
   text-align: center;
 }
@@ -121,5 +120,6 @@ a {
 
 .preview-box input[type='text'] {
   font-size: 20px;
+  margin-bottom: 20px;
 }
 

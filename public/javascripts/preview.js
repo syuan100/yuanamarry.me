@@ -55,4 +55,9 @@ $(document).ready(function(){
     $(".preview-container").fadeOut();
   });
 
+  $(".send-preview-button").click(function(){
+    $(".preview-box").hide();
+    $(".sending-box").show();
+  });
+
 });

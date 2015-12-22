@@ -4,6 +4,7 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
     script(src='//code.jquery.com/jquery-2.1.4.min.js')
     script(src='/javascripts/preview.js')
   body.blue
@@ -14,6 +15,15 @@ html
         br
         .send-preview-email-button.button Send Preview
         .cancel-preview-email-button.button Cancel Preview
+      .sending-box
+        h2 Sending Preview...
+        i.fa.fa-spin.fa-spinner
+      .success-box
+        h2 Success!
+        .cancel-preview-email-button.button Close
+      .error-box
+        h2 Error. Please try again.
+        .cancel-preview-email-button.button Close
     #container
       .header
         | Tracking Preview
