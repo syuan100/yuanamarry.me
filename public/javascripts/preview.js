@@ -62,7 +62,11 @@ $(document).ready(function(){
   });
 
   $(".cancel-preview-email-button").click(function(){
-    $(".preview-container").fadeOut();
+    if ($(this).hasClass("home")){
+      window.location.href = "/admin/stage";
+    } else {
+      $(".preview-container").fadeOut();
+    }
   });
 
   $(".send-preview-email-button").click(function(){
