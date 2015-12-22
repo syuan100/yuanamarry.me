@@ -109,15 +109,15 @@ $(document).ready(function(){
         data: JSON.stringify(finalEmailObject),
         success: function(data){
           successfulEmails.push($(e).attr("data-email"));
-          $(".results-box").append("<div class='success'>" + $(e).attr("data-email") + "</span>");
+          $(".results-box").append("<div class='success-text'>" + $(e).attr("data-email") + "</span>");
           totalProcessed++;
           if (totalProcessed == (recipients.length - 1)) {
-            $(".results-box").before("Finished!");
+            $(".results-box").before(totalProcessed + " Processed! <span class='success-text'>" + successfulEmails.length + " Sent</span>, <span class='error-text'>" + failedEmails.length + " Failed</span>");
           }
         },
         error: function(xhr, status, error) {
           failedEmails.push($(e).attr("data-email"));
-          $(".results-box").append("<div class='error'>" + $(e).attr("data-email") + "</span>");
+          $(".results-box").append("<div class='error-text'>" + $(e).attr("data-email") + "</span>");
           totalProcessed++;
           if (totalProcessed == (recipients.length - 1)) {
             $(".results-box").before(totalProcessed + " Processed! <span class='success-text'>" + successfulEmails.length + " Sent</span>, <span class='error-text'>" + failedEmails.length + " Failed</span>");
