@@ -85,7 +85,7 @@ connection.connect(function(err) {
 });
 
 app.post('/admin/api/delete', auth, function(req, res){
-  var objKeys = req.body.keys;
+  var objKeys = Object.keys(req.body);
   var values = [];
   console.log(req.body);
   for(var i=0; i < keys.length; i++) {
