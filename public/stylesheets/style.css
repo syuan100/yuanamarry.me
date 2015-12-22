@@ -131,6 +131,7 @@ input.subject {
   height: 100%;
   background-color: rgba(0,0,0,0.7);
   display: none;
+  z-index: 2;
 }
 
 .preview-box {
