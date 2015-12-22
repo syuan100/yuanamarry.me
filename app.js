@@ -190,6 +190,7 @@ app.get('/admin/stage', auth, function(req, res){
 
 // route to serve tracker image
 app.get('/tracker/*',function(req,res){
+  console.log(req.path);
   res.sendfile(path.join(__dirname, req.path));
 });
 
