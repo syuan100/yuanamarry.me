@@ -36,9 +36,9 @@ html
           | Compose an email to send to recipients
           br
           form(action="/admin/stage/preview", method="POST", enctype="multipart/form-data", name="preview")
-            | Subject
             br
-            input.subject(type="text", name="subject")
+            input.subject(type="text", name="subject", placeholder="Subject")
+            br
             br
             textarea.html-area(rows="30", cols="70", name="html_area")
             br
