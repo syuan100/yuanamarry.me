@@ -73,11 +73,8 @@ $(document).ready(function(){
       contentType: "application/json",
       data: JSON.stringify(emailObject),
       success: function(data){
-        console.log(data.success);
-        if (data.success === "yes") {
-          $(".box").hide();
-          $(".success-box").show();
-        }
+        $(".box").hide();
+        $(".success-box").show();
       },
       error: function(xhr, status, error) {
         $(".box").hide();
