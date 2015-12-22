@@ -199,5 +199,10 @@ app.get('/admin/api/sendees', auth, function(req, res){
   }
 });
 
+app.post('/admin/api/sendemail', auth, function(req, res){
+  console.log(req.body);
+  res.send(JSON.stringify({ success: "yes" }));
+});
+
 
 module.exports = app;

@@ -58,6 +58,23 @@ $(document).ready(function(){
   $(".send-preview-email-button").click(function(){
     $(".box").hide();
     $(".sending-box").show();
+
+    var emailObject = {
+      email: $("input#preview-email").text(),
+      html: $(".html-preview").html()
+    };
+
+    $.ajax({
+      url: "/admin/api/sendemail",
+      method: "POST",
+      data: emailObject,
+      success: function(data){
+        console.log(data);
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
   });
 
 });
