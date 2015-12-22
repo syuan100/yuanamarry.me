@@ -195,6 +195,8 @@ app.get('/tracker/*',function(req,res){
   var now = new Date();
   var timeString = moment(now).format("M/DD hA") + "<br />Opened"
 
+  console.log(trackerArray);
+
   if((trackerArray[1] == "std") || (trackerArray[1] == "invitation")){
     var trackingQuery = "UPDATE people SET " + trackerArray[1] + " = '" + timeString + "'' WHERE email = '" + trackerArray[0] + "';";
     console.log(trackingQuery);
