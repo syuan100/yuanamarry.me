@@ -21,31 +21,33 @@ app.use(bodyParser.json());
 /////////////////
 var ses = new AWS.SES({region: 'us-west-2'});
 
-// var params = {
-//   Destination: {
-//     ToAddresses: [
-//       'gracejiras@gmail.com',
-//     ]
-//   },
-//   Message: { 
-//     Body: { 
-//       Html: {
-//         Data: '<b>i luh u grace</b>', 
-//       },
-//       Text: {
-//         Data: 'testing ses service', 
-//       }
-//     },
-//     Subject: { 
-//       Data: 'free succulents',
-//     }
-//   },
-//   Source: 'no-rely@yuanamarry.me'
-// };
-// ses.sendEmail(params, function(err, data) {
-//   if (err) console.log(err, err.stack); 
-//   else     console.log(data);          
-// });
+var createSESObject = function(subject, html, text, recipient, sender) {
+
+  var params = {
+    Destination: {
+      ToAddresses: [
+        recipient,
+      ]
+    },
+    Message: { 
+      Body: { 
+        Html: {
+          Data: html, 
+        },
+        Text: {
+          Data: text, 
+        }
+      },
+      Subject: { 
+        Data: subject,
+      }
+    },
+    Source: sender
+  };
+
+  return params;
+
+}
 
 /////////////////
 // DATABASE STUFF
@@ -205,8 +207,19 @@ app.get('/admin/api/sendees', auth, function(req, res){
 });
 
 app.post('/admin/api/sendemail', auth, function(req, res){
-  console.log(req.body);
-  res.send(JSON.stringify({ success: "yes" }));
+  var recipient = req.body.email;
+  var html = req.body.html;
+
+  var sesObject = createSESObject('Test Email', html, html, recipient, 'no-reply@yuanamarry.me');
+
+  ses.sendEmail(sesObject, function(err, data) {
+    if (err) {
+      res.send(500).send({ error: "SES failure: " + err });
+    } else {
+      res.send(JSON.stringify({ success: "yes" }));
+    }        
+  });
+  
 });
 
 
