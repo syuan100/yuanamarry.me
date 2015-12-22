@@ -93,11 +93,16 @@ $(document).ready(function(){
 
   /* Send Final Email */
   $(".send-mail-button").click(function(){
+    $(".preview-container").fadeIn();
+    $(".box").hide();
+    $(".final-send").show();
+  });
+
+  $(".final-send-button").click(function(){
     var recipients = $finalEmails.find("option");
     var successfulEmails = [];
     var failedEmails = [];
     var totalProcessed = 0;
-    $(".preview-container").fadeIn();
     $(".box").hide();
     $(".final-send").show();
     $.each(recipients, function(i,e) {
