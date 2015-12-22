@@ -13,6 +13,7 @@ html, body {
 
 body {
   font: 14px "Muli", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 #container {
@@ -110,5 +111,15 @@ a {
   background-color: #c0f0d8;
   width: 400px;
   height: 200px;
+  padding: 40px;
+  text-align: center;
+}
+
+.preview-box .button {
+  margin: 5px auto;
+}
+
+.preview-box input[type='text'] {
+  font-size: 20px;
 }
 
