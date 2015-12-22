@@ -81,6 +81,18 @@ connection.connect(function(err) {
   });
 });
 
+app.post('/admin/api/delete', auth, function(req, res){
+  var objKeys = req.body.keys;
+  var values = [];
+  console.log(req.body);
+  for(var i=0; i < keys.length; i++) {
+    console.log(req.body.objKeys[i]);
+    values.push(req.body.objKeys[i]);
+  }
+});
+
+
+
 /////////////////
 // VIEWS
 /////////////////

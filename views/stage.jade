@@ -6,8 +6,20 @@ html
     link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
     script(src='//code.jquery.com/jquery-2.1.4.min.js')
-    script(src='/javascripts/preview.js')
+    script(src='/javascripts/stage.js')
   body.blue
+    .preview-container
+      .preview-box
+        .delete-row.box
+          | Are you sure you want to delete
+          b
+            span.name
+            &nbsp;
+            span.email
+          | from the database?
+          br
+          .delete-record.button Yes
+          .cancel.button No
     #container
       .header
         | Tracking
@@ -28,7 +40,7 @@ html
             .cell.std.center=recipient.std
             .cell.invitation.center=recipient.invitation
             .cell.rsvp.center=recipient.rsvp
-            .cell.delete.center
+            .cell.delete.center.remove
               i.fa.fa-trash-o
       .action-area.right.half
         .upload-csv
