@@ -20,6 +20,8 @@ $(document).ready(function(){
       },
       error: function(xhr, status, error){
         console.log(error);
+        $(".box").hide();
+        $(".delete-row-error").show();
       }
     });
   });

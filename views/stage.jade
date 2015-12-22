@@ -21,6 +21,10 @@ html
           br
           .delete-record.button Yes
           .cancel.button No
+        .delete-row-error.box
+          | Error deleting record.
+          br
+          .cancel.button OK
     #container
       .header
         | Tracking
@@ -46,6 +50,7 @@ html
       .action-area.right.half
         .upload-csv
           | Upload CSV of recipients (First Name, Last Name, Email)
+          br
           br
           form(action="/admin/stage", method="POST", enctype="multipart/form-data", name="csvfile")
             input.upload-dialog(type="file", name="csvfile")
