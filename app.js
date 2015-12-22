@@ -10,6 +10,7 @@ var multer = require('multer');
 var csv = require("fast-csv");
 var AWS = require('aws-sdk');
 var fs = require('fs-extra');
+var base32 = require('base32');
 var basicAuth = require('basic-auth-connect');
 var app = express();
 
