@@ -61,7 +61,8 @@ $(document).ready(function(){
 
     var emailObject = {
       email: $("input#preview-email").val(),
-      html: $(".html-preview").html()
+      html: $(".html-preview").html(),
+      subject: $("h1.subject").text()
     };
 
     console.log(JSON.stringify(emailObject));

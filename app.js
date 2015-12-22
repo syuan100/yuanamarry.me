@@ -210,8 +210,9 @@ app.get('/admin/api/sendees', auth, function(req, res){
 app.post('/admin/api/sendemail', auth, function(req, res){
   var recipient = req.body.email;
   var html = req.body.html;
+  var subject = req.body.subject;
 
-  var sesObject = createSESObject('Test Email', html, html, recipient, 'no-reply@yuanamarry.me');
+  var sesObject = createSESObject(subject, html, html, recipient, 'no-reply@yuanamarry.me');
 
   ses.sendEmail(sesObject, function(err, data) {
     if (err) {
