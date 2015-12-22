@@ -94,7 +94,7 @@ app.post('/admin/api/delete', auth, function(req, res){
     }
     return finalString;
   };
-  var deleteQuery = "DELETE * FROM people WHERE " + identifier() + ";";
+  var deleteQuery = "DELETE FROM people WHERE " + identifier() + ";";
 
   connection.query(deleteQuery, function(err, result){
     if (err) {
