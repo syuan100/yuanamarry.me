@@ -86,6 +86,10 @@ input.subject {
   width: 18%;
 }
 
+.cell.id, .cell.delete {
+  width: 3%;
+}
+
 /* Preview page */
 .html-preview {
   padding: 20px;
