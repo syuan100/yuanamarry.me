@@ -73,10 +73,14 @@ $(document).ready(function(){
       contentType: "application/json",
       data: JSON.stringify(emailObject),
       success: function(data){
-        console.log(data);
+        if (data.success === "yes") {
+          $(".box").hide();
+          $(".success-box").show();
+        }
       },
       error: function(xhr, status, error) {
-        console.log(error);
+        $(".box").hide();
+        $(".error-box").show();
       }
     });
   });

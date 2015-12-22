@@ -218,8 +218,8 @@ app.post('/admin/api/sendemail', auth, function(req, res){
     if (err) {
       res.send(500).send({ error: "SES failure: " + err });
     } else {
-      res.send(JSON.stringify({ success: "yes" }));
-    }        
+      res.send(JSON.stringify({ success: "yes", data: data }));
+    }
   });
 
 });
