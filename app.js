@@ -87,10 +87,11 @@ connection.connect(function(err) {
 app.post('/admin/api/delete', auth, function(req, res){
   var objKeys = Object.keys(req.body);
   var values = [];
-  console.log(req.body);
+
+  console.log(Object.keys(req.body));
   for(var i=0; i < objKeys.length; i++) {
-    console.log(req.body.objKeys[i]);
-    values.push(req.body.objKeys[i]);
+    console.log(req.body[objKeys[i]]);
+    values.push(req.body[objKeys[i]]);
   }
 });
 
