@@ -96,6 +96,7 @@ $(document).ready(function(){
     $(".preview-container").fadeIn();
     $(".box").hide();
     $(".final-send-confirmation").show();
+    $(".final-send-confirmation.number").text($finalEmails.find("option").length);
   });
 
   $(".final-send-button").click(function(){
