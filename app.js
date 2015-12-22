@@ -217,7 +217,9 @@ app.post('/admin/api/sendemail', auth, function(req, res){
   ses.sendEmail(sesObject, function(err, data) {
     if (err) {
       res.send(500).send({ error: "SES failure: " + err });
+      console.log("email failed to send to " + recipient);
     } else {
+      console.log("email sent to " + recipient);
       res.send(JSON.stringify({ success: "yes", data: data }));
     }
   });
