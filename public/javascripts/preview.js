@@ -55,7 +55,7 @@ $(document).ready(function(){
     $(".preview-container").fadeOut();
   });
 
-  $(".send-preview-button").click(function(){
+  $(".send-preview-email-button").click(function(){
     $(".preview-box").hide();
     $(".sending-box").show();
   });
