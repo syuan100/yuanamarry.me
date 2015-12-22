@@ -11,6 +11,7 @@ var csv = require("fast-csv");
 var AWS = require('aws-sdk');
 var fs = require('fs-extra');
 var base32 = require('base32');
+var moment = require('moment');
 var basicAuth = require('basic-auth-connect');
 var app = express();
 
@@ -190,8 +191,15 @@ app.get('/admin/stage', auth, function(req, res){
 
 // route to serve tracker image
 app.get('/tracker/*',function(req,res){
-  console.log(req.path);
-  console.log(base32.decode(req.path.split('.')[0].split('\/tracker\/')[1]));
+  var trackerArray = base32.decode(req.path.split('.')[0].split('\/tracker\/')[1]).split("|");
+  var now = new Date();
+  var timeString = moment(now).format("M/DD hA") + "<br />Opened"
+
+  if((trackerArray[1] == "std") || (trackerArray[1] == "invitation")){
+    var trackingQuery = "UPDATE people SET " + trackerArray[1] + " = '" + timeString + "'' WHERE email = '" + trackerArray[0] + "';";
+    console.log(trackingQuery);
+  }
+
   res.sendfile(path.join(__dirname, req.path));
 });
 
@@ -237,7 +245,7 @@ app.get('/admin/api/sendees', auth, function(req, res){
 
 app.post('/admin/api/sendemail', auth, function(req, res){
   var timestamp = new Date();
-  var newTrackerName = base32.encode(req.body.email + "|" + req.body.emailType + "|" + timestamp);
+  var newTrackerName = base32.encode(req.body.email + "|" + req.body.emailType + "|" + timestamp + "|" + req.body.subject);
   console.log(base32.decode(newTrackerName));
   // Add tracker gif
   fs.copy(path.join(__dirname, 'tracker/tracker.png'), path.join(__dirname, 'tracker/' + newTrackerName + ".png"), function (err) {
