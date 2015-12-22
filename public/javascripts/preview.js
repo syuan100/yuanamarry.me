@@ -48,7 +48,11 @@ $(document).ready(function(){
 
   /* Send Preview */
   $(".send-preview-button").click(function(){
-    
+    $(".preview-box").fadeIn();
+  });
+
+  $(".cancel-preview-button").click(function(){
+    $(".preview-box").fadeOut();
   });
 
 });
