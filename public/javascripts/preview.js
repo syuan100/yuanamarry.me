@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   var populateEmailList = function(data){
     $.each(data, function(i, e){
-      $finalEmails.append("<option id=" + e.id + ">" + e.name + " (" + e.email + ")</option>");
+      $finalEmails.append("<option id=" + e.id + " data-name='" + e.name "' data-email='" + e.email + "'>" + e.name + " (" + e.email + ")</option>");
     });
   };
 
@@ -47,6 +47,16 @@ $(document).ready(function(){
   });
 
   /* Send Preview */
+  var createEmailObject = function(email, html, subject) {
+    var object = {
+      email: email,
+      html: html,
+      subject: subject
+    }
+
+    return object;
+  };
+
   $(".send-preview-button").click(function(){
     $(".preview-container").fadeIn();
   });
@@ -59,11 +69,7 @@ $(document).ready(function(){
     $(".box").hide();
     $(".sending-box").show();
 
-    var emailObject = {
-      email: $("input#preview-email").val(),
-      html: $(".html-preview").html(),
-      subject: $("h1.subject").text()
-    };
+    var emailObject = createEmailObject($("input#preview-email").val(), $(".html-preview").html(), $("h1.subject").text());
 
     console.log(JSON.stringify(emailObject));
 
@@ -80,6 +86,42 @@ $(document).ready(function(){
         $(".box").hide();
         $(".error-box").show();
       }
+    });
+  });
+
+  /* Send Final Email */
+  $(".send-mail-button").click(function(){
+    var recipients = $finalEmails.find("option");
+    var successfulEmails = [];
+    var failedEmails = [];
+    var totalProcessed = 0;
+    $(".preview-container").fadeIn();
+    $(".box").hide();
+    $(".final-send").show();
+    $.each(recipients, function(i,e) {
+      var finalEmailObject = createEmailObject($(e).attr("data-email"), $(".html-preview").html(), $("h1.subject").text());
+      $.ajax({
+        url: "/admin/api/sendemail",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(finalEmailObject),
+        success: function(data){
+          successfulEmails.append($(e).attr("data-email"));
+          $(".results-box").append("<span class='success'>" + $(e).attr("data-email") + "</span>");
+          totalProcessed++;
+          if (totalProcessed == (recipients.length - 1)) {
+            $(".results-box").before("Finished!");
+          }
+        },
+        error: function(xhr, status, error) {
+          failedEmails.append($(e).attr("data-email"));
+          $(".results-box").append("<span class='error'>" + $(e).attr("data-email") + "</span>");
+          totalProcessed++;
+          if (totalProcessed == (recipients.length - 1)) {
+            $(".results-box").before("Finished!");
+          }
+        }
+      });
     });
   });
 
