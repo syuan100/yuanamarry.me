@@ -70,4 +70,16 @@ a {
   width: 200px;
 }
 
+.button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  color: white;
+  background-color: #09617c;
+}
+
+.button:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
 
