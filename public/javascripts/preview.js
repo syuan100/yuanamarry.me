@@ -120,7 +120,7 @@ $(document).ready(function(){
           $(".results-box").append("<div class='error'>" + $(e).attr("data-email") + "</span>");
           totalProcessed++;
           if (totalProcessed == (recipients.length - 1)) {
-            $(".results-box").before(totalProcessed + " Processed! <span class='success-text'>" + successfulEmails.length " Sent</span>, <span class='error-text'>" + failedEmails.length + " Failed</span>");
+            $(".results-box").before(totalProcessed + " Processed! <span class='success-text'>" + successfulEmails.length + " Sent</span>, <span class='error-text'>" + failedEmails.length + " Failed</span>");
           }
         }
       });
