@@ -12,8 +12,11 @@ html, body {
 /* Body styles */
 
 body {
-  padding: 50px;
   font: 14px "Muli", Helvetica, Arial, sans-serif;
+}
+
+#container {
+  padding: 50px;
 }
 
 body.blue {

@@ -47,11 +47,11 @@ $(document).ready(function(){
   });
 
   /* Send Preview */
-  $(".send-preview-button").click(function(){
+  $(".send-preview-email-button").click(function(){
     $(".preview-container").fadeIn();
   });
 
-  $(".cancel-preview-button").click(function(){
+  $(".cancel-preview-email-button").click(function(){
     $(".preview-container").fadeOut();
   });
 
