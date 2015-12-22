@@ -16,6 +16,7 @@ $(document).ready(function(){
       data: JSON.stringify({ email: $(".delete-row .email").text()}),
       success: function(data){
         console.log("successful delete");
+        window.location.href = "/admin/stage";
       },
       error: function(xhr, status, error){
         console.log(error);
