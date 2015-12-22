@@ -9,6 +9,10 @@ html, body {
   box-sizing: inherit;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Body styles */
 
 body {

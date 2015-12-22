@@ -10,20 +10,21 @@ html
   body.blue
     .preview-container
       .preview-box
-        h2 Enter destination of test email
-        input(type="text", id="preview-email")
-        br
-        .send-preview-email-button.button Send Preview
-        .cancel-preview-email-button.button Cancel Preview
-      .sending-box
-        h2 Sending Preview...
-        i.fa.fa-spin.fa-spinner
-      .success-box
-        h2 Success!
-        .cancel-preview-email-button.button Close
-      .error-box
-        h2 Error. Please try again.
-        .cancel-preview-email-button.button Close
+        .initial-box.box
+          h2 Enter destination of test email
+          input(type="text", id="preview-email")
+          br
+          .send-preview-email-button.button Send Preview
+          .cancel-preview-email-button.button Cancel Preview
+        .sending-box.hidden.box
+          h2 Sending Preview...
+          i.fa.fa-spin.fa-spinner
+        .success-box.hidden.box
+          h2 Success!
+          .cancel-preview-email-button.button Close
+        .error-box.hidden.box
+          h2 Error. Please try again.
+          .cancel-preview-email-button.button Close
     #container
       .header
         | Tracking Preview
