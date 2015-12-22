@@ -64,11 +64,12 @@ $(document).ready(function(){
       html: $(".html-preview").html()
     };
 
-    console.log()
+    console.log(JSON.stringify(emailObject));
 
     $.ajax({
       url: "/admin/api/sendemail",
       method: "POST",
+      contentType: "application/json",
       data: JSON.stringify(emailObject),
       success: function(data){
         console.log(data);
