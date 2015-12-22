@@ -9,6 +9,7 @@ var mysql = require('mysql');
 var multer = require('multer');
 var csv = require("fast-csv");
 var AWS = require('aws-sdk');
+var fs = require('fs-extra');
 var basicAuth = require('basic-auth-connect');
 var app = express();
 
@@ -232,8 +233,16 @@ app.get('/admin/api/sendees', auth, function(req, res){
 });
 
 app.post('/admin/api/sendemail', auth, function(req, res){
+  var newTrackerName = btoa(req.body.email + "|" + req.body.emailType) + ".png";
+
+  // Add tracker gif
+  fs.copy('/tracker/tracker.png', '/tracker/' + newTrackerName, function (err) {
+    if (err) return console.error(err)
+    console.log("success!")
+  });
+
   var recipient = req.body.email;
-  var html = req.body.html;
+  var html = req.body.html + "<img src='http://yuanamarry.me/tracker/" + newTrackerName + ".png' />";
   var subject = req.body.subject;
 
   var sesObject = createSESObject(subject, html, html, recipient, 'no-reply@yuanamarry.me');

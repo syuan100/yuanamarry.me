@@ -47,11 +47,12 @@ $(document).ready(function(){
   });
 
   /* Send Preview */
-  var createEmailObject = function(email, html, subject) {
+  var createEmailObject = function(email, html, subject, type) {
     var object = {
       email: email,
       html: html,
-      subject: subject
+      subject: subject,
+      type: type
     }
 
     return object;
@@ -73,7 +74,7 @@ $(document).ready(function(){
     $(".box").hide();
     $(".sending-box").show();
 
-    var emailObject = createEmailObject($("input#preview-email").val(), $(".html-preview").html(), $("h1.subject").text());
+    var emailObject = createEmailObject($("input#preview-email").val(), $(".html-preview").html(), $("h1.subject").text(), "preview");
 
     $.ajax({
       url: "/admin/api/sendemail",
@@ -101,13 +102,14 @@ $(document).ready(function(){
 
   $(".final-send-button").click(function(){
     var recipients = $finalEmails.find("option");
+    var emailType = $("input[name='sendees']:checked").val();
     var successfulEmails = [];
     var failedEmails = [];
     var totalProcessed = 0;
     $(".box").hide();
     $(".final-send").show();
     $.each(recipients, function(i,e) {
-      var finalEmailObject = createEmailObject($(e).attr("data-email"), $(".html-preview").html(), $("h1.subject").text());
+      var finalEmailObject = createEmailObject($(e).attr("data-email"), $(".html-preview").html(), $("h1.subject").text(), emailType);
       $.ajax({
         url: "/admin/api/sendemail",
         method: "POST",
