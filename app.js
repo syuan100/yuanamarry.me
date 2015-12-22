@@ -179,6 +179,7 @@ var imageUpload = multer({
 
 app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res, next) { 
   var tmpHtml = req.body.html_area;
+  var subject = req.body.subject;
   if (req.file){
     var tmpFile = req.file.filename;
     var imgTag = '<img src=\'/images/' + tmpFile + '\' />';
@@ -186,7 +187,7 @@ app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res,
     console.log(req.file);
   }
 
-  res.render('preview', {tmpHtml: tmpHtml});
+  res.render('preview', {tmpHtml: tmpHtml, subject: subject});
 
 });
 
@@ -219,7 +220,7 @@ app.post('/admin/api/sendemail', auth, function(req, res){
       res.send(JSON.stringify({ success: "yes" }));
     }        
   });
-  
+
 });
 
 

@@ -75,6 +75,11 @@ a {
   text-align: center;
 }
 
+/* Stage page */
+input.subject {
+  font-size: 20px;
+}
+
 /* Preview page */
 .html-preview {
   padding: 20px;
