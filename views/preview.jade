@@ -34,7 +34,6 @@ html
           input(type="text" name="custom-emails")
         .email-list
           h2 Final Email List
-          form(action="/admin/stage/sendmail", method="POST", enctype="multipart/form-data", name="sendmail")
-            select(id="final-emails", size="20", multiple)
-            br
-            .send-mail-button.button Send Email
+          select(id="final-emails", size="20", multiple)
+          br
+          .send-mail-button.button Send Email
