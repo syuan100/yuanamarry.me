@@ -86,13 +86,18 @@ connection.connect(function(err) {
 
 app.post('/admin/api/delete', auth, function(req, res){
   var objKeys = Object.keys(req.body);
-  var values = [];
 
-  console.log(Object.keys(req.body));
-  for(var i=0; i < objKeys.length; i++) {
-    console.log(req.body[objKeys[i]]);
-    values.push(req.body[objKeys[i]]);
-  }
+  var identifier = function() {
+    var finalString = "";
+    for(var i=0; i < objKeys.length; i++) {
+      finalString = finalString + objKeys[i] + "=" + req.body[objKeys[i]];
+    }
+    return finalString;
+  };
+  var deleteQuery = "DELETE * FROM people WHERE " + identifier() + ";";
+
+  console.log(deleteQuery);
+
 });
 
 /////////////////

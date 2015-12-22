@@ -13,7 +13,7 @@ $(document).ready(function(){
       url: "/admin/api/delete",
       method: "POST",
       contentType: "application/json",
-      data: JSON.stringify({ user: $(".delete-row .email").text()}),
+      data: JSON.stringify({ email: $(".delete-row .email").text()}),
       success: function(data){
         console.log("successful delete");
       },
