@@ -52,7 +52,7 @@ $(document).ready(function(){
       email: email,
       html: html,
       subject: subject,
-      type: type
+      emailType: type
     }
 
     return object;

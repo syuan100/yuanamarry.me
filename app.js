@@ -234,7 +234,7 @@ app.get('/admin/api/sendees', auth, function(req, res){
 
 app.post('/admin/api/sendemail', auth, function(req, res){
   var newTrackerName = btoa(req.body.email + "|" + req.body.emailType) + ".png";
-
+  console.log(atob(newTrackerName));
   // Add tracker gif
   fs.copy('/tracker/tracker.png', '/tracker/' + newTrackerName, function (err) {
     if (err) return console.error(err)
