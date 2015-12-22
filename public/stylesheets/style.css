@@ -82,12 +82,21 @@ input.subject {
   font-size: 20px;
 }
 
-.std, .inivitation, .rsvp {
+.std, .invitation, .rsvp {
   width: 18%;
 }
 
 .cell.id, .cell.delete {
   width: 3%;
+}
+
+.cell.delete {
+  opacity: 0.5;
+}
+
+.cell.delete:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 /* Preview page */
