@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $(".cell.delete.remove").click(function(){
-    var userEmail = $(this).parent().find("email").text();
-    var userName = $(this).parent().find("name").text();
+    var userEmail = $(this).parent().find(".email").text();
+    var userName = $(this).parent().find(".name").text();
 
     $(".preview-container").fadeIn();
     $(".delete-row .name").text(userName);
