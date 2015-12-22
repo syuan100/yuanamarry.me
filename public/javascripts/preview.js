@@ -60,14 +60,16 @@ $(document).ready(function(){
     $(".sending-box").show();
 
     var emailObject = {
-      email: $("input#preview-email").text(),
+      email: $("input#preview-email").val(),
       html: $(".html-preview").html()
     };
+
+    console.log()
 
     $.ajax({
       url: "/admin/api/sendemail",
       method: "POST",
-      data: emailObject,
+      data: JSON.stringify(emailObject),
       success: function(data){
         console.log(data);
       },
