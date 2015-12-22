@@ -4,24 +4,32 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+    script(src='//code.jquery.com/jquery-2.1.4.min.js')
+    script(src='/javascripts/preview.js')
   body.blue
     #container
       .header
         | Tracking
       .email-list.left.half
         .row.first
+            .cell.id ID
             .cell.name Name
             .cell.email Email
             .cell.std.center STD
             .cell.invitation.center Invite
             .cell.rsvp.center RSVP
+            .cell.delete.center
         - each recipient in recipients
           .row
+            .cell.id=recipient.id
             .cell.name=recipient.name
             .cell.email=recipient.email
             .cell.std.center=recipient.std
             .cell.invitation.center=recipient.invitation
             .cell.rsvp.center=recipient.rsvp
+            .cell.delete.center
+              i.fa.fa-trash-o
       .action-area.right.half
         .upload-csv
           | Upload CSV of recipients (First Name, Last Name, Email)

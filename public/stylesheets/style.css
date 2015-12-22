@@ -82,6 +82,10 @@ input.subject {
   font-size: 20px;
 }
 
+.std, .inivitation, .rsvp {
+  width: 18%;
+}
+
 /* Preview page */
 .html-preview {
   padding: 20px;
