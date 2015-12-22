@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   var populateEmailList = function(data){
     $.each(data, function(i, e){
-      $finalEmails.append("<option id=" + e.id + " data-name='" + e.name "' data-email='" + e.email + "'>" + e.name + " (" + e.email + ")</option>");
+      $finalEmails.append("<option id=" + e.id + " data-name='" + e.name + "' data-email='" + e.email + "'>" + e.name + " (" + e.email + ")</option>");
     });
   };
 
