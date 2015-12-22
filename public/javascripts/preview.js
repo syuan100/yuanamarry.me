@@ -95,7 +95,7 @@ $(document).ready(function(){
   $(".send-mail-button").click(function(){
     $(".preview-container").fadeIn();
     $(".box").hide();
-    $(".final-send").show();
+    $(".final-send-confirmation").show();
   });
 
   $(".final-send-button").click(function(){
