@@ -73,8 +73,8 @@ $(document).ready(function(){
       contentType: "application/json",
       data: JSON.stringify(emailObject),
       success: function(data){
-        console.log(data);
-        if (data.success === "yes") {
+        if (data.success) {
+          console.log("yes");
           $(".box").hide();
           $(".success-box").show();
         }
