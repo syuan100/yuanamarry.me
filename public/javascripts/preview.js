@@ -56,7 +56,7 @@ $(document).ready(function(){
   });
 
   $(".send-preview-email-button").click(function(){
-    $(".preview-box").hide();
+    $(".box").hide();
     $(".sending-box").show();
   });
 
