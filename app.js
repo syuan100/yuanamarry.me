@@ -90,7 +90,7 @@ app.post('/admin/api/delete', auth, function(req, res){
   var identifier = function() {
     var finalString = "";
     for(var i=0; i < objKeys.length; i++) {
-      finalString = finalString + objKeys[i] + "=" + req.body[objKeys[i]];
+      finalString = finalString + objKeys[i] + "=\'" + req.body[objKeys[i]] + "\'";
     }
     return finalString;
   };
