@@ -191,7 +191,7 @@ app.get('/admin/stage', auth, function(req, res){
 // route to serve tracker image
 app.get('/tracker/*',function(req,res){
   console.log(req.path);
-  console.log(base32.decode(req.path.split('.')[0]));
+  console.log(base32.decode(req.path.split('.')[0].split('\/tracker\/')[1]));
   res.sendfile(path.join(__dirname, req.path));
 });
 
