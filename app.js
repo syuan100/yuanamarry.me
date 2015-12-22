@@ -3,6 +3,7 @@
 /////////////////
 
 var express = require('express');
+var bodyParser = require("body-parser");
 var path = require('path');
 var mysql = require('mysql');
 var multer = require('multer');
@@ -10,6 +11,10 @@ var csv = require("fast-csv");
 var AWS = require('aws-sdk');
 var basicAuth = require('basic-auth-connect');
 var app = express();
+
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 /////////////////
 // EMAIL STUFF
@@ -200,7 +205,7 @@ app.get('/admin/api/sendees', auth, function(req, res){
 });
 
 app.post('/admin/api/sendemail', auth, function(req, res){
-  console.log(req);
+  console.log(req.body);
   res.send(JSON.stringify({ success: "yes" }));
 });
 
