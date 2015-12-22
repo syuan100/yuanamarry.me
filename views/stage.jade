@@ -42,9 +42,9 @@ html
             .cell.id=recipient.id
             .cell.name=recipient.name
             .cell.email=recipient.email
-            .cell.std.center=recipient.std
-            .cell.invitation.center=recipient.invitation
-            .cell.rsvp.center=recipient.rsvp
+            .cell.std.center!=recipient.std
+            .cell.invitation.center!=recipient.invitation
+            .cell.rsvp.center!=recipient.rsvp
             .cell.delete.center.remove
               i.fa.fa-trash-o
       .action-area.right.half
