@@ -106,7 +106,7 @@ $(document).ready(function(){
         contentType: "application/json",
         data: JSON.stringify(finalEmailObject),
         success: function(data){
-          successfulEmails.append($(e).attr("data-email"));
+          successfulEmails.push($(e).attr("data-email"));
           $(".results-box").append("<span class='success'>" + $(e).attr("data-email") + "</span>");
           totalProcessed++;
           if (totalProcessed == (recipients.length - 1)) {
@@ -114,7 +114,7 @@ $(document).ready(function(){
           }
         },
         error: function(xhr, status, error) {
-          failedEmails.append($(e).attr("data-email"));
+          failedEmails.push($(e).attr("data-email"));
           $(".results-box").append("<span class='error'>" + $(e).attr("data-email") + "</span>");
           totalProcessed++;
           if (totalProcessed == (recipients.length - 1)) {
