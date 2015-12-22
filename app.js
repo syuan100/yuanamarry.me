@@ -234,7 +234,7 @@ app.get('/admin/api/sendees', auth, function(req, res){
 
 app.post('/admin/api/sendemail', auth, function(req, res){
   var timestamp = new Date.now();
-  var newTrackerName = base32.encode(req.body.email + "|" + req.body.emailType + "|" + timestamp;
+  var newTrackerName = base32.encode(req.body.email + "|" + req.body.emailType + "|" + timestamp);
   console.log(base32.decode(newTrackerName));
   // Add tracker gif
   fs.copy(path.join(__dirname, 'tracker/tracker.png'), path.join(__dirname, 'tracker/' + newTrackerName + ".png"), function (err) {
