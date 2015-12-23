@@ -21,6 +21,7 @@
     "aws-sdk": "~2.2.25",
     "fs-extra": "~0.26.3",
     "base32": "0.0.6",
-    "moment": "~2.10.6"
+    "moment": "~2.10.6",
+    "moment-timezone": "~0.4.1"
   }
 }
