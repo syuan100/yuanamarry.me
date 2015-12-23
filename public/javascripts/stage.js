@@ -31,11 +31,11 @@ $(document).ready(function(){
   });
 
   $.each($(".cell.std, .cell.invitation"), function(i, e){
-    if ($(e).text().match('Opened') > -1) {
+    if ($(e).text().indexOf('Opened') > -1) {
       $(e).addClass("opened");
     }
 
-    if ($(e).text().match('Sent') > -1) {
+    if ($(e).text().indexOf('Sent') > -1) {
       $(e).addClass("sent");
     }
   });
