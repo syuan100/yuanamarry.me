@@ -194,7 +194,7 @@ app.get('/admin/stage', auth, function(req, res){
 app.get('/tracker/*',function(req,res){
   var trackerArray = base32.decode(req.path.split('.')[0].split('\/tracker\/')[1]).split("|");
   var now = new Date();
-  var timeString = moment(now)..tz("America/Los_Angeles").format("M/DD hA") + "<br />Opened"
+  var timeString = moment(now).tz("America/Los_Angeles").format("M/DD hA") + "<br />Opened"
 
   console.log(trackerArray);
 
