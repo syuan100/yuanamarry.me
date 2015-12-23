@@ -71,6 +71,7 @@ a {
 .cell {
   float: left;
   width: 20%;
+  border: 1px solid #c0f0d8;
 }
 
 .cell.opened {
@@ -92,7 +93,11 @@ input.subject {
 }
 
 .std, .invitation, .rsvp {
-  width: 18%;
+  width: 15%;
+}
+
+.email {
+  width: 29%;
 }
 
 .cell.id, .cell.delete {
