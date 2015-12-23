@@ -198,7 +198,7 @@ app.get('/tracker/*',function(req,res){
   console.log(trackerArray);
 
   if((trackerArray[1] == "std") || (trackerArray[1] == "invitation")){
-    var trackingQuery = "UPDATE people SET " + trackerArray[1] + " = '" + timeString + "'' WHERE email = '" + trackerArray[0] + "';";
+    var trackingQuery = "UPDATE people SET " + trackerArray[1] + " = '" + timeString + "' WHERE email = '" + trackerArray[0] + "';";
     connection.query(trackingQuery, function(err, result) {
       if (err) throw err
     });
