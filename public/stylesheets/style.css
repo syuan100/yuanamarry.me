@@ -73,6 +73,15 @@ a {
   width: 20%;
 }
 
+.cell.opened {
+  background-color: #118900;
+  color: white;
+}
+
+.cell.sent {
+  background-color: #f6f991;
+}
+
 .center {
   text-align: center;
 }
