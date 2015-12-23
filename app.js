@@ -198,6 +198,7 @@ app.get('/tracker/*',function(req,res){
   if((trackerArray[1] == "std") || (trackerArray[1] == "invitation")){
     var trackingQuery = "UPDATE people SET " + trackerArray[1] + " = '" + timeString + "' WHERE email = '" + trackerArray[0] + "';";
     connection.query(trackingQuery, function(err, result) {
+      console.log(result);
       if (err) throw err
     });
   }
@@ -269,8 +270,10 @@ app.post('/admin/api/sendemail', auth, function(req, res){
         var now = new Date();
         var sentString = moment(now).tz("America/Los_Angeles").format("M/DD hA") + "<br />Sent"
         var trackingQuery = "UPDATE people SET " + req.body.emailType + " = '" + sentString + "' WHERE email = '" + req.body.email + "';";
+        console.log(trackingQuery);
         connection.query(trackingQuery, function(err, result) {
           if (err) throw err
+          console.log(result);
         });
       }
       res.send(JSON.stringify({ success: "yes", data: data }));
