@@ -119,7 +119,7 @@ $(document).ready(function(){
           successfulEmails.push($(e).attr("data-email"));
           $(".results-box").append("<div class='success-text'>" + $(e).attr("data-email") + "</span>");
           totalProcessed++;
-          if (totalProcessed == (recipients.length - 1)) {
+          if (totalProcessed == (recipients.length)) {
             $(".results-box").before(totalProcessed + " Processed! <span class='success-text'>" + successfulEmails.length + " Sent</span>, <span class='error-text'>" + failedEmails.length + " Failed</span>");
           }
         },
@@ -127,7 +127,7 @@ $(document).ready(function(){
           failedEmails.push($(e).attr("data-email"));
           $(".results-box").append("<div class='error-text'>" + $(e).attr("data-email") + "</span>");
           totalProcessed++;
-          if (totalProcessed == (recipients.length - 1)) {
+          if (totalProcessed == (recipients.length)) {
             $(".results-box").before(totalProcessed + " Processed! <span class='success-text'>" + successfulEmails.length + " Sent</span>, <span class='error-text'>" + failedEmails.length + " Failed</span>");
           }
         }
