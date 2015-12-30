@@ -53,7 +53,7 @@ h1.fp{
   color: #489694;
   display: inline-block;
   font-family: 'Lato';  
-  font-weight: 300;
+  font-weight: 100;
   text-align: center;
   font-size: 80px;
   margin: 0;
@@ -62,6 +62,12 @@ h1.fp{
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)
+}
+
+@media (max-width: 800px){
+  #clockdiv {
+    font-weight: 300;
+  }
 }
 
 #clockdiv > div{
