@@ -128,16 +128,16 @@ $(document).ready(function(){
         contentType: "application/json",
         data: JSON.stringify(finalEmailObject),
         success: function(data){
-          successfulEmails.push($(e).attr("data-email"));
-          $(".results-box").append("<div class='success-text'>" + $(e).attr("data-email") + "</span>");
+          successfulEmails.push(e);
+          $(".results-box").append("<div class='success-text'>" + e + "</span>");
           totalProcessed++;
           if (totalProcessed == (recipients.length)) {
             $(".results-box").before(totalProcessed + " Processed! <span class='success-text'>" + successfulEmails.length + " Sent</span>, <span class='error-text'>" + failedEmails.length + " Failed</span>");
           }
         },
         error: function(xhr, status, error) {
-          failedEmails.push($(e).attr("data-email"));
-          $(".results-box").append("<div class='error-text'>" + $(e).attr("data-email") + "</span>");
+          failedEmails.push(e);
+          $(".results-box").append("<div class='error-text'>" + e + "</span>");
           totalProcessed++;
           if (totalProcessed == (recipients.length)) {
             $(".results-box").before(totalProcessed + " Processed! <span class='success-text'>" + successfulEmails.length + " Sent</span>, <span class='error-text'>" + failedEmails.length + " Failed</span>");
