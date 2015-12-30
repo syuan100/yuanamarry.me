@@ -50,11 +50,17 @@ h1.fp{
 }
 
 #clockdiv{
-  color: #fff;
+  color: #489694;
   display: inline-block;
   font-weight: 100;
   text-align: center;
   font-size: 30px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 #clockdiv > div{
