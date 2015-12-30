@@ -102,7 +102,7 @@ $(document).ready(function(){
 
   $(".final-send-button").click(function(){
     var recipientsOptions = $finalEmails.find("option");
-    var recipients = function(){
+    var recipientsFunction = function(){
       var emailArray = [];
       $.each(recipientsOptions, function(i,e){
         emailArray.push($(e).attr("data-email"));
@@ -116,7 +116,9 @@ $(document).ready(function(){
     $(".box").hide();
     $(".final-send").show();
     if(emailType == "custom"){
-      recipients = $("input[name='custom-emails']").split(",");
+      var recipients = $("input[name='custom-emails']").split(",");
+    } else {
+      var recipients = recipientsFunction();
     }
     $.each(recipients, function(i,e) {
       var finalEmailObject = createEmailObject(e, $(".html-preview").html(), $("h1.subject").text(), emailType);
