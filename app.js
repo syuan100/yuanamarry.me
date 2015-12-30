@@ -126,6 +126,14 @@ app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 
 /////////////////
+// HOME PAGE
+/////////////////
+
+app.get('/', function(req, res){
+  res.render('index');
+});
+
+/////////////////
 // TRACKER LOGIC
 /////////////////
 
