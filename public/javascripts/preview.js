@@ -101,15 +101,25 @@ $(document).ready(function(){
   });
 
   $(".final-send-button").click(function(){
-    var recipients = $finalEmails.find("option");
+    var recipientsOptions = $finalEmails.find("option");
+    var recipients = function(){
+      var emailArray = [];
+      $.each(recipientsOptions, function(i,e){
+        emailArray.push($(e).attr("data-email"));
+      });
+      return emailArray;
+    }
     var emailType = $("input[name='sendees']:checked").val();
     var successfulEmails = [];
     var failedEmails = [];
     var totalProcessed = 0;
     $(".box").hide();
     $(".final-send").show();
+    if(emailType == "custom"){
+      recipients = $("input[name='custom-emails']").split(",");
+    }
     $.each(recipients, function(i,e) {
-      var finalEmailObject = createEmailObject($(e).attr("data-email"), $(".html-preview").html(), $("h1.subject").text(), emailType);
+      var finalEmailObject = createEmailObject(e, $(".html-preview").html(), $("h1.subject").text(), emailType);
       $.ajax({
         url: "/admin/api/sendemail",
         method: "POST",

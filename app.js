@@ -77,7 +77,6 @@ connection.connect(function(err) {
   var tableExistsQuery = "SHOW TABLES LIKE 'people'";
 
   connection.query(tableExistsQuery, function(err, result){
-    console.log(result);
     if (!result.length) {
       var tableCreationQuery = 'CREATE TABLE people(id int primary key AUTO_INCREMENT, name varchar(255), email varchar(255), std varchar(255), invitation varchar(255), rsvp varchar(255));';
       connection.query(tableCreationQuery, function(err, result) {
@@ -179,7 +178,7 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
           var insertQuery = 'INSERT INTO people (name, email, std, invitation, rsvp) VALUES (?, ?, ?, ?, ?);';
           connection.query(insertQuery, [newGuest.name, newGuest.email, newGuest.std, newGuest.invitation, newGuest.rsvp], function(err, result) {
             if (err) throw err
-
+            console.log('Adding ' + newGuest.name + ' to database.');
           });
         } else {
           console.log(newGuest.name + ' is already in the database.');
@@ -203,12 +202,11 @@ app.get('/tracker/*',function(req,res){
   var trackerArray = base32.decode(req.path.split('.')[0].split('\/tracker\/')[1]).split("|");
   var now = new Date();
   var timeString = moment(now).tz("America/Los_Angeles").format("M/DD hA") + "<br />Opened"
-
   console.log(trackerArray);
-
   if((trackerArray[1] == "std") || (trackerArray[1] == "invitation")){
     var trackingQuery = "UPDATE people SET " + trackerArray[1] + " = '" + timeString + "' WHERE email = '" + trackerArray[0] + "';";
     connection.query(trackingQuery, function(err, result) {
+      console.log(result);
       if (err) throw err
     });
   }
@@ -233,7 +231,6 @@ app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res,
     var tmpFile = req.file.filename;
     var imgTag = '<img src=\'http://yuanamarry.me/images/' + tmpFile + '\' />';
     tmpHtml = tmpHtml.replace(/\|\!IMAGE\!\|/g, imgTag);
-    console.log(req.file);
   }
 
   res.render('preview', {tmpHtml: tmpHtml, subject: subject});
@@ -259,11 +256,10 @@ app.get('/admin/api/sendees', auth, function(req, res){
 app.post('/admin/api/sendemail', auth, function(req, res){
   var timestamp = new Date();
   var newTrackerName = base32.encode(req.body.email + "|" + req.body.emailType + "|" + timestamp + "|" + req.body.subject);
-  console.log(base32.decode(newTrackerName));
+
   // Add tracker gif
   fs.copy(path.join(__dirname, 'tracker/tracker.png'), path.join(__dirname, 'tracker/' + newTrackerName + ".png"), function (err) {
     if (err) return console.error(err)
-    console.log("success!");
   });
 
   var recipient = req.body.email;
@@ -278,6 +274,16 @@ app.post('/admin/api/sendemail', auth, function(req, res){
       console.log("email failed to send to " + recipient);
     } else {
       console.log("email sent to " + recipient);
+      if((req.body.emailType == "std") || (req.body.emailType == "invitation")){
+        var now = new Date();
+        var sentString = moment(now).tz("America/Los_Angeles").format("M/DD hA") + "<br />Sent"
+        var trackingQuery = "UPDATE people SET " + req.body.emailType + " = '" + sentString + "' WHERE email = '" + req.body.email + "';";
+        console.log(trackingQuery);
+        connection.query(trackingQuery, function(err, result) {
+          if (err) throw err
+          console.log(result);
+        });
+      }
       res.send(JSON.stringify({ success: "yes", data: data }));
     }
   });

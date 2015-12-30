@@ -30,4 +30,14 @@ $(document).ready(function(){
     $(".preview-container").fadeOut();
   });
 
+  $.each($(".cell.std, .cell.invitation"), function(i, e){
+    if ($(e).text().indexOf('Opened') > -1) {
+      $(e).addClass("opened");
+    }
+
+    if ($(e).text().indexOf('Sent') > -1) {
+      $(e).addClass("sent");
+    }
+  });
+
 });
