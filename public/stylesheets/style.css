@@ -72,7 +72,7 @@ h1.fp{
 }
 
 #clockdiv div > span{
-  padding: 15px 60px;
+  padding: 15px 40px;
   border-radius: 3px;
   background: transparent;
   display: inline-block;
@@ -80,7 +80,8 @@ h1.fp{
 
 .smalltext{
   padding-top: 5px;
-  font-size: 20px;
+  font-size: 18px;
+  font-family: 'Muli';
 }
 
 
