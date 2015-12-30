@@ -38,8 +38,7 @@ a {
 
 body.fp{
   text-align: center;
-  background: #00ECB9;
-  font-family: sans-serif;
+  background: #c0f0d8;
   font-weight: 100;
 }
 
@@ -51,7 +50,6 @@ h1.fp{
 }
 
 #clockdiv{
-  font-family: sans-serif;
   color: #fff;
   display: inline-block;
   font-weight: 100;
@@ -62,14 +60,14 @@ h1.fp{
 #clockdiv > div{
   padding: 10px;
   border-radius: 3px;
-  background: #00BF96;
+  background: transparent;
   display: inline-block;
 }
 
 #clockdiv div > span{
   padding: 15px;
   border-radius: 3px;
-  background: #00816A;
+  background: transparent;
   display: inline-block;
 }
 
