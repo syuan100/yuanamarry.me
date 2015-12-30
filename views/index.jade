@@ -2,17 +2,20 @@ doctype html
 html(lang='en')
   head
     title Jade
-  h1 Countdown Clock
-  #clockdiv
-    div
-      span.days
-      .smalltext Days
-    div
-      span.hours
-      .smalltext Hours
-    div
-      span.minutes
-      .smalltext Minutes
-    div
-      span.seconds
-      .smalltext Seconds
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/countdown.js')
+  body.fp
+    h1 Countdown Clock
+    #clockdiv
+      div
+        span.days
+        .smalltext Days
+      div
+        span.hours
+        .smalltext Hours
+      div
+        span.minutes
+        .smalltext Minutes
+      div
+        span.seconds
+        .smalltext Seconds
