@@ -10,6 +10,7 @@ var multer = require('multer');
 var csv = require("fast-csv");
 var AWS = require('aws-sdk');
 var fs = require('fs-extra');
+var favicon = require('serve-favicon');
 var base32 = require('base32');
 var moment = require('moment');
 var moment = require('moment-timezone');
@@ -19,6 +20,7 @@ var app = express();
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // basic auth (unsecure)
 var auth = basicAuth('charlie', 'candymountain');
