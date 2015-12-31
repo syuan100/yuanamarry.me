@@ -229,7 +229,7 @@ app.post('/admin/stage/preview', imageUpload.single('image'), function(req, res,
   var subject = req.body.subject;
   if (req.file){
     var tmpFile = req.file.filename;
-    var imgTag = '<img src=\'http://yuanamarry.me/images/' + tmpFile + '\' />';
+    var imgTag = '<img src=\'http://yuanamarry.me/images/' + tmpFile + '\' style="max-width: 100%;"/>';
     tmpHtml = tmpHtml.replace(/\|\!IMAGE\!\|/g, imgTag);
   }
 
