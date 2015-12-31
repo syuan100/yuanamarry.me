@@ -42,13 +42,6 @@ body.fp{
   font-weight: 100;
 }
 
-h1.fp{
-  color: #396;
-  font-weight: 100;
-  font-size: 40px;
-  margin: 40px 0px 20px;
-}
-
 #clockdiv{
   color: #489694;
   display: inline-block;
@@ -62,6 +55,12 @@ h1.fp{
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)
+}
+
+#clockdiv h1 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  margin: 20px 0;
 }
 
 @media (max-width: 800px){
