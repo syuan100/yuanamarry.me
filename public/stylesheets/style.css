@@ -247,6 +247,7 @@ input.subject {
   color: white;
   font-size: 14px;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .fp .header ul {
@@ -257,13 +258,18 @@ input.subject {
 
 .fp .header ul li {
   float: right;
-  padding: 10px 35px;
+  padding: 23px 15px;
+}
+
+.fp .header ul li a:hover {
+  color: #c0f0d8;
 }
 
 .fp .header ul li#home {
   float: left;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
+  padding: 20px 35px;
 }
 
 .fp .content {
