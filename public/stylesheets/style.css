@@ -240,7 +240,7 @@ input.subject {
 
 /* HOME PAGE */
 .fp .header {
-  padding: 0;
+  padding: 0 25px;
   position: fixed;
   top: 0;
   background: #072111;
@@ -280,7 +280,7 @@ input.subject {
 .fp .content {
   margin-top: 60px;
   height: 700px;
-  background-image: url('/images/home_page.jpg');
+  background-image: url('/img/home_page.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
