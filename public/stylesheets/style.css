@@ -278,7 +278,7 @@ input.subject {
 }
 
 .fp .content {
-  margin-top: 60px;
+  margin-top: 30px;
   height: 700px;
   background-image: url('/img/home_page.jpg');
   -webkit-background-size: cover;
