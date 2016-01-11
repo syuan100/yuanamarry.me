@@ -239,7 +239,7 @@ input.subject {
 }
 
 /* HOME PAGE */
-.fp.header {
+.fp .header {
   padding: 0;
   position: fixed;
   top: 0;
@@ -248,12 +248,12 @@ input.subject {
   font-size: 14px
 }
 
-.fp.header ul {
+.fp .header ul {
   list-style-type: none;
   padding: 0;
 }
 
-.fp.header ul li {
+.fp .header ul li {
   float: left;
   padding: 10px 35px;
 }
