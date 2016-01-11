@@ -245,7 +245,8 @@ input.subject {
   top: 0;
   background: #072111;
   color: white;
-  font-size: 14px
+  font-size: 14px;
+  width: 100%;
 }
 
 .fp .header ul {
