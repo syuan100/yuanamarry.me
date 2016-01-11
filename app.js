@@ -127,14 +127,6 @@ app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 
 /////////////////
-// HOME PAGE
-/////////////////
-
-app.get('/', function(req, res){
-  res.render('index');
-});
-
-/////////////////
 // TRACKER LOGIC
 /////////////////
 
@@ -290,6 +282,18 @@ app.post('/admin/api/sendemail', auth, function(req, res){
     }
   });
 
+});
+
+/////////////////
+// HOME PAGE
+/////////////////
+
+app.get('/', function(req, res){
+  res.render('index');
+});
+
+app.get('/homepage', auth, function(req, res){
+  res.render('index-lock');
 });
 
 

@@ -1,24 +1,27 @@
 doctype html
 html(lang='en')
   head
-    title #yuanamarryme
+    title #yuanamarryme | 06.11.16
     link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Lato:100,300', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='//code.jquery.com/jquery-2.1.4.min.js')
-    script(src='/javascripts/countdown.js')
   body.fp
-    #clockdiv
-      h1 GRACE + STEVEN
-      div
-        span.days
-        .smalltext days
-      div
-        span.hours
-        .smalltext hours
-      div
-        span.minutes
-        .smalltext minutes
-      div
-        span.seconds
-        .smalltext seconds
+    .header
+      ul#menu
+        li#home YUANAMARRYME
+        li Wedding Details
+        li Our Story
+        li RSVP
+    .content
+      .header GRACE + STEVEN
+      .details
+        span.location Hiddenbrooke Golf Club
+        br
+        span.date June 11th, 2016
+        br
+        span.text Ceremony starts at five o'clock in the evening
+        br
+        span.directions Directions
+    .rsvp-footer
+      .rsvp-button RSVP
