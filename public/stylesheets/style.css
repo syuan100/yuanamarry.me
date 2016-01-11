@@ -251,10 +251,22 @@ input.subject {
 .fp .header ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .fp .header ul li {
-  float: left;
+  float: right;
   padding: 10px 35px;
+}
+
+.fp .header ul li#home {
+  float: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.fp .content {
+  margin-top: 60px;
+  height: 100%;
 }
 
