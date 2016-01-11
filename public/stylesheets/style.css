@@ -281,5 +281,9 @@ input.subject {
   margin-top: 60px;
   height: 700px;
   background-image: url('/images/home_page.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
