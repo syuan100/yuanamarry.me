@@ -238,3 +238,23 @@ input.subject {
   color: #dd0000;
 }
 
+/* HOME PAGE */
+.fp.header {
+  padding: 0;
+  position: fixed;
+  top: 0;
+  background: #072111;
+  color: white;
+  font-size: 14px
+}
+
+.fp.header ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.fp.header ul li {
+  float: left;
+  padding: 10px 35px;
+}
+
