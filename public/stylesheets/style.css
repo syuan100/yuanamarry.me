@@ -261,6 +261,11 @@ input.subject {
   padding: 23px 15px;
 }
 
+.fp .header ul li a {
+  color: white;
+  text-decoration: none;
+}
+
 .fp .header ul li a:hover {
   color: #c0f0d8;
 }
