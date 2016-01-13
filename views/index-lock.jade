@@ -6,11 +6,9 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Lato:100,300', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='//code.jquery.com/jquery-2.1.4.min.js')
-  body.fp
+  body.home
     .header
       ul#menu
-        li#home
-          a(href="/") #YUANAMARRYME
         li
           a(href="#") Wedding Details
         li 
@@ -18,7 +16,10 @@ html(lang='en')
         li 
           a(href="#") RSVP
     .content
-      .title GRACE + STEVEN
+      .home-image
+        img#main-image(src='/img/home_icon.png')
+        br
+        img#name-image(src='/img/namges.png')
       .details
         span.location Hiddenbrooke Golf Club
         br
