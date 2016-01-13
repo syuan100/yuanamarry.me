@@ -285,6 +285,7 @@ input.subject {
 
 .home .content {
   height: 100%;
+  clear: both;
 }
 
 .home .content .home-image {
@@ -297,6 +298,6 @@ input.subject {
 }
 
 .home .content .home-image #main-image, .home .content .home-image #name-image {
-  max-width: 700px;
+  max-width: 400px;
 }
 
