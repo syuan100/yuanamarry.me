@@ -247,12 +247,13 @@ input.subject {
 /* HOME PAGE */
 .home .header {
   padding: 0 25px;
-  position: fixed;
+  position: absolute;
   top: 0;
   color: #4db28b;
   font-size: 14px;
-  margin: 0 auto;
+  width: 100%;
   text-transform: uppercase;
+  border-bottom: none;
 }
 
 .home .header ul {
@@ -267,7 +268,7 @@ input.subject {
 }
 
 .home .header ul li a {
-  color: white;
+  color: #4db28b;
   text-decoration: none;
 }
 
