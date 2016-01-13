@@ -258,8 +258,8 @@ input.subject {
 .home .header ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
-  width: 400px;
+  margin: 0 auto;
+  width: 600px;
 }
 
 .home .header ul li {
@@ -292,6 +292,7 @@ input.subject {
 .home .content .home-image {
   text-align: center;
   position: relative;
+  clear: both;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
