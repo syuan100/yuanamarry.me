@@ -323,7 +323,8 @@ input.subject {
 }
 
 .wedding-party {
-  width: 350px;
+  width: 800px;
+  margin: 0 auto;
 }
 
 .wedding-party .person {
