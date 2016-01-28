@@ -307,7 +307,7 @@ input.subject {
 }
 
 .home .rsvp-footer {
-  margin-top: -100px;
+  top: -100px;
   position: relative;
   margin: 30px 0;
 }
@@ -322,3 +322,22 @@ input.subject {
   margin: 0 auto;
 }
 
+.wedding-party {
+  width: 600px;
+}
+
+.wedding-party .person {
+  padding: 10px;
+}
+
+.wedding-party .person .picture {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.wedding-party .person .description {
+  width: 400px;
+  padding: 10px;
+  float: right;
+}
