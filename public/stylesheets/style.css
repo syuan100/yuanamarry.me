@@ -307,6 +307,7 @@ input.subject {
 }
 
 .home .rsvp-footer {
+  margin-top: -200px;
   margin: 30px 0;
 }
 
