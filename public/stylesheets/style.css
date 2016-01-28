@@ -323,21 +323,31 @@ input.subject {
 }
 
 .wedding-party {
-  width: 600px;
+  width: 350px;
 }
 
 .wedding-party .person {
   padding: 10px;
 }
 
+.wedding-party .girls {
+  width: 50%;
+  float: left;
+}
+
+.wedding-party .boys {
+  width: 50%;
+  float: right;
+}
+
 .wedding-party .person .picture {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   float: left;
 }
 
 .wedding-party .person .description {
-  width: 400px;
+  width: 250px;
   padding: 10px;
   float: right;
 }
