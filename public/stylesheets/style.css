@@ -292,6 +292,7 @@ input.subject {
   position: relative;
   clear: both;
   top: 50%;
+  height: 100%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
