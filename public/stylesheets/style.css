@@ -344,11 +344,10 @@ input.subject {
 .wedding-party .person .picture {
   width: 100px;
   height: 100px;
-  float: left;
+  margin: 0 auto;
 }
 
 .wedding-party .person .description {
-  width: 250px;
-  padding: 10px;
-  float: right;
+  padding: 10px 20px;
+  clear: both;
 }
