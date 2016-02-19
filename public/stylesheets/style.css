@@ -69,12 +69,6 @@ body.home{
   margin: 20px 0;
 }
 
-@media (max-width: 800px){
-  #clockdiv {
-    font-weight: 300;
-  }
-}
-
 #clockdiv > div{
   padding: 10px;
   border-radius: 3px;
@@ -261,7 +255,7 @@ input.subject {
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
-  width: 600px;
+  width: 40%;
 }
 
 .home .header ul li {
@@ -356,4 +350,10 @@ input.subject {
 .wedding-party .person .description {
   padding: 10px 20px;
   clear: both;
+}
+
+@media (max-width: 760px){
+  .home .header ul {
+    width: 100%;
+  }
 }
