@@ -255,13 +255,13 @@ input.subject {
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
-  width: 40%;
+  width: 60%;
 }
 
 .home .header ul li {
   float: right;
   width: 33%;
-  padding: 23px 15px;
+  padding: 4% 1%;
   border-bottom: 1px solid #4db28b;
 }
 
