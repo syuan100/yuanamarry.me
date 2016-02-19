@@ -320,7 +320,7 @@ input.subject {
 }
 
 .wedding-party {
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -355,13 +355,21 @@ input.subject {
   clear: both;
 }
 
-@media (max-width: 760px){
+@media (max-width: 800px){
   .home .header ul {
     width: 100%;
   }
 
   .home .content .home-image {
     margin-top: 12%;
+  }
+
+  .wedding-party .boys, .wedding-party .girls {
+    width: 100%;
+  }
+
+  .wedding-party .person {
+    padding: 20px 20%;
   }
 
 }
