@@ -295,6 +295,7 @@ input.subject {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  margin-top: 10%;
 }
 
 .home .content .home-image #main-image, .home .content .home-image #name-image {
@@ -357,6 +358,11 @@ input.subject {
   .home .header ul {
     width: 100%;
   }
+
+  .home .content .home-image {
+    margin-top: 12%;
+  }
+
 }
 
 @media (max-width: 375px){
