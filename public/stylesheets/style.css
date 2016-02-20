@@ -96,6 +96,15 @@ body.home{
   padding: 10px 20px;
 }
 
+.rsvp-window .submit-button {
+  width: 100%;
+  background-color: #4db28b;
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 700;
+}
+
 #clockdiv{
   color: #489694;
   display: inline-block;
