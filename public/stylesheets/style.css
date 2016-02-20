@@ -194,6 +194,7 @@ body.home{
   padding-bottom: 30px;
   border-bottom: 1px dashed black;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .half {
@@ -386,7 +387,7 @@ input.subject {
   position: relative;
   clear: both;
   top: 50%;
-  margin-top: 10%;
+  margin-top: 3%;
   overflow: hidden;
 }
 
