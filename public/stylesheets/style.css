@@ -300,7 +300,6 @@ input.subject {
 }
 
 .home .rsvp-footer {
-  top: -100px;
   position: relative;
   margin: 30px 0;
 }
@@ -317,7 +316,8 @@ input.subject {
 
 .wedding-party {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 80px auto;
+  overflow: hidden;
 }
 
 .wedding-party .person {
@@ -347,7 +347,9 @@ input.subject {
 }
 
 .wedding-party .person .description {
-  padding: 10px 20px;
+  line-height: 1.8em;
+  font-size: 12px;
+  padding: 8% 4%;
   clear: both;
 }
 
