@@ -113,6 +113,12 @@ app.post('/admin/api/delete', auth, function(req, res){
 
 });
 
+// Database Integrity
+app.get('/admin/db/check', auth, function(req, res){
+  var connectedAs = connection.threadId;
+  res.render('dbcheck', {connectionid: connectionid});
+});
+
 /////////////////
 // VIEWS
 /////////////////
