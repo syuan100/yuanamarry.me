@@ -127,14 +127,14 @@ app.get('/admin/db/check', auth, function(req, res){
   if (!connectionid) {
     connectionid = 'null connection. DB is not connected.';
   } else {
-    var columnQuery = "SHOW COLUMNS FROM people;";
+    var columnQuery = "SHOW COLUMNS FROM 'test_database' FROM 'people';";
     connection.query(columnQuery, function(err, result){
       if (err) {
         console.log(err);
         columns = err;
       } else {
         console.log(result);
-        columns = JSON.stringify(result);
+        columns = result;
       }
     });
   }
