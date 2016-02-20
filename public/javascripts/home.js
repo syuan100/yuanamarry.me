@@ -6,7 +6,7 @@ $(document).ready(function() {
   var $passField = $('input.passcode');
 
   $rsvpButton.click(function() {
-    $rsvpWindow.fadeIn(fucntion() {
+    $rsvpWindow.fadeIn(function() {
       $emailField.focus();
     });
   });
