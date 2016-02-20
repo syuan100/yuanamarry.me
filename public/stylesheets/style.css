@@ -283,7 +283,6 @@ input.subject {
 }
 
 .home .content {
-  height: 100%;
   clear: both;
 }
 
@@ -292,11 +291,8 @@ input.subject {
   position: relative;
   clear: both;
   top: 50%;
-  height: 100%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   margin-top: 10%;
+  overflow: hidden;
 }
 
 .home .content .home-image #main-image, .home .content .home-image #name-image {
