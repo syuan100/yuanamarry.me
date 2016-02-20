@@ -54,6 +54,20 @@ body.home{
   height: 100%;
   background-color: rgba(253, 177, 158, 0.8);
   color: black;
+  z-index: 1;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Lato';
+}
+
+.rsvp-window .form {
+  padding: 50px;
+  position: relative;
+  background-color: rgba(253, 177, 158);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #clockdiv{
