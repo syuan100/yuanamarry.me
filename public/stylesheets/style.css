@@ -111,12 +111,18 @@ body.home{
 .rsvp-window .info {
   padding: 20px;
   width: 610px;
-  margin: 10px auto;
+  margin: 30px auto;
+  margin-bottom: 10px;
   background-color: #eaa18f;
   color: black;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 300;
   line-height: 1.4em;
+}
+
+.rsvp-window .info a {
+  color: black;
+  text-decoration: underline;
 }
 
 #clockdiv{
