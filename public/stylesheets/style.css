@@ -108,6 +108,17 @@ body.home{
   margin: 10px auto;
 }
 
+.rsvp-window .info {
+  padding: 20px;
+  width: 610px;
+  margin: 10px auto;
+  background-color: #eaa18f;
+  color: black;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.4em;
+}
+
 #clockdiv{
   color: #489694;
   display: inline-block;
@@ -415,7 +426,7 @@ input.subject {
 @media (max-width: 800px){
 
   .rsvp-window .form .label {
-    font-weight: 700;
+    font-weight: 300;
     font-size: 20px;
   }
 
