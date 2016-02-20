@@ -11,14 +11,14 @@ html(lang='en')
     .rsvp-window
       .form
         table
-          tr.labels
-            td.email-text
+          tr
+            td.label
               | Email
-            td.passcode-text
-              | Passcode
-          tr.inputs
             td.email-input
               input.email(type='text', name='email')
+          tr
+            td.label
+              | Passcode
             td.passcode-input
               input.passcode(type='text', name='passcode')
     .content
