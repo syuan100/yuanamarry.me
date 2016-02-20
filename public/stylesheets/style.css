@@ -93,7 +93,7 @@ body.home{
 }
 
 .rsvp-window .form table tr td {
-  padding: 10px 5px;
+  padding: 10px 20px;
 }
 
 #clockdiv{
@@ -401,6 +401,23 @@ input.subject {
 }
 
 @media (max-width: 800px){
+
+  .rsvp-window .form .label {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .rsvp-window .form input {
+    border: 2px solid #eaa18f;
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .rsvp-window .form table tr td {
+    padding: 5px 10px;
+  }
+
   .home .header ul {
     width: 100%;
   }
