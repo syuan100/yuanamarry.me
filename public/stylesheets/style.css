@@ -90,6 +90,7 @@ body.home{
 
 .rsvp-window .form table {
   margin: 0 auto;
+  width: 654px;
 }
 
 .rsvp-window .form table tr td {
@@ -97,12 +98,14 @@ body.home{
 }
 
 .rsvp-window .submit-button {
-  width: 100%;
+  width: 610px;
   background-color: #4db28b;
   color: white;
   font-size: 36px;
   text-align: center;
   font-weight: 700;
+  border-radius: 5px;
+  margin: 10px auto;
 }
 
 #clockdiv{
