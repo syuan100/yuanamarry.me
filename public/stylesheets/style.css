@@ -123,7 +123,6 @@ body.home{
 .rsvp-window .info a {
   color: black;
   text-decoration: underline;
-  margin: ;
 }
 
 .rsvp-window .close-button {
@@ -136,7 +135,7 @@ body.home{
 .rsvp-window .close-button i {
   font-size: 60px;
   color: rgba(0,0,0,0.3);
-  margin-top: 10px 15px;
+  margin: 10px 15px;
 }
 
 .rsvp-window .close-button i:hover {
