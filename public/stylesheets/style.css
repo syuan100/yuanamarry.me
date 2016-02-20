@@ -125,6 +125,22 @@ body.home{
   text-decoration: underline;
 }
 
+.rsvp-window .close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.rsvp-window .close-button i {
+  font-size: 30px;
+  color: rgba(0,0,0,0.3);
+}
+
+.rsvp-window .close-button i:hover {
+  color: rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
 #clockdiv{
   color: #489694;
   display: inline-block;
