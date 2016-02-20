@@ -57,6 +57,12 @@ var createSESObject = function(subject, html, text, recipient, sender) {
   return params;
 
 }
+/////////////////
+// VIEWS
+/////////////////
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 /////////////////
 // DATABASE STUFF
@@ -118,13 +124,6 @@ app.get('/admin/db/check', auth, function(req, res){
   var connectedAs = connection.threadId;
   res.render('dbcheck', {connectionid: connectionid});
 });
-
-/////////////////
-// VIEWS
-/////////////////
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 /////////////////
 // STATIC FILES
