@@ -250,13 +250,12 @@ input.subject {
 .home .header {
   padding: 0 2%;
   top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   color: #4db28b;
   font-size: 14px;
   width: 100%;
   text-transform: uppercase;
   border-bottom: none;
-  position: absolute;
 }
 
 .home .header ul {
