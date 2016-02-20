@@ -57,18 +57,30 @@ body.home{
   color: black;
   z-index: 1;
   font-size: 18px;
-  font-weight: 300;
   font-family: 'Lato';
 }
 
 .rsvp-window .form {
   padding: 50px;
   position: relative;
-  background-color: rgba(253, 177, 158);
+  background-color: rgb(253, 177, 158);
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.rsvp-window .form .labels {
+  font-weight: 700;
+}
+
+.rsvp-window .form .inputs input {
+  background-color: white;
+  border: 3px solid #eaa18f;
+}
+
+.rsvp-window .form table tr td {
+  padding: 10px 5px;
 }
 
 #clockdiv{

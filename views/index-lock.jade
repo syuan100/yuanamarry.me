@@ -4,15 +4,23 @@ html(lang='en')
     title #yuanamarryme | 06.11.16
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Lato:100,300', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:100,300,700', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='//code.jquery.com/jquery-2.1.4.min.js')
   body.home
     .rsvp-window
       .form
-        | Email
-        br
-        | Passcode
+        table
+          tr.labels
+            td.email-text
+              | Email
+            td.passcode-text
+              | Passcode
+          tr.inputs
+            td.email-input
+              input.email(type='text', name='email')
+            td.passcode-input
+              input.passcode(type='text', name='passcode')
     .content
       .header
         ul#menu
