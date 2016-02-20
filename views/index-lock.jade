@@ -8,6 +8,7 @@ html(lang='en')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='//code.jquery.com/jquery-2.1.4.min.js')
+    script(src='/javascripts/home.js')
   body.home
     .rsvp-window
       .close-button
@@ -39,13 +40,13 @@ html(lang='en')
           li 
             a(href="#") Our Story
           li 
-            a(href="#") RSVP
+            a(href="#", class='rsvp-action') RSVP
       .home-image
         img#main-image(src='/img/home_icon.png')
         br
         img#name-image(src='/img/names.png')
     .rsvp-footer
-      .rsvp-button RSVP
+      .rsvp-button.rsvp-action RSVP
     .wedding-party
       .boys
         .person.best-man
