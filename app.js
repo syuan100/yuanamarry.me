@@ -122,7 +122,24 @@ app.post('/admin/api/delete', auth, function(req, res){
 // Database Integrity
 app.get('/admin/db/check', auth, function(req, res){
   var connectionid = connection.threadId;
-  res.render('dbcheck', {connectionid: connectionid});
+  var columns;
+
+  if (!connectionid) {
+    connectionid = 'null connection. DB is not connected.';
+  } else {
+    var columnQuery = "SHOW COLUMNS FROM people;";
+    connection.query(columnQuery, function(err, result){
+      if (err) {
+        console.log(err);
+        columns = err;
+      } else {
+        console.log(result);
+        columns = JSON.stringify(result);
+      }
+    });
+  }
+
+  res.render('dbcheck', {connectionid: connectionid, columnIntegrity: columns});
 });
 
 /////////////////
