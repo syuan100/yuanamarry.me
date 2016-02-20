@@ -442,6 +442,12 @@ input.subject {
   width: 100%;
 }
 
+.wedding-party .person .name {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
 .wedding-party .person .description {
   line-height: 1.8em;
   font-size: 12px;
