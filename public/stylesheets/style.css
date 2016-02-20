@@ -358,6 +358,10 @@ input.subject {
     width: 100%;
   }
 
+  .home .header ul li a {
+    font-size: 11px;
+  }
+
   .home .content .home-image {
     margin-top: 12%;
   }
