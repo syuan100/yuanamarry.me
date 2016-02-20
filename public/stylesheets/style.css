@@ -363,7 +363,11 @@ input.subject {
   }
 
   .home .content .home-image {
-    margin-top: 12%;
+    margin-top: 20%;
+  }
+
+  .home .content .home-image #main-image, .home .content .home-image #name-image {
+    max-width: 300px;
   }
 
   .wedding-party .boys, .wedding-party .girls {
