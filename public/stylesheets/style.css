@@ -74,7 +74,10 @@ body.home{
   font-weight: 700;
 }
 
-.rsvp-window .form .inputs input {
+.rsvp-window .form input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: white;
   border: 3px solid #eaa18f;
 }
