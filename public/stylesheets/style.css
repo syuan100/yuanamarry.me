@@ -48,6 +48,14 @@ body.home{
   font-weight: 100;
 }
 
+.rsvp-window {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(253, 177, 158, 0.8);
+  color: black;
+}
+
 #clockdiv{
   color: #489694;
   display: inline-block;
