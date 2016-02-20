@@ -58,6 +58,7 @@ body.home{
   z-index: 1;
   font-size: 18px;
   font-family: 'Lato';
+  text-align: left;
 }
 
 .rsvp-window .form {
@@ -68,10 +69,12 @@ body.home{
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  text-align: left;
 }
 
 .rsvp-window .form .label {
   font-weight: 700;
+  font-size: 40px;
 }
 
 .rsvp-window .form input {
@@ -80,6 +83,13 @@ body.home{
   appearance: none;
   background-color: white;
   border: 3px solid #eaa18f;
+  width: 100%;
+  padding: 10px;
+  font-size: 36px;
+}
+
+.rsvp-window .form table {
+  margin: 0 auto;
 }
 
 .rsvp-window .form table tr td {
