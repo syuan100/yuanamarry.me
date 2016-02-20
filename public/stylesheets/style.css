@@ -477,6 +477,11 @@ input.subject {
     padding: 5px 10px;
   }
 
+  .rsvp-window .close-button i {
+    font-size: 30px;
+    margin: 5px 8px;
+  }
+
   .home .header ul {
     width: 100%;
   }
