@@ -175,7 +175,7 @@ app.get('/admin/db/fix', auth, function(req, res){
 
   for(var i=0; i < desiredfields.length; i++) {
     var tempCall = "IF COL_LENGTH('people','" + desiredfields[i] + "') IS NULL BEGIN END;";
-    console.log(desiredfields[i]);
+    console.log(tempCall);
   }
 
 });
