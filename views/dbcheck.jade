@@ -17,7 +17,7 @@ html(lang='en')
       table.current-schema
         tr
           - each column in columns
-            td= column.Field
+            td(class='#{column.Field}')= column.Field
       br
       br
       strong Desired Schema for People
