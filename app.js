@@ -160,6 +160,26 @@ app.get('/admin/db/check', auth, function(req, res){
   }
 });
 
+app.get('/admin/db/fix', auth, function(req, res){
+  var desiredfields = [
+    'id',
+    'name',
+    'email',
+    'std',
+    'invitation',
+    'rsvp',
+    'passcode',
+    'additional_spots',
+    'meal_choices'
+  ];
+
+  for(var i=0; i < desiredfields.length; i++) {
+    var tempCall = "IF COL_LENGTH('people','" + desiredfields[i] + "') IS NULL BEGIN END;";
+    console.log(desiredfields[i]);
+  }
+
+});
+
 /////////////////
 // STATIC FILES
 /////////////////
