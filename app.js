@@ -123,6 +123,7 @@ app.post('/admin/api/delete', auth, function(req, res){
 app.get('/admin/db/check', auth, function(req, res){
   var connectionid = connection.threadId;
   var columns;
+  var error;
 
   if (!connectionid) {
     connectionid = 'null connection. DB is not connected.';
@@ -131,7 +132,7 @@ app.get('/admin/db/check', auth, function(req, res){
     connection.query(columnQuery, function(err, result){
       if (err) {
         console.log(err);
-        columns = err;
+        error = err;
       } else {
         console.log(result);
         columns = result;
@@ -139,7 +140,7 @@ app.get('/admin/db/check', auth, function(req, res){
     });
   }
 
-  res.render('dbcheck', {connectionid: connectionid, columns: columns});
+  res.render('dbcheck', {connectionid: connectionid, error: error});
 });
 
 /////////////////
