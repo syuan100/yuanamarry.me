@@ -1,10 +1,7 @@
 {
   "name": "app",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
+  "private": true, 
   "dependencies": {
     "aws-sdk": "~2.2.25",
     "base32": "0.0.6",

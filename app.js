@@ -144,14 +144,14 @@ app.get('/admin/db/check', auth, function(req, res){
       if (err) {
         console.log(err);
         error = err;
+        res.render('dbcheck', {connectionid: connectionid, columns: columns, desiredcolumns: desiredcolumns});
       } else {
         console.log(result);
         columns = result;
+        res.render('dbcheck', {connectionid: connectionid, columns: columns, desiredcolumns: desiredcolumns});
       }
     });
   }
-  console.log("desired columns: " + desiredcolumns);
-  res.render('dbcheck', {connectionid: connectionid, columns: columns, desiredcolumns: desiredcolumns});
 });
 
 /////////////////
