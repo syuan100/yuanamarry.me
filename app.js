@@ -182,9 +182,11 @@ app.get('/admin/db/fix', auth, function(req, res){
         console.log(err);
       }
       if (result) {
-        for(var prop in result[0]) {
-          console.log(result[prop]);
-         }
+        for(var prop in result) {
+          for(var val in prop) {
+            console.log(val);
+          }
+        }
         console.log(desiredfields[i] + " doesn't exist");
       }
     });
