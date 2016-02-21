@@ -14,11 +14,18 @@ html(lang='en')
       br
       strong Current Schema for People
       br
-      = columns
       table.current-schema
+        tr
+          - each column in columns
+            td= column.Field
       br
       br
       strong Desired Schema for People
       br
       table.desired-schema
         tr
+          - each column in desiredcolumns
+            td= column
+        tr
+          - each column in desiredcolumns
+            td(class='#{column}')

@@ -142,13 +142,10 @@ app.get('/admin/db/check', auth, function(req, res){
     var columnQuery = "SHOW COLUMNS FROM people;";
     connection.query(columnQuery, function(err, result){
       if (err) {
-        console.log(err);
-        error = err;
+        res.render('dbcheck', {connectionid: connectionid, columns: result, error: err});
       }
       if (result) {
-        console.log(result);
         res.render('dbcheck', {connectionid: connectionid, columns: result});
-        console.log("finish");
       }
     });
   }
