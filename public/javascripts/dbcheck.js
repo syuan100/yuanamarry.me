@@ -3,7 +3,7 @@ function matchFields(){
   var $current = $(".current-schema");
 
   $.each(matches, function(i,e){
-    console.log(e);
+    console.log($(e).attr('class'));
     var currentClass = $(e).attr('class');
     if($current.find(currentClass).length) {
       $(".desired-schema").find(e).text("TRUE");
