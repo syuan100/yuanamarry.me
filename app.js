@@ -145,7 +145,7 @@ app.get('/admin/db/check', auth, function(req, res){
         res.render('dbcheck', {connectionid: connectionid, columns: result, error: err});
       }
       if (result) {
-        res.render('dbcheck', {connectionid: connectionid, columns: result});
+        res.render('dbcheck', {connectionid: connectionid, columns: result, desiredcolumns: desiredcolumns});
       }
     });
   }
