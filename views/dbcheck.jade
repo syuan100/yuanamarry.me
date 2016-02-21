@@ -10,4 +10,6 @@ html(lang='en')
     .db
       | Table Integrity
       br
-      = columns
+      ul
+        - each column in columns
+        li= column.text
