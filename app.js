@@ -140,7 +140,7 @@ app.get('/admin/db/check', auth, function(req, res){
     });
   }
 
-  res.render('dbcheck', {connectionid: connectionid, error: error});
+  res.render('dbcheck', {connectionid: connectionid, columns: columns});
 });
 
 /////////////////
