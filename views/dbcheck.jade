@@ -31,3 +31,11 @@ html(lang='en')
         tr.matches
           - each column in desiredcolumns
             td(class='#{column}')
+      br
+      br
+      strong FULL LIST
+      br
+      br
+      - each item in fullList
+        - each field in item
+          span= field
