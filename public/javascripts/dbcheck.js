@@ -4,8 +4,7 @@ function matchFields(){
 
   $.each(matches, function(i,e){
     var currentClass = $(e).attr('class');
-    console.log($current.find(currentClass));
-    if($current.find(currentClass)) {
+    if($current.hasClass(currentClass)) {
       $(".desired-schema").find(e).text("TRUE");
     } else {
       $(".desired-schema").find(e).text("FALSE");
