@@ -174,7 +174,7 @@ app.get('/admin/db/fix', auth, function(req, res){
   ];
 
   for(var i=0; i < desiredfields.length; i++) {
-    var tempCall = "IF COL_LENGTH('people','" + desiredfields[i] + "') IS NULL BEGIN END;";
+    var tempCall = "IF NOT EXISTS(SELECT * FROM people.COLUMNS WHERE TABLE_SCHEMA = 'test_database' AND TABLE_NAME = 'people' AND COLUMN_NAME = '" + desiredfields[1] + "') BEGIN END;";
     console.log(tempCall);
   }
 
