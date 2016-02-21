@@ -27,7 +27,7 @@ html(lang='en')
       table.desired-schema
         tr
           - each column in desiredcolumns
-            td= column
+            td(width='200px')= column
         tr.matches
           - each column in desiredcolumns
             td(class='#{column}')
