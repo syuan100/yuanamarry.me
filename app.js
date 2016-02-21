@@ -187,10 +187,19 @@ app.get('/admin/db/fix', auth, function(req, res){
           var query = Object.keys(JSON.parse(check).data[0])[0];
           var columnName = query.match(/COLUMN_NAME\ =\ \'(.+)\'\)/i)[1];
           var createColumn = "ALTER TABLE people ADD " + columnName + " varchar(256);";
-          console.log(createColumn);
+          connection.query(createColumn, function(err, result){
+            if (err) {
+              console.log(err);
+            }
+            if (result) {
+              console.log(result);
+            }
+          });
         }
       }
     });
+
+    res.redirect('/admin/db/check');
   }
 
 });
