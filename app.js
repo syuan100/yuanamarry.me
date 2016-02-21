@@ -140,12 +140,21 @@ app.get('/admin/db/check', auth, function(req, res){
     connectionid = 'null connection. DB is not connected.';
   } else {
     var columnQuery = "SHOW COLUMNS FROM people;";
+    var fullListQuery = "SELECT * FROM people;";
     connection.query(columnQuery, function(err, result){
       if (err) {
         res.render('dbcheck', {connectionid: connectionid, columns: result, error: err});
       }
       if (result) {
-        res.render('dbcheck', {connectionid: connectionid, columns: result, desiredcolumns: desiredcolumns});
+        connection.query(fullListQuery, function(err, fullList){
+          if(err){
+            console.log(err);
+          }
+          if(fullList) {
+            console.log(fullList[0]);
+            res.render('dbcheck', {connectionid: connectionid, columns: result, desiredcolumns: desiredcolumns, fullList: fullList});
+          }
+        })
       }
     });
   }
