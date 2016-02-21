@@ -178,6 +178,17 @@ app.get('/admin/db/fix', auth, function(req, res){
     var tempCreateColumn = "";
 
     connection.query(columnCheck, function(err, result){
+      var desiredfields = [
+        'id',
+        'name',
+        'email',
+        'std',
+        'invitation',
+        'rsvp',
+        'passcode',
+        'additional_spots',
+        'meal_choices'
+      ];
       if (err) {
         console.log(err);
       }
