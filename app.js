@@ -174,7 +174,7 @@ app.get('/admin/db/fix', auth, function(req, res){
   ];
 
   for(var i=0; i < desiredfields.length; i++) {
-    var columnCheck = "SELECT EXISTS(SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'test_database' AND TABLE_NAME = 'people' AND COLUMN_NAME = '" + desiredfields[1] + "');";
+    var columnCheck = "SELECT EXISTS(SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = 'test_database' AND TABLE_NAME = 'people' AND COLUMN_NAME = '" + desiredfields[i] + "');";
     var tempCreateColumn = "";
 
     connection.query(columnCheck, function(err, result){
@@ -182,7 +182,9 @@ app.get('/admin/db/fix', auth, function(req, res){
         console.log(err);
       }
       if (result) {
-        console.log(result);
+        for(var prop in result) {
+              console.log(result[prop]);
+         }
         console.log(desiredfields[i] + " doesn't exist");
       }
     });
