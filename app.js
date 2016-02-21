@@ -198,8 +198,6 @@ app.get('/admin/db/fix', auth, function(req, res){
         }
       }
     });
-
-    res.redirect('/admin/db/check');
   }
 
 });
