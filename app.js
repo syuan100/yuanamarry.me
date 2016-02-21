@@ -183,8 +183,10 @@ app.get('/admin/db/fix', auth, function(req, res){
       }
       if (result) {
         var check = JSON.stringify({ data: result });
-        console.log(check);
-        //console.log(desiredfields[i] + " doesn't exist");
+        var exists = check.data[0][Object.keys(check.data[0])];
+        if (!exists){
+          console.log(desiredfields[i] + " doesn't exist");
+        }
       }
     });
   }
