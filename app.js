@@ -185,7 +185,7 @@ app.get('/admin/db/fix', auth, function(req, res){
         var check = JSON.stringify({ data: result });
         var exists = JSON.parse(check).data[0][Object.keys(JSON.parse(check).data[0])];
         if (!exists){
-          var query = Object.keys(JSON.parse(check).data[0]);
+          var query = Object.keys(JSON.parse(check).data[0])[0];
           var columnName = query.match(/COLUMN_NAME\ =\ \'(.+)\'\)/i)[1];
           console.log(columnName + " doesn't exist");
         }
