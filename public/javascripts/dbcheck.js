@@ -1,5 +1,5 @@
 function matchFields(){
-  var matches = $(".desired-schema .matches");
+  var matches = $(".desired-schema .matches td");
   var $current = $(".current-schema");
   console.log(matches);
 
