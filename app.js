@@ -182,13 +182,8 @@ app.get('/admin/db/fix', auth, function(req, res){
         console.log(err);
       }
       if (result) {
-        for(var prop in result) {
-          for(var val in prop) {
-            console.log(result);
-            console.log(prop);
-            console.log(val);
-          }
-        }
+        var check = JSON.stringify({ data: result });
+        console.log(check);
         //console.log(desiredfields[i] + " doesn't exist");
       }
     });
