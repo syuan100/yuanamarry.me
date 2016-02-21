@@ -135,10 +135,12 @@ app.get('/admin/db/check', auth, function(req, res){
         error = err;
       } else {
         console.log(result);
-        res.render('dbcheck', {connectionid: connectionid, columns: result});
+        columns = result;
       }
     });
   }
+
+  res.render('dbcheck', {connectionid: connectionid, columns: columns});
 });
 
 /////////////////

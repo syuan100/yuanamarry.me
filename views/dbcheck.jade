@@ -7,7 +7,13 @@ html(lang='en')
       | connected as 
       = connectionid
     br
+    br
     .db
       | Table Integrity
       br
-      = columns
+      br
+      strong Current Schema
+      br
+      ul.current-schema
+        - each column in columns
+          li= column.Field
