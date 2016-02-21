@@ -127,7 +127,7 @@ app.get('/admin/db/check', auth, function(req, res){
   if (!connectionid) {
     connectionid = 'null connection. DB is not connected.';
   } else {
-    var columnQuery = "SHOW COLUMNS FROM 'test_database' FROM 'people';";
+    var columnQuery = "SHOW COLUMNS FROM people;";
     connection.query(columnQuery, function(err, result){
       if (err) {
         console.log(err);
@@ -139,7 +139,7 @@ app.get('/admin/db/check', auth, function(req, res){
     });
   }
 
-  res.render('dbcheck', {connectionid: connectionid, columnIntegrity: columns});
+  res.render('dbcheck', {connectionid: connectionid, columns: columns});
 });
 
 /////////////////
