@@ -182,6 +182,7 @@ app.get('/admin/db/fix', auth, function(req, res){
         console.log(err);
       }
       if (result) {
+        console.log(result);
         console.log(desiredfields[i] + " doesn't exist");
       }
     });
