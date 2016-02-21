@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function initRsvpButton(){
   var $rsvpButton = $('.rsvp-action');
   var $rsvpWindow = $('.rsvp-window');
   var $closeButton = $('.rsvp-window .close-button');
@@ -14,5 +14,8 @@ $(document).ready(function() {
   $closeButton.click(function(){
     $rsvpWindow.fadeOut();
   });
+}
 
+$(document).ready(function() {
+  initRsvpButton();
 });
