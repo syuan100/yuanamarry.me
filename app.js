@@ -148,6 +148,7 @@ app.get('/admin/db/check', auth, function(req, res){
       if (result) {
         console.log(result);
         res.render('dbcheck', {connectionid: connectionid, columns: result});
+        console.log("finish");
       }
     });
   }
