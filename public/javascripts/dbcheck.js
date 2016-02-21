@@ -1,8 +1,10 @@
 function matchFields(){
   var matches = $(".desired-schema .matches");
   var $current = $(".current-schema");
+  console.log(matches);
 
   $.each(matches, function(i,e){
+    console.log(e);
     if($current.find(e).length) {
       $(".desired-schema").find(e).text("TRUE");
     } else {
