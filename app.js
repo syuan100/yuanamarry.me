@@ -178,17 +178,6 @@ app.get('/admin/db/fix', auth, function(req, res){
     var tempCreateColumn = "";
 
     connection.query(columnCheck, function(err, result){
-      var desiredfields = [
-        'id',
-        'name',
-        'email',
-        'std',
-        'invitation',
-        'rsvp',
-        'passcode',
-        'additional_spots',
-        'meal_choices'
-      ];
       if (err) {
         console.log(err);
       }
@@ -196,7 +185,9 @@ app.get('/admin/db/fix', auth, function(req, res){
         var check = JSON.stringify({ data: result });
         var exists = JSON.parse(check).data[0][Object.keys(JSON.parse(check).data[0])];
         if (!exists){
-          console.log(desiredfields[i] + " doesn't exist");
+          var query = Object.keys(JSON.parse(check).data[0]);
+          var columnName = query.match(/COLUMN_NAME\ =\ \'(.+)\'\)/i)[1];
+          console.log(columnName + " doesn't exist");
         }
       }
     });
