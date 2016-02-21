@@ -183,8 +183,9 @@ app.get('/admin/db/fix', auth, function(req, res){
       }
       if (result) {
         var check = JSON.stringify({ data: result });
-        var exists = check.data[0];
-        console.log(check.data[0]);
+        console.log(check);
+        var exists = check.data;
+        console.log(exists);
         // if (!exists){
         //   console.log(desiredfields[i] + " doesn't exist");
         // }
