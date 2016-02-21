@@ -123,6 +123,17 @@ app.post('/admin/api/delete', auth, function(req, res){
 app.get('/admin/db/check', auth, function(req, res){
   var connectionid = connection.threadId;
   var columns;
+  var desiredcolumns = [
+    'id',
+    'name',
+    'email',
+    'std',
+    'invitation',
+    'rsvp',
+    'passcode',
+    'additional_spots',
+    'meal_choices'
+  ];
   var error;
 
   if (!connectionid) {
@@ -140,7 +151,7 @@ app.get('/admin/db/check', auth, function(req, res){
     });
   }
 
-  res.render('dbcheck', {connectionid: connectionid, columns: columns});
+  res.render('dbcheck', {connectionid: connectionid, columns: columns, desiredcolumns: desiredcolumns});
 });
 
 /////////////////

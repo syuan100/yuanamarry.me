@@ -12,8 +12,20 @@ html(lang='en')
       | Table Integrity
       br
       br
-      strong Current Schema
+      strong Current Schema for People
       br
-      ul.current-schema
-        - each column in columns
-          li= column.Field
+      table.current-schema
+        tr
+          - each column in columns
+            td= column.Field
+      br
+      br
+      strong Desired Schema for People
+      br
+      table.desired-schema
+        tr
+          - each column in desiredcolumns
+            td= column
+        tr
+          - each column in desiredcolumns
+            td(class='#{column}')
