@@ -183,7 +183,7 @@ app.get('/admin/db/fix', auth, function(req, res){
       }
       if (result) {
         var check = JSON.stringify({ data: result });
-        console.log(check.data);
+        console.log(JSON.parse(check).data);
         // if (!exists){
         //   console.log(desiredfields[i] + " doesn't exist");
         // }
