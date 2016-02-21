@@ -150,7 +150,7 @@ app.get('/admin/db/check', auth, function(req, res){
       }
     });
   }
-
+  console.log("desired columns: " + desiredcolumns);
   res.render('dbcheck', {connectionid: connectionid, columns: columns, desiredcolumns: desiredcolumns});
 });
 
