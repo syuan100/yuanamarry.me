@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "0.0.1",
-  "private": true, 
+  "private": true,
   "dependencies": {
     "aws-sdk": "~2.2.25",
     "base32": "0.0.6",
@@ -20,6 +20,7 @@
     "mysql": "^2.10.0",
     "serve-favicon": "^2.3.0",
     "smtp-server": "~1.7.1",
-    "static-favicon": "~1.0.0"
+    "static-favicon": "~1.0.0",
+    "randomstring": "~1.1.4"
   }
 }

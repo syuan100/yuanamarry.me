@@ -269,7 +269,6 @@ app.post('/admin/stage', upload.single('csvfile'), function(req, res, next) {
 
 app.get('/admin/stage', auth, function(req, res){
   connection.query('SELECT * FROM people', function(err, rows){
-    console.log(rows);
     res.render('stage', {recipients: rows});
   }); 
 });
