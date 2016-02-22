@@ -25,6 +25,12 @@ html
           | Error deleting record.
           br
           .cancel.button OK
+    .person-detail
+      .field.name
+      .field.email
+      .field.passcode
+      .field.additional-spots
+      .field.meal-choices
     #container
       .header
         | Tracking
@@ -38,7 +44,7 @@ html
             .cell.rsvp.center RSVP
             .cell.delete.center
         - each recipient in recipients
-          .row
+          .row(id='#{recipient.id}')
             .cell.id=recipient.id
             .cell.name=recipient.name
             .cell.email=recipient.email
@@ -47,6 +53,9 @@ html
             .cell.rsvp.center!=recipient.rsvp
             .cell.delete.center.remove
               i.fa.fa-trash-o
+            .cell.passcode.hidden=recipient.passcode
+            .cell.additional-spots.hidden=recipient.additional_spots
+            .cell.meal-choices.hidden=recipient.meal_choices
       .action-area.right.half
         .upload-csv
           | Upload CSV of recipients (First Name, Last Name, Email)

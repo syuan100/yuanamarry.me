@@ -455,6 +455,17 @@ input.subject {
   clear: both;
 }
 
+
+.person-detail {
+  position: absolute;
+  padding: 30px;
+  background-color: white;
+  color: black;
+  margin: 30px;
+  right: 0;
+  top: 0;
+}
+
 @media (max-width: 800px){
 
   .rsvp-window .form .label {
