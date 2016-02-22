@@ -372,7 +372,7 @@ app.post('/admin/api/sendemail', auth, function(req, res){
 /////////////////
 
 app.post('/admin/db/generate-codes', auth, function(req, res){
-  var getPeopleWhoNeedCodes = "SELECT * FROM people WHERE passcode=NULL;";
+  var getPeopleWhoNeedCodes = "SELECT * FROM people WHERE passcode IS NULL;";
 
   connection.query(getPeopleWhoNeedCodes, function(err, result) {
     if (err) {
