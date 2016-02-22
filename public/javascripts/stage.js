@@ -40,4 +40,14 @@ $(document).ready(function(){
     }
   });
 
+  $(".generate-code-button").click(function(){
+    $.ajax({
+      method: "POST",
+      url: "/admin/db/generate-codes",
+      success: function(data) {
+        console.log(data);
+      }
+    });
+  });
+
 });

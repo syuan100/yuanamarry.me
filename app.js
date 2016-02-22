@@ -368,6 +368,26 @@ app.post('/admin/api/sendemail', auth, function(req, res){
 });
 
 /////////////////
+// RSVP STUFF
+/////////////////
+
+app.post('/admin/db/generate-codes', auth, function(req, res){
+  var getPeopleWhoNeedCodes = "SELECT * FROM people WHERE passcode=NULL;";
+
+  connection.query(getPeopleWhoNeedCodes, function(err, result) {
+    if (err) {
+      console.log(err);
+    }
+    if (result) {
+      console.log(result);
+    }
+  });
+
+  res.send(200);
+
+})
+
+/////////////////
 // HOME PAGE
 /////////////////
 
