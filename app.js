@@ -15,6 +15,7 @@ var base32 = require('base32');
 var moment = require('moment');
 var moment = require('moment-timezone');
 var basicAuth = require('basic-auth-connect');
+var randomstring = require('randomstring');
 var app = express();
 
 //Here we are configuring express to use body-parser as middle-ware.
