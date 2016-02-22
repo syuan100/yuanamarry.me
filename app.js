@@ -379,7 +379,8 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
       console.log(err);
     }
     if (result) {
-      console.log(result);
+      var peopleWhoNeedCodes = JSON.stringify({ data: result });
+      console.log(peopleWhoNeedCodes);
     }
   });
 
