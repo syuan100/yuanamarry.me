@@ -403,7 +403,7 @@ app.get('/rsvp', function(req, res){
   var email = req.query.email;
   var passcode = req.query.passcode;
 
-  var rsvpQuery = "SELECT * FROM people WHERE email = '" + email "' AND passcode = '" + passcode "';";
+  var rsvpQuery = "SELECT * FROM people WHERE email = '" + email + "' AND passcode = '" + passcode + "';";
 
   connection.query(rsvpQuery, function(err, result){
     if (err) {
