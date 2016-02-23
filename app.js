@@ -399,6 +399,23 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
 
 });
 
+app.get('/rsvp', function(req, res){
+  var email = req.query.email;
+  var passcode = req.query.passcode;
+
+  var rsvpQuery = "SELECT * FROM people WHERE email = '" + email "' AND passcode = '" + passcode "';";
+
+  connection.query(rsvpQuery, function(err, result){
+    if (err) {
+      res.render('rsvp-error');
+    } 
+    if (result) {
+      res.render('rsvp');
+    }
+  });
+
+});
+
 /////////////////
 // HOME PAGE
 /////////////////
