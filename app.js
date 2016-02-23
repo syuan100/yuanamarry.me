@@ -380,7 +380,7 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
     }
     if (result) {
       var peopleWhoNeedCodes = JSON.stringify({ data: result }).data;
-      for(var i = 0, i < peopleWhoNeedCodes.length; i++) {
+      for(var i = 0; i < peopleWhoNeedCodes.length; i++) {
         var tempPasscode = randomstring.generate(5);
         var addPasscodeQuery = "UPDATE people SET passcode = " + tempPasscode + " WHERE id = " + peopleWhoNeedCodes[i].id + ";";
         console.log(addPasscodeQuery);
@@ -390,7 +390,7 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
 
   res.send(200);
 
-})
+});
 
 /////////////////
 // HOME PAGE
