@@ -8,8 +8,21 @@ html(lang='en')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='//code.jquery.com/jquery-2.1.4.min.js')
-    script(src='/javascripts/home.js')
+    script(src='/javascripts/rsvp.js')
   body.home
+    script
+      | additionalGuests(#{additional_guests});
     .content
       h1
         | RSVP
+      .form.attendance
+        .label
+          | Will you be attending the wedding?
+        .input
+          input.attendance-choice(type='radio', name='attendance', value='yes') Yes
+          input.attendance-choice(type='radio', name='attendance', value='no') No
+      .form.additional-guests.hidden
+        .label
+          | How many additional guests will be coming?
+        .input
+          select

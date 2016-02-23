@@ -405,10 +405,6 @@ app.get('/rsvp', function(req, res){
     var email = code.split("|")[0];
     var passcode = code.split("|")[1];
 
-    console.log(code);
-    console.log(email);
-    console.log(passcode);
-
     var rsvpQuery = "SELECT * FROM people WHERE email = '" + email + "' AND passcode = '" + passcode + "';";
 
     connection.query(rsvpQuery, function(err, result){
@@ -417,7 +413,8 @@ app.get('/rsvp', function(req, res){
       } 
       if (result) {
         if(result.length) {
-          res.render('rsvp');
+          var additional_guests = 3;
+          res.render('rsvp', {additional_guests: additional_guests});
         } else {
           res.render('rsvp-error');
         }
