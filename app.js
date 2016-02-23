@@ -393,7 +393,7 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
           }
         });
       }
-      res.send(JSON.stringify{ queries: peopleWhoNeedCodes.length});
+      res.send(JSON.stringify({ queries: peopleWhoNeedCodes.length}));
     }
   });
 
