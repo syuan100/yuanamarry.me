@@ -18,4 +18,12 @@ function initRsvpButton(){
 
 $(document).ready(function() {
   initRsvpButton();
+
+  $(".submit-button").click(function(){
+    var email = $("input.email").val();
+    var passcode = $("input.passcode").val();
+
+    window.location = "/rsvp?email=" + email + "&passcode=" + passcode;
+  });
+
 });
