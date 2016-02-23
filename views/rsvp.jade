@@ -11,7 +11,7 @@ html(lang='en')
     script(src='/javascripts/rsvp.js')
   body.home
     script
-      | additionalGuests(#{additional_guests});
+      | $(document).ready(function(){additionalGuests(#{additional_guests});});
     .content
       h1
         | RSVP
