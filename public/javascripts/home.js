@@ -66,7 +66,7 @@ $(document).ready(function() {
     var passcode = $("input.passcode").val();
     var code = email + "|" + passcode;
 
-    code = basenc.b32encode(code);
+    code = baseenc.b32encode(code);
 
     window.location = "/rsvp?code=" + code;
   });
