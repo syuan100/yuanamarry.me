@@ -400,8 +400,9 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
 });
 
 app.get('/rsvp', function(req, res){
-  var email = req.query.email;
-  var passcode = req.query.passcode;
+  var code = base32.decode(req.query.code);
+  var email = code.split("|")[0];
+  var passcode = code.split("|")[1];
 
   var rsvpQuery = "SELECT * FROM people WHERE email = '" + email + "' AND passcode = '" + passcode + "';";
 
