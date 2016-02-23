@@ -53,7 +53,7 @@ $(document).ready(function(){
   $(".row .name").click(function(){
     var $detailPane = $(".person-detail");
     var $parentRow = $(this).parents(".row");
-    $detailPane.find(".html").html("<h3>Name</h3>" +
+    $detailPane.find(".content").html("<h3>Name</h3>" +
       $parentRow.find(".name").text() +
       "<h3>Email</h3>" +
       $parentRow.find(".email").text() +
