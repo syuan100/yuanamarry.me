@@ -410,6 +410,7 @@ app.get('/rsvp', function(req, res){
       res.render('rsvp-error');
     } 
     if (result) {
+      console.log(result);
       res.render('rsvp');
     }
   });
