@@ -400,24 +400,28 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
 });
 
 app.get('/rsvp', function(req, res){
-  var code = base32.decode(req.query.code);
-  var email = code.split("|")[0];
-  var passcode = code.split("|")[1];
+  if(req.query.code) {
+    var code = base32.decode(req.query.code);
+    var email = code.split("|")[0];
+    var passcode = code.split("|")[1];
 
-  var rsvpQuery = "SELECT * FROM people WHERE email = '" + email + "' AND passcode = '" + passcode + "';";
+    var rsvpQuery = "SELECT * FROM people WHERE email = '" + email + "' AND passcode = '" + passcode + "';";
 
-  connection.query(rsvpQuery, function(err, result){
-    if (err) {
-      res.render('rsvp-error');
-    } 
-    if (result) {
-      if(result.length) {
-        res.render('rsvp');
-      } else {
+    connection.query(rsvpQuery, function(err, result){
+      if (err) {
         res.render('rsvp-error');
+      } 
+      if (result) {
+        if(result.length) {
+          res.render('rsvp');
+        } else {
+          res.render('rsvp-error');
+        }
       }
-    }
-  });
+    });
+  } else {
+    res.redirect("/");
+  }
 
 });
 
