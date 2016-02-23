@@ -19,8 +19,11 @@ html(lang='en')
         .label
           | Will you be attending the wedding?
         .input
-          input.attendance-choice(type='radio', name='attendance', value='yes') Yes
-          input.attendance-choice(type='radio', name='attendance', value='no') No
+          input.attendance-choice(type='radio', name='attendance', value='yes')
+          | Yes
+          br
+          input.attendance-choice(type='radio', name='attendance', value='no')
+          | No
       .form.additional-guests.hidden
         .label
           | How many additional guests will be coming?
