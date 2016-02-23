@@ -457,6 +457,7 @@ input.subject {
 
 
 .person-detail {
+  display: none;
   position: absolute;
   padding: 30px;
   background-color: white;
@@ -464,6 +465,19 @@ input.subject {
   margin: 30px;
   right: 0;
   top: 0;
+}
+
+.person-detail:hover {
+  cursor: pointer;
+}
+
+.row:not(.first) .name {
+  text-decoration: underline;
+}
+
+.row:not(.first) .name:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 @media (max-width: 800px){

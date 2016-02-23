@@ -50,4 +50,25 @@ $(document).ready(function(){
     });
   });
 
+  $(".row .name").click(function(){
+    var $detailPane = $(".person-detail");
+    var $parentRow = $(this).parents(".row");
+    $detailPane.find(".html").html("<h3>Name</h3>" +
+      $parentRow.find(".name").text() +
+      "<h3>Email</h3>" +
+      $parentRow.find(".email").text() +
+      "<h3>Passcode</h3>" +
+      $parentRow.find(".passcode").text() +
+      "<h3>Additional Spots</h3>" +
+      $parentRow.find(".additional-spots").text() +
+      "<h3>Meal Choices</h3>" +
+      $parentRow.find(".meal-choices").text()
+      );
+    $detailPane.show();
+  });
+
+  $(".person-detail .close").click(function(){
+    $(".person-detail").hide();
+  });
+
 });
