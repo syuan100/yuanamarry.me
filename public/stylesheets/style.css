@@ -465,6 +465,7 @@ input.subject {
   margin: 30px;
   right: 0;
   top: 0;
+  min-width: 300px;
 }
 
 .person-detail:hover {
