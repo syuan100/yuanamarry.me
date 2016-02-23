@@ -24,7 +24,7 @@ $(document).ready(function() {
     var passcode = $("input.passcode").val();
     var code = email + "|" + passcode;
 
-    code = baseenc.b32encode(code);
+    code = base32.encode(code);
 
     window.location = "/rsvp?code=" + code;
   });
