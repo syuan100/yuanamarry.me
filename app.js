@@ -383,13 +383,19 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
       var peopleWhoNeedCodes = JSON.parse(rawResult).data;
       for(var i = 0; i < peopleWhoNeedCodes.length; i++) {
         var tempPasscode = randomstring.generate(5);
-        var addPasscodeQuery = "UPDATE people SET passcode = " + tempPasscode + " WHERE id = " + peopleWhoNeedCodes[i].id + ";";
-        console.log(addPasscodeQuery);
+        var addPasscodeQuery = "UPDATE people SET passcode = '" + tempPasscode + "' WHERE id = " + peopleWhoNeedCodes[i].id + ";";
+        connection.query(addPasscodeQuery, function(err, result) {
+          if (err) {
+            console.log(err);
+          }
+          if (result) {
+            console.log(result);
+          }
+        });
       }
+      res.send(JSON.stringify{ queries: peopleWhoNeedCodes.length});
     }
   });
-
-  res.send(200);
 
 });
 
