@@ -10,11 +10,10 @@ function additionalGuests(n) {
 $(document).ready(function() {
   $(".additional-guests select").change(function(){
     var additionalSelections = $(this).val();
-    var $mealForm = $(".meal-form").clone();
+    var $mealForm = $(".meal-form").html();
     $(".form.meal-selection").empty();
     for(var j=0; j < eval("additionalSelections + 1"); j++) {
       $(".form.meal-selection").append($mealForm);
-      $mealForm = $(".meal-form").clone();
     }
   });
 });
