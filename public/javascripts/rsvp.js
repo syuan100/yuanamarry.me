@@ -12,7 +12,7 @@ $(document).ready(function() {
   $(".additional-guests select").change(function(){
     var additionalSelections = $(this).val();
     $(".form.meal-selection").empty();
-    for(var j=0; j < eval("additionalSelections + 1"); j++) {
+    for(var j=0; j < (parseInt(additionalSelections) + 1); j++) {
       $(".form.meal-selection").append($mealForm);
     }
   });
