@@ -29,3 +29,21 @@ html(lang='en')
           | How many additional guests will be coming?
         .input
           select
+      .form.meal-selection
+        .meal-form
+          .label
+            | Meal Selection
+          .input
+            input.meal-name(type='text' name='meal-name', placeholder='Name')
+            input.meal-selection(name='meal-selection', value='1')
+            | Grilled Sirloin Steak topped with Sauteed Onions and Mushrooms
+            br
+            input.meal-selection(name='meal-selection', value='2')
+            | Grilled Salmon with Green Goddess Dressing
+            br
+            input.meal-selection(name='meal-selection', value='3')
+            | Grilled Portobello Mushrooms (Vegetarian)
+            br
+            input.meal-selection(name='meal-selection', value='4')
+            | Children's Meal - Chicken Fingers and French Fries
+            br
