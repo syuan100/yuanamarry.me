@@ -16,7 +16,7 @@ html(lang='en')
       h1
         | RSVP
       .form.attendance
-        .label
+        h2.label
           | Will you be attending the wedding?
         .input
           input.attendance-choice(type='radio', name='attendance', value='yes')
@@ -25,13 +25,13 @@ html(lang='en')
           input.attendance-choice(type='radio', name='attendance', value='no')
           | No
       .form.additional-guests.hidden
-        .label
+        h2.label
           | How many additional guests will be coming?
         .input
           select
       .form.meal-selection
         .meal-form
-          .label
+          h2.label
             | Meal Selection
           .input
             input.meal-name(type='text' name='meal-name', placeholder='Name')
