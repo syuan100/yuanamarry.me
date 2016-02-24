@@ -14,6 +14,7 @@ $(document).ready(function() {
     $(".form.meal-selection").empty();
     for(var j=0; j < eval("additionalSelections + 1"); j++) {
       $(".form.meal-selection").append($mealForm);
+      $mealForm = $(".meal-form").clone();
     }
   });
 });
