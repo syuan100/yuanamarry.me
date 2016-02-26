@@ -481,6 +481,22 @@ input.subject {
   cursor: pointer;
 }
 
+/* RSVP Form */
+
+.home .content.rsvp {
+  width: 320px;
+  padding: 30px 15px;
+  background-color: #FFF2F0;
+}
+
+.home .content.rsvp .meal-selection .input {
+  text-align: left;
+}
+
+.home .content.rsvp .meal-selection .input input {
+  margin: 5px 3px;
+}
+
 @media (max-width: 800px){
 
   .rsvp-window .form .label {
