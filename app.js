@@ -413,7 +413,7 @@ app.get('/rsvp', function(req, res){
       } 
       if (result) {
         if(result.length) {
-          var additional_guests = 3;
+          var additional_guests = 0;
           res.render('rsvp', {additional_guests: additional_guests});
         } else {
           res.render('rsvp-error');

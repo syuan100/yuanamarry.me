@@ -502,6 +502,10 @@ input.subject {
   margin-right: 6px;
 }
 
+.home.content.rsvp .rsvp-submit {
+  margin: 30px auto;
+}
+
 @media (max-width: 800px){
 
   .rsvp-window .form .label {
