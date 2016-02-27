@@ -495,11 +495,11 @@ input.subject {
 }
 
 .home .content.rsvp .meal-selection .input .selection {
-  margin: 3px 0;
+  margin: 12px 0;
 }
 
 .home .content.rsvp .meal-selection .input input {
-  margin: 5px 3px;
+  margin-right: 6px;
 }
 
 @media (max-width: 800px){

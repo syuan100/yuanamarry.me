@@ -34,7 +34,8 @@ html(lang='en')
           h2.label
             | Meal Selection
           .input
-            input.meal-name(type='text' name='meal-name', placeholder='Name')
+            | For: 
+            input.meal-name(type='text' name='meal-name', placeholder='Full Name')
             .selection
               input.meal-selection(type='radio', name='meal-selection', value='1')
               | Grilled Sirloin Steak topped with Sauteed Onions and Mushrooms
@@ -43,8 +44,12 @@ html(lang='en')
               | Grilled Salmon with Green Goddess Dressing
             .selection  
               input.meal-selection(type='radio', name='meal-selection', value='3')
-              | Grilled Portobello Mushrooms (Vegetarian)
+              | Stuffed Portobello Mushrooms (Vegetarian)
             .selection  
               input.meal-selection(type='radio', name='meal-selection', value='4')
               | Children's Meal - Chicken Fingers and French Fries
+      .form.submit-rsvp
+        .button.rsvp-submit
+          | Submit RSVP
+
             
