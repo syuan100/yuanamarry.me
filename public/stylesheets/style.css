@@ -493,6 +493,10 @@ input.subject {
   text-align: left;
 }
 
+.home .content.rsvp .meal-selection .input .selection {
+  margin: 3px 0;
+}
+
 .home .content.rsvp .meal-selection .input input {
   margin: 5px 3px;
 }

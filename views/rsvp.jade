@@ -35,16 +35,16 @@ html(lang='en')
             | Meal Selection
           .input
             input.meal-name(type='text' name='meal-name', placeholder='Name')
-            br
-            input.meal-selection(type='radio', name='meal-selection', value='1')
-            | Grilled Sirloin Steak topped with Sauteed Onions and Mushrooms
-            br
-            input.meal-selection(type='radio', name='meal-selection', value='2')
-            | Grilled Salmon with Green Goddess Dressing
-            br
-            input.meal-selection(type='radio', name='meal-selection', value='3')
-            | Grilled Portobello Mushrooms (Vegetarian)
-            br
-            input.meal-selection(type='radio', name='meal-selection', value='4')
-            | Children's Meal - Chicken Fingers and French Fries
-            br
+            .selection
+              input.meal-selection(type='radio', name='meal-selection', value='1')
+              | Grilled Sirloin Steak topped with Sauteed Onions and Mushrooms
+            .selection  
+              input.meal-selection(type='radio', name='meal-selection', value='2')
+              | Grilled Salmon with Green Goddess Dressing
+            .selection  
+              input.meal-selection(type='radio', name='meal-selection', value='3')
+              | Grilled Portobello Mushrooms (Vegetarian)
+            .selection  
+              input.meal-selection(type='radio', name='meal-selection', value='4')
+              | Children's Meal - Chicken Fingers and French Fries
+            
