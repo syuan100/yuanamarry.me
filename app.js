@@ -415,7 +415,7 @@ app.get('/rsvp', function(req, res){
         if(result.length) {
           var dbResult = JSON.stringify({ data: result });
           var jsonData = JSON.parse(dbResult).data[0];
-          var additional_guests = jsonData.additional_guests;
+          var additional_guests = parseInt(jsonData.additional_guests);
           console.log(jsonData);
           res.render('rsvp', {additional_guests: additional_guests});
         } else {
