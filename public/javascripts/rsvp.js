@@ -3,7 +3,7 @@ function additionalGuests(n) {
   for(var i=0; i<(n + 1); i++){
     $guestBox.append("<option value='"+ i +"'>" + i + "</option>");
   }
-  if($guestBox.find("option").length < 2)
+  if($guestBox.find("option").length > 1)
     $(".additional-guests").show();
 };
 
