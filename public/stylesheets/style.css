@@ -485,8 +485,9 @@ input.subject {
 
 .home .content.rsvp {
   width: 320px;
-  padding: 30px 15px;
+  padding: 60px 15px;
   background-color: #FFF2F0;
+  margin: 10px auto;
 }
 
 .home .content.rsvp .meal-selection .input {
