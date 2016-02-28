@@ -439,7 +439,17 @@ app.post('/rsvp-submit', function(req, res){
 
   var rsvpDataQuery = "UPDATE people SET rsvp='" + rsvp + "', meal_choices='" + meal_choices + "', used_spots='" + used_spots + "' WHERE email='" + email + "';";
 
-  console.log(rsvpDataQuery);
+  connection.query(rsvpDataQuery, function(err, result) {
+    if (err) {
+      console.log(err);
+      res.render('error', {err: err});
+    }
+
+    if (result) {
+      console.log(result);
+      res.render('success', {success: "success"});
+    }
+  });
 });
 
 /////////////////
