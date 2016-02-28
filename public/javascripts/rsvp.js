@@ -18,7 +18,7 @@ function getParameterByName(name, url) {
 }
 
 $(document).ready(function() {
-  var $mealForm = $(".meal-form").html();
+  var $mealForm = $(".meal-form")[0].outerHTML;
   $(".additional-guests select").change(function(){
     var additionalSelections = $(this).val();
     $(".form.meal-selection").empty();
