@@ -15,8 +15,6 @@ html(lang='en')
     .content.rsvp
       h1
         | RSVP
-      .error-message.hidden
-        | Please fill out the entire form.
       .form.attendance
         h2.label
           | Will you be attending the wedding?
@@ -50,6 +48,8 @@ html(lang='en')
             .selection  
               input.meal-selection(type='radio', name='meal-selection', value='4')
               | Children's Meal - Chicken Fingers and French Fries
+      .error-message.hidden
+        | Please fill out the entire form.
       .form.submit-rsvp
         .button.rsvp-submit
           | Submit RSVP

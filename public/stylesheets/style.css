@@ -510,6 +510,7 @@ input.subject {
   background: red;
   color: white;
   padding: 10px;
+  margin: 15px 0;
 }
 
 @media (max-width: 800px){
