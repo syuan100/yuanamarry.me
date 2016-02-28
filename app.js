@@ -433,11 +433,11 @@ app.get('/rsvp', function(req, res){
 app.post('/rsvp-submit', function(req, res){
   var rsvpData = req.body;
   var rsvp = rsvpData.rsvp;
-  var additional_guests = rsvp.additional_guests;
+  var used_spots = parseInt(rsvp.additional_guests) + 1;
   var meal_choices = rsvpData.meal_choices;
   var email = rsvpData.email;
 
-  var rsvpDataQuery = "UPDATE people SET rsvp='" + rsvp + "', meal_choices='" + meal_choices + "' WHERE email='" + email + "';";
+  var rsvpDataQuery = "UPDATE people SET rsvp='" + rsvp + "', meal_choices='" + meal_choices + "', used_spots='" + used_spots + "' WHERE email='" + email + "';";
 
   console.log(rsvpDataQuery);
 });
