@@ -429,7 +429,12 @@ app.get('/rsvp', function(req, res){
 });
 
 app.post('/rsvp-submit', function(req, res){
-  console.log(req);
+  var rsvpData = req.body;
+  var rsvp = rsvpData.rsvp;
+  var additional_guests = rsvp.additional_guests;
+  var meal_choices = rsvpData.meal_choices;
+  var email = rsvpData.email;
+  console.log(req.body);
 });
 
 /////////////////

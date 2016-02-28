@@ -7,6 +7,18 @@ function additionalGuests(n) {
     $(".additional-guests").show();
 };
 
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
 $(document).ready(function() {
   var $mealForm = $(".meal-form").html();
   $(".additional-guests select").change(function(){
@@ -43,8 +55,9 @@ $(document).ready(function() {
 
     var rsvpData = {
       rsvp: $("input[name='attendance']:checked").val(),
-      additional_guests: $(".additional_guests select").val(),
-      meal_choices: mealChoices
+      additional_guests: $(".additional-guests select").val(),
+      meal_choices: mealChoices,
+      email: base32.decode(getUrlVars.code).split("|")[0]
     }
 
     if (error) {
