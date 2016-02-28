@@ -133,7 +133,8 @@ app.get('/admin/db/check', auth, function(req, res){
     'rsvp',
     'passcode',
     'additional_spots',
-    'meal_choices'
+    'meal_choices',
+    'used_spots'
   ];
   var error;
 
@@ -171,7 +172,8 @@ app.get('/admin/db/fix', auth, function(req, res){
     'rsvp',
     'passcode',
     'additional_spots',
-    'meal_choices'
+    'meal_choices',
+    'used_spots'
   ];
 
   for(var i=0; i < desiredfields.length; i++) {
