@@ -16,4 +16,26 @@ $(document).ready(function() {
       $(".form.meal-selection").append($mealForm);
     }
   });
+
+  $(".rsvp-submit").click(function(){
+    var error = false;
+    var errorMessage = "Please fill out the entire form.";
+
+    if (!$("input[name='attendance']:checked").val()) {
+      error = true;
+    }
+
+    $.each($(".meal-form"), function(i, e) {
+      if(!$($(e).find(".meal-name")).val()) {
+        error = true;
+      }
+      if(!$($(e).find("input[name='meal-selection']:checked")).val()) {
+        error = true;
+      }
+    });
+
+    console.log(error);
+
+  });
+
 });
