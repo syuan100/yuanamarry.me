@@ -19,7 +19,7 @@ $(document).ready(function() {
 
   $(".rsvp-submit").click(function(){
     var error = false;
-    var errorMessage = "Please fill out the entire form.";
+    $(".error-message").hide();
 
     if (!$("input[name='attendance']:checked").val()) {
       error = true;
@@ -34,7 +34,11 @@ $(document).ready(function() {
       }
     });
 
-    console.log(error);
+    if (error) {
+      $(".error-message").show();
+    } else {
+      console.log("sending");
+    }
 
   });
 
