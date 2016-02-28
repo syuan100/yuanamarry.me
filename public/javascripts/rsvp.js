@@ -26,7 +26,7 @@ $(document).ready(function() {
       $(".form.meal-selection").append($mealForm);
     }
     for(var k=0; k < ($(".meal-selection").length); k++) {
-      $.each($(".meal-selection")[k].find(".meal-selection-radio"), function(i,e){
+      $.each($($(".meal-selection")[k]).find(".meal-selection-radio"), function(i,e){
         $(e).attr("name", "meal-selection-" + k);
       });
     }
