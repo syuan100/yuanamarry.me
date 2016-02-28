@@ -429,7 +429,7 @@ app.get('/rsvp', function(req, res){
 });
 
 app.post('/rsvp-submit', function(req, res){
-  console.log(req.data);
+  console.log(req);
 });
 
 /////////////////
