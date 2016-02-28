@@ -25,19 +25,41 @@ $(document).ready(function() {
       error = true;
     }
 
+    var mealChoices = "";
+
     $.each($(".meal-form"), function(i, e) {
       if(!$($(e).find(".meal-name")).val()) {
         error = true;
+      } else {
+        mealChoices += $($(e).find(".meal-name")).val() + "|";
       }
+
       if(!$($(e).find("input[name='meal-selection']:checked")).val()) {
         error = true;
+      } else {
+        mealChoices += $($(e).find("input[name='meal-selection']:checked")).val() + "&";
       }
     });
+
+    var rsvpData = {
+      rsvp: $("input[name='attendance']:checked").val(),
+      additional_guests: $(".additional_guests select").val(),
+      meal_choices: mealChocies
+    }
 
     if (error) {
       $(".error-message").show();
     } else {
-      console.log("sending");
+      $.ajax({
+        url: "/rsvp-submit/",
+        data: rsvpData,
+        success: function(data){
+          console.log(data);
+        },
+        error: function(err) {
+          console.log(err);
+        }
+      });
     }
 
   });
