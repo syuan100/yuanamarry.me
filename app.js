@@ -434,7 +434,10 @@ app.post('/rsvp-submit', function(req, res){
   var additional_guests = rsvp.additional_guests;
   var meal_choices = rsvpData.meal_choices;
   var email = rsvpData.email;
-  console.log(req.body);
+
+  var rsvpDataQuery = "UPDATE people SET rsvp='" + rsvp + "', meal_choices='" + meal_choices + "' WHERE email='" + email + "';";
+
+  console.log(rsvpDataQuery);
 });
 
 /////////////////
