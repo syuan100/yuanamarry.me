@@ -25,6 +25,11 @@ $(document).ready(function() {
     for(var j=0; j < (parseInt(additionalSelections) + 1); j++) {
       $(".form.meal-selection").append($mealForm);
     }
+    for(var k=0; k < ($(".meal-selection").length); k++) {
+      $.each($(".meal-selection")[k].find(".meal-selection-radio"), function(i,e){
+        $(e).attr("name", "meal-selection-" + k);
+      });
+    }
   });
 
   $(".rsvp-submit").click(function(){
@@ -44,10 +49,10 @@ $(document).ready(function() {
         mealChoices += $($(e).find(".meal-name")).val() + "|";
       }
 
-      if(!$($(e).find("input[name='meal-selection']:checked")).val()) {
+      if(!$($(e).find("input.meal-selection-radio:checked")).val()) {
         error = true;
       } else {
-        mealChoices += $($(e).find("input[name='meal-selection']:checked")).val() + "&";
+        mealChoices += $($(e).find("input.meal-selection-radio:checked")).val() + "&";
       }
     });
 
