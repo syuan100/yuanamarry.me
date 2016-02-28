@@ -52,6 +52,7 @@ $(document).ready(function() {
     } else {
       $.ajax({
         url: "/rsvp-submit/",
+        method: "POST",
         data: rsvpData,
         success: function(data){
           console.log(data);
