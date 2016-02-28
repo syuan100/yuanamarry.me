@@ -44,7 +44,7 @@ $(document).ready(function() {
     var rsvpData = {
       rsvp: $("input[name='attendance']:checked").val(),
       additional_guests: $(".additional_guests select").val(),
-      meal_choices: mealChocies
+      meal_choices: mealChoices
     }
 
     if (error) {
