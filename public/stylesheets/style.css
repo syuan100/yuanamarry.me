@@ -506,6 +506,12 @@ input.subject {
   margin: 30px auto;
 }
 
+.home .content.rsvp .error-message {
+  background: red;
+  color: white;
+  padding: 10px;
+}
+
 @media (max-width: 800px){
 
   .rsvp-window .form .label {
