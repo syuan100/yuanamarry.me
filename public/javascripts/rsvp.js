@@ -7,16 +7,14 @@ function additionalGuests(n) {
     $(".additional-guests").show();
 };
 
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
 $(document).ready(function() {
@@ -57,7 +55,7 @@ $(document).ready(function() {
       rsvp: $("input[name='attendance']:checked").val(),
       additional_guests: $(".additional-guests select").val(),
       meal_choices: mealChoices,
-      email: base32.decode(getUrlVars.code).split("|")[0]
+      email: base32.decode(getParameterByName("code")).split("|")[0]
     }
 
     if (error) {
