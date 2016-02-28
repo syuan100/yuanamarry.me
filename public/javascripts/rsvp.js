@@ -25,8 +25,8 @@ $(document).ready(function() {
     for(var j=0; j < (parseInt(additionalSelections) + 1); j++) {
       $(".form.meal-selection").append($mealForm);
     }
-    for(var k=0; k < ($(".meal-selection").length); k++) {
-      $.each($($(".meal-selection")[k]).find(".meal-selection-radio"), function(i,e){
+    for(var k=0; k < ($(".meal-form").length); k++) {
+      $.each($($(".meal-form")[k]).find(".meal-selection-radio"), function(i,e){
         $(e).attr("name", "meal-selection-" + k);
       });
     }
