@@ -18,6 +18,9 @@ function getParameterByName(name, url) {
 }
 
 function addRsvpForms(number) {
+  if(number === NaN) {
+    number = 0;
+  }
   var $mealForm = $(".meal-form")[0].outerHTML;
   $(".form.meal-selection").empty();
   for(var j=0; j < (parseInt(number) + 1); j++) {
