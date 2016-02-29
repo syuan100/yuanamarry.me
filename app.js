@@ -437,7 +437,12 @@ app.get('/rsvp', function(req, res){
 app.post('/rsvp-submit', function(req, res){
   var rsvpData = req.body;
   var rsvp = rsvpData.rsvp;
-  var used_spots = parseInt(rsvpData.additional_guests) + 1;
+  var used_spots;
+  if(rsvpData.additional_guests) {
+    used_spots = parseInt(rsvpData.additional_guests) + 1;
+  } else {
+    used_spots = 1;
+  } 
   var meal_choices = rsvpData.meal_choices;
   var email = rsvpData.email;
 
