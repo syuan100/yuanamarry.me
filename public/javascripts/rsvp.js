@@ -98,7 +98,7 @@ $(document).ready(function() {
 
     var rsvpData = {
       rsvp: $("input[name='attendance']:checked").val(),
-      additional_guests: $(".additional-guests select").val(),
+      additional_guests: addGuests,
       meal_choices: mealChoices,
       email: base32.decode(getParameterByName("code")).split("|")[0]
     }
