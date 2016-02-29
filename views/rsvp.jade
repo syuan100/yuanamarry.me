@@ -57,14 +57,16 @@ html(lang='en')
         .form.submit-rsvp
           .button.rsvp-submit
             | Submit RSVP
-      .finished
+      .finished.hidden
         | Thank you for your RSVP!
         br
         a.button(href='/')
           | Home
+        br
+        br
         a.button.reload
           | Edit RSVP
-      .error
+      .error.hidden
         | Sorry there was an error when submitting your RSVP. Reload the page and try again or email syuan100@gmail.com if you continue to experience problems.
         br
         a.button.reload
