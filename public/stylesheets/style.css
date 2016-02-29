@@ -335,6 +335,16 @@ input.subject {
   color: #dd0000;
 }
 
+.rsvp.yes {
+  background: green;
+  color: white;
+}
+
+.rsvp.no {
+  background: red;
+  color: white;
+}
+
 /* HOME PAGE */
 .home .header {
   padding: 0 2%;
