@@ -442,12 +442,12 @@ app.post('/rsvp-submit', function(req, res){
   connection.query(rsvpDataQuery, function(err, result) {
     if (err) {
       console.log(err);
-      res.render('error', {err: err});
+      res.status(500).json({err: err});
     }
 
     if (result) {
       console.log(result);
-      res.render('success', {success: "success"});
+      res.status(200).json({success: "success"});
     }
   });
 });
