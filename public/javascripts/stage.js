@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
 
   var totalRSVP = 0;
-  $.each($(".used_spots:not(:empty)"), function(i,e) {
+  $.each($(".used-spots:not(:empty)"), function(i,e) {
     totalRSVP += parseInt($(e).text());
   });
   $(".total-rsvp").text(totalRSVP);
