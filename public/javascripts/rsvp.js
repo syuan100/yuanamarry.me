@@ -18,6 +18,7 @@ function getParameterByName(name, url) {
 }
 
 function addRsvpForms(number) {
+  var $mealForm = $(".meal-form")[0].outerHTML;
   $(".form.meal-selection").empty();
   for(var j=0; j < (number + 1); j++) {
     $(".form.meal-selection").append($mealForm);
@@ -45,7 +46,6 @@ function setRsvp(rsvp, additional_guests, meal_choices){
 }
 
 $(document).ready(function() {
-  var $mealForm = $(".meal-form")[0].outerHTML;
   $(".additional-guests select").change(function(){
     var additionalSelections = $(this).val();
     addRsvpForms(additionalSelections);
