@@ -13,7 +13,7 @@ html(lang='en')
   body.home
     script
       | $(document).ready(function(){additionalGuests(#{additional_guests});
-      | if(#{rsvp} != 'Not Yet') { setRsvp("#{rsvp}", #{usedSpots}, "#{mealChocies}"); }
+      | if('#{rsvp}' != 'Not Yet') { setRsvp("#{rsvp}", #{usedSpots}, "#{mealChoices}"); }
       | });
     .content.rsvp
       h1
