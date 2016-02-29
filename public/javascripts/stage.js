@@ -8,6 +8,12 @@ $(document).ready(function(){
     $(".delete-row .email").text(userEmail);
   });
 
+  var totalRSVP = 0;
+  $.each($(".used_spots:not(:empty)"), function(i,e) {
+    totalRSVP += parseInt($(e).text());
+  });
+  $(".total-rsvp").text(totalRSVP);
+
   $(".delete-row .delete-record").click(function(){
     $.ajax({
       url: "/admin/api/delete",

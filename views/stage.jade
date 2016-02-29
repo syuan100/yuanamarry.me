@@ -54,16 +54,20 @@ html
             .cell.passcode.hidden=recipient.passcode
             .cell.additional-spots.hidden=recipient.additional_spots
             .cell.meal-choices.hidden=recipient.meal_choices
+            .cell.used-spots.hidden=recipient.used_spots
       .action-area.right.half
         .generate-code
           | Generate passcodes
           br
           .button.generate-code-button
             | Generate
-          br
-          br
           .codes-generated.hidden
             | codes generated
+          br
+          br
+          | Total RSVP
+          br
+          .total-rsvp
           br
           br
         .upload-csv
