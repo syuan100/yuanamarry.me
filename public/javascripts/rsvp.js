@@ -36,7 +36,7 @@ function setRsvp(rsvp, additional_guests, meal_choices){
   $("input.attendance-choice[value='" + rsvp + "']").prop("checked", true);
   $(".additional-guests select option[value='" + additional_guests + "']").prop("selected", true);
   addRsvpForms(additional_guests);
-  var mealPeople = meal_choices.split('&');
+  var mealPeople = meal_choices.split("&amp;");
 
   for(var k=0; k < ($(".meal-form").length); k++) {
     var mealName = mealPeople[k].split("|")[0];
