@@ -96,12 +96,12 @@ $(document).ready(function() {
         method: "POST",
         data: rsvpData,
         success: function(data){
-          $(".rsvp.form-content").empty();
-          $(".rsvp.finished").show();
+          $(".rsvp .form-content").empty();
+          $(".rsvp .finished").show();
         },
         error: function(err) {
-          $(".rsvp.form-content").empty();
-          $(".rsvp.error").show();
+          $(".rsvp .form-content").empty();
+          $(".rsvp .error").show();
         }
       });
     }
