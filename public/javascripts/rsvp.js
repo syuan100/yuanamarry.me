@@ -79,16 +79,20 @@ $(document).ready(function() {
     var mealChoices = "";
 
     $.each($(".meal-form"), function(i, e) {
-      if(!$($(e).find(".meal-name")).val()) {
-        error = true;
-      } else {
-        mealChoices += $($(e).find(".meal-name")).val() + "|";
-      }
+      if($("input[name='attendance']:checked").val() == 'yes') {
+        if(!$($(e).find(".meal-name")).val()) {
+          error = true;
+        } else {
+          mealChoices += $($(e).find(".meal-name")).val() + "|";
+        }
 
-      if(!$($(e).find("input.meal-selection-radio:checked")).val()) {
-        error = true;
-      } else {
-        mealChoices += $($(e).find("input.meal-selection-radio:checked")).val() + "&";
+        if(!$($(e).find("input.meal-selection-radio:checked")).val()) {
+          error = true;
+        } else {
+          mealChoices += $($(e).find("input.meal-selection-radio:checked")).val() + "&";
+        }
+      } else if($("input[name='attendance']:checked").val() == 'no') {
+        mealChoices = "";
       }
     });
 
