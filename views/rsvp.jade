@@ -12,7 +12,9 @@ html(lang='en')
     script(src='/javascripts/rsvp.js')
   body.home
     script
-      | $(document).ready(function(){additionalGuests(#{additional_guests});});
+      | $(document).ready(function(){additionalGuests(#{additional_guests});
+      | if(#{rsvp} != 'Not Yet') { setRsvp(#{rsvp}, #{usedSpots}, #{mealChocies}); }
+      | });
     .content.rsvp
       h1
         | RSVP

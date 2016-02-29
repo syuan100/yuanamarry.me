@@ -418,7 +418,10 @@ app.get('/rsvp', function(req, res){
           var dbResult = JSON.stringify({ data: result });
           var jsonData = JSON.parse(dbResult).data[0];
           var additional_guests = parseInt(jsonData.additional_spots);
-          res.render('rsvp', {additional_guests: additional_guests});
+          var rsvp = jsonData.rsvp;
+          var usedSpots = jsonData.usedSpots;
+          var mealChoices = jsonData.meal_choices;
+          res.render('rsvp', {additional_guests: additional_guests, rsvp: rsvp, usedSpots: usedSpots, mealChoices: mealChoices});
         } else {
           res.render('rsvp-error');
         }
