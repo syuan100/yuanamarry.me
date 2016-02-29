@@ -419,8 +419,9 @@ app.get('/rsvp', function(req, res){
           var jsonData = JSON.parse(dbResult).data[0];
           var additional_guests = parseInt(jsonData.additional_spots);
           var rsvp = jsonData.rsvp;
-          var usedSpots = jsonData.usedSpots;
+          var usedSpots = jsonData.used_spots;
           var mealChoices = jsonData.meal_choices;
+          console.log(jsonData);
           res.render('rsvp', {additional_guests: additional_guests, rsvp: rsvp, usedSpots: usedSpots, mealChoices: mealChoices});
         } else {
           res.render('rsvp-error');
