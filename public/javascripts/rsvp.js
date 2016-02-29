@@ -31,6 +31,7 @@ function addRsvpForms(number) {
 }
 
 function setRsvp(rsvp, additional_guests, meal_choices){
+  $(".rsvp h1").text("Edit RSVP");
   additional_guests = additional_guests - 1;
   $("input.attendance-choice[value='" + rsvp + "']").prop("checked", true);
   $(".additional-guests select option[value='" + additional_guests + "']").prop("selected", true);
