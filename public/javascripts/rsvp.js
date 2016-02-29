@@ -66,6 +66,11 @@ $(document).ready(function() {
     going = true;
   });
 
+  if($(".attendance-choice[value='no']:checked").length) {
+    $('.rsvp-yes').hide();
+    going = false;
+  }
+
   $(".additional-guests select").change(function(){
     var additionalSelections = $(this).val();
     addRsvpForms(additionalSelections);
