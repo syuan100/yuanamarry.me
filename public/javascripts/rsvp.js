@@ -51,6 +51,17 @@ $(document).ready(function() {
   $(".reload").click(function() {
     window.location.reload();
   });
+  var going;
+
+  $(".attendance-choice[value='no']").click(function() {
+    $('.rsvp-yes').hide();
+    going = false;
+  });
+
+  $(".attendance-choice[value='yes']").click(function() {
+    $('.rsvp-yes').show();
+    going = true;
+  });
 
   $(".additional-guests select").change(function(){
     var additionalSelections = $(this).val();
@@ -80,6 +91,10 @@ $(document).ready(function() {
         mealChoices += $($(e).find("input.meal-selection-radio:checked")).val() + "&";
       }
     });
+
+    var addGuests = $(".additional-guests select").val();
+    if (!going)
+      addGuests = -1;
 
     var rsvpData = {
       rsvp: $("input[name='attendance']:checked").val(),

@@ -28,30 +28,31 @@ html(lang='en')
             br
             input.attendance-choice(type='radio', name='attendance', value='no')
             | No
-        .form.additional-guests.hidden
-          h2.label
-            | How many additional guests will be coming?
-          .input
-            select
-        .form.meal-selection
-          .meal-form
+        .rsvp-yes
+          .form.additional-guests.hidden
             h2.label
-              | Meal Selection
+              | How many additional guests will be coming?
             .input
-              | For: 
-              input.meal-name(type='text' name='meal-name', placeholder='Full Name')
-              .selection
-                input.meal-selection-radio(type='radio', name='meal-selection-0', value='1')
-                | Grilled Sirloin Steak topped with Sauteed Onions and Mushrooms
-              .selection  
-                input.meal-selection-radio(type='radio', name='meal-selection-0', value='2')
-                | Grilled Salmon with Green Goddess Dressing
-              .selection  
-                input.meal-selection-radio(type='radio', name='meal-selection-0', value='3')
-                | Stuffed Portobello Mushrooms (Vegetarian)
-              .selection  
-                input.meal-selection-radio(type='radio', name='meal-selection-0', value='4')
-                | Children's Meal - Chicken Fingers and French Fries
+              select
+          .form.meal-selection
+            .meal-form
+              h2.label
+                | Meal Selection
+              .input
+                | For: 
+                input.meal-name(type='text' name='meal-name', placeholder='Full Name')
+                .selection
+                  input.meal-selection-radio(type='radio', name='meal-selection-0', value='1')
+                  | Grilled Sirloin Steak topped with Sauteed Onions and Mushrooms
+                .selection  
+                  input.meal-selection-radio(type='radio', name='meal-selection-0', value='2')
+                  | Grilled Salmon with Green Goddess Dressing
+                .selection  
+                  input.meal-selection-radio(type='radio', name='meal-selection-0', value='3')
+                  | Stuffed Portobello Mushrooms (Vegetarian)
+                .selection  
+                  input.meal-selection-radio(type='radio', name='meal-selection-0', value='4')
+                  | Children's Meal - Chicken Fingers and French Fries
         .error-message.hidden
           | Please fill out the entire form.
         .form.submit-rsvp
