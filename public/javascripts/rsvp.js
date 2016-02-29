@@ -31,6 +31,12 @@ function addRsvpForms(number) {
       $(e).attr("name", "meal-selection-" + k);
     });
   }
+
+  if($(".attendance-choice[value='no']:checked").length) {
+    $('.rsvp-yes').hide();
+    going = false;
+  }
+
 }
 
 function setRsvp(rsvp, additional_guests, meal_choices){
@@ -65,11 +71,6 @@ $(document).ready(function() {
     $('.rsvp-yes').show();
     going = true;
   });
-
-  if($(".attendance-choice[value='no']:checked").length) {
-    $('.rsvp-yes').hide();
-    going = false;
-  }
 
   $(".additional-guests select").change(function(){
     var additionalSelections = $(this).val();
