@@ -48,6 +48,10 @@ function setRsvp(rsvp, additional_guests, meal_choices){
 }
 
 $(document).ready(function() {
+  $(".reload").click(function() {
+    window.location.reload();
+  });
+
   $(".additional-guests select").change(function(){
     var additionalSelections = $(this).val();
     addRsvpForms(additionalSelections);
@@ -92,10 +96,12 @@ $(document).ready(function() {
         method: "POST",
         data: rsvpData,
         success: function(data){
-          console.log(data);
+          $(".rsvp.form-content").empty();
+          $(".rsvp.finished").show();
         },
         error: function(err) {
-          console.log(err);
+          $(".rsvp.form-content").empty();
+          $(".rsvp.error").show();
         }
       });
     }
