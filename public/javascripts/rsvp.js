@@ -39,9 +39,8 @@ function setRsvp(rsvp, additional_guests, meal_choices){
   for(var k=0; k < ($(".meal-form").length); k++) {
     var mealName = mealPeople[k].split("|")[0];
     var mealChoice = mealPeople[k].split("|")[1];
-    console.log(mealName + " " + mealChoice);
-    $($(".meal-form")[k]).find(".meal-name").text();
-    $($(".meal-form")[k]).find("selection[value='" + mealChoice + "']").prop("selected", true);
+    $($(".meal-form")[k]).find(".meal-name").text(mealName);
+    $($(".meal-form")[k]).find(".meal-selection-radio[value='" + mealChoice + "']").prop("selected", true);
   }
 
 }
