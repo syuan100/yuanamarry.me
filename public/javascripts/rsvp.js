@@ -18,7 +18,7 @@ function getParameterByName(name, url) {
 }
 
 function addRsvpForms(number) {
-  if(number === NaN) {
+  if(number === NaN || number < 0) {
     number = 0;
   }
   var $mealForm = $(".meal-form")[0].outerHTML;
