@@ -396,8 +396,7 @@ input.subject {
   text-align: center;
   position: relative;
   clear: both;
-  top: 50%;
-  margin-top: 3%;
+  margin-top: 5%;
   overflow: hidden;
 }
 
