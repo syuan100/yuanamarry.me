@@ -285,6 +285,7 @@ input.subject {
   background-color: #09617c;
   width: 150px;
   text-align: center;
+  text-decoration: none;
 }
 
 .button:hover {
