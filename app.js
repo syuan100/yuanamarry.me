@@ -446,7 +446,7 @@ app.post('/rsvp-submit', function(req, res){
   var meal_choices = rsvpData.meal_choices;
   var email = rsvpData.email;
 
-  console.log(req);
+  console.log(req.headers.host);
 
   var rsvpDataQuery = "UPDATE people SET rsvp='" + rsvp + "', meal_choices='" + meal_choices + "', used_spots='" + used_spots + "' WHERE email='" + email + "';";
 
