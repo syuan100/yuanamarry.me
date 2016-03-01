@@ -29,7 +29,7 @@ $(document).ready(function() {
     window.location = "/rsvp?code=" + code;
   });
 
-  if(window.location.pathname !== "/" || window.location.pathname !== "/homepage" || window.location.pathname !== "/homepage/") {
+  if(window.location.pathname !== "/" && window.location.pathname !== "/homepage" && window.location.pathname !== "/homepage/") {
     $(".rsvp-action").text("HOME");
     $(".rsvp-action").attr("href", "/");
   }
