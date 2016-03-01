@@ -435,32 +435,34 @@ app.get('/rsvp', function(req, res){
 });
 
 app.post('/rsvp-submit', function(req, res){
-  var rsvpData = req.body;
-  var rsvp = rsvpData.rsvp;
-  var used_spots;
-  if(rsvpData.additional_guests) {
-    used_spots = parseInt(rsvpData.additional_guests) + 1;
+  if(req.headers.host === 'www.yuanamarry.me' || req.headers.host === 'yuanamarry.me') {
+    var rsvpData = req.body;
+    var rsvp = rsvpData.rsvp;
+    var used_spots;
+    if(rsvpData.additional_guests) {
+      used_spots = parseInt(rsvpData.additional_guests) + 1;
+    } else {
+      used_spots = 1;
+    } 
+    var meal_choices = rsvpData.meal_choices;
+    var email = rsvpData.email;
+
+    var rsvpDataQuery = "UPDATE people SET rsvp='" + rsvp + "', meal_choices='" + meal_choices + "', used_spots='" + used_spots + "' WHERE email='" + email + "';";
+
+    connection.query(rsvpDataQuery, function(err, result) {
+      if (err) {
+        console.log(err);
+        res.status(500).json({err: err});
+      }
+
+      if (result) {
+        console.log(result);
+        res.status(200).json({success: "success"});
+      }
+    });
   } else {
-    used_spots = 1;
-  } 
-  var meal_choices = rsvpData.meal_choices;
-  var email = rsvpData.email;
-
-  console.log(req.headers.host);
-
-  var rsvpDataQuery = "UPDATE people SET rsvp='" + rsvp + "', meal_choices='" + meal_choices + "', used_spots='" + used_spots + "' WHERE email='" + email + "';";
-
-  connection.query(rsvpDataQuery, function(err, result) {
-    if (err) {
-      console.log(err);
-      res.status(500).json({err: err});
-    }
-
-    if (result) {
-      console.log(result);
-      res.status(200).json({success: "success"});
-    }
-  });
+    res.status(400);
+  }
 });
 
 /////////////////
