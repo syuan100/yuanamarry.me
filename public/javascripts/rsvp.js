@@ -56,11 +56,12 @@ function setRsvp(rsvp, additional_guests, meal_choices){
 
 }
 
+var going = false;
+
 $(document).ready(function() {
   $(".reload").click(function() {
     window.location.reload();
   });
-  var going;
 
   $(".attendance-choice[value='no']").click(function() {
     $('.rsvp-yes').hide();
