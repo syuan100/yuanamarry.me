@@ -465,6 +465,14 @@ app.post('/rsvp-submit', function(req, res){
   }
 });
 
+///////////////////
+// WEDDING DETAILS
+//////////////////
+
+app.get('/wedding', auth, function(req, res) {
+  res.render('wedding-details-lock');
+});
+
 /////////////////
 // HOME PAGE
 /////////////////
