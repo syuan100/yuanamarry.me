@@ -438,6 +438,7 @@ app.post('/rsvp-submit', function(req, res){
   var rsvpData = req.body;
   var rsvp = rsvpData.rsvp;
   var used_spots;
+  console.log(rsvpData.additional_guests);
   if(rsvpData.additional_guests) {
     used_spots = parseInt(rsvpData.additional_guests) + 1;
   } else {
@@ -445,6 +446,8 @@ app.post('/rsvp-submit', function(req, res){
   } 
   var meal_choices = rsvpData.meal_choices;
   var email = rsvpData.email;
+
+  console.log(used_spots);
 
   var rsvpDataQuery = "UPDATE people SET rsvp='" + rsvp + "', meal_choices='" + meal_choices + "', used_spots='" + used_spots + "' WHERE email='" + email + "';";
 
