@@ -2,50 +2,13 @@ doctype html
 html(lang='en')
   head
     title #yuanamarryme | 06.11.16
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Lato:100,300,700', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='//code.jquery.com/jquery-2.1.4.min.js')
-    script(src='/javascripts/base32.js')
-    script(src='/javascripts/home.js')
+    include ./includes/head.jade
   body.home
-    .rsvp-window
-      .close-button
-        i.fa.fa-close
-      .form
-        table
-          tr
-            td.label
-              | Email
-            td.email-input
-              input.email(type='text', name='email')
-          tr
-            td.label
-              | Passcode
-            td.passcode-input
-              input.passcode(type='text', name='passcode')
-        .submit-button.button
-          | Submit
-        .info
-          | Email and passcode must match the information provided on your mailed invitation. Please email us at 
-          a(href='mailto:syuan100@gmail.com')
-            | syuan100@gmail.com
-          |  if you have having difficulties.
-    .content
-      .header
-        ul#menu
-          li
-            a(href="#") Wedding Details
-          li 
-            a(href="#") Our Story
-          li 
-            a(href="#", class='rsvp-action') RSVP
-      .home-image
-        img#main-image(src='/img/home_icon.png')
-        br
-        img#name-image(src='/img/names.png')
+    include ./includes/header.jade
+    .home-image
+      img#main-image(src='/img/home_icon.png')
+      br
+      img#name-image(src='/img/names.png')
     .rsvp-footer
       .rsvp-button.button.rsvp-action RSVP
     .wedding-party

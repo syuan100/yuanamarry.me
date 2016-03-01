@@ -1,12 +1,11 @@
 doctype html
 html(lang='en')
   head
-    title #yuanamarryme
-    link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Lato:100,300', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='//code.jquery.com/jquery-2.1.4.min.js')
-  body.wedding-details
+    title
+      | #yuanamarryme | Wedding Details
+    include ./includes/head.jade
+  body.home
+    include ./includes/header.jade
     .content
       .honeyfund(style="width:200px;margin:0 auto;")
         a(href="http://www.honeyfund.com/wedding/yuanamarryme" style="text-align:left;background:url('http://www.honeyfund.com/share/honeyfund3.png') no-repeat;display:block;width:200px;height:100px;text-indent:-9999em;")
