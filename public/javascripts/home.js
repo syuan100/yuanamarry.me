@@ -33,6 +33,7 @@ $(document).ready(function() {
     $(".rsvp-action").text("HOME");
     $(".rsvp-action").attr("href", "/");
     $(".rsvp-action").removeClass("rsvp-action");
+    $(".rsvp-action").off("click");
   }
 
 });
