@@ -406,7 +406,7 @@ app.get('/rsvp', function(req, res){
     var code = base32.decode(req.query.code);
     var email = code.split("|")[0];
     var passcode = code.split("|")[1].toLowerCase();
-
+    console.log(passcode);
     var rsvpQuery = "SELECT * FROM people WHERE email = '" + email + "' AND passcode = '" + passcode + "';";
 
     connection.query(rsvpQuery, function(err, result){
