@@ -32,8 +32,8 @@ $(document).ready(function() {
   if(window.location.pathname !== "/" && window.location.pathname !== "/homepage" && window.location.pathname !== "/homepage/") {
     $(".rsvp-action").text("HOME");
     $(".rsvp-action").attr("href", "/");
+    $("body").off("click", ".rsvp-action");
     $(".rsvp-action").removeClass("rsvp-action");
-    $(".rsvp-action").off("click");
   }
 
 });
