@@ -29,4 +29,9 @@ $(document).ready(function() {
     window.location = "/rsvp?code=" + code;
   });
 
+  if(window.location.pathname !== "/") {
+    $(".rsvp-action").text("HOME");
+    $(".rsvp-action").attr("href", "/");
+  }
+
 });
