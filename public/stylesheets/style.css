@@ -403,6 +403,7 @@ input.subject {
 .home-image #main-image, .home-image #name-image {
   width: 100%;
   max-width: 400px;
+  padding: 0 10px;
 }
 
 .home .rsvp-footer {
