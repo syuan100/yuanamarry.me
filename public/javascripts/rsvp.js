@@ -1,3 +1,5 @@
+var going = false;
+
 function additionalGuests(n) {
   var $guestBox = $(".additional-guests select");
   for(var i=0; i<(n + 1); i++){
@@ -43,6 +45,8 @@ function setRsvp(rsvp, additional_guests, meal_choices){
   $(".rsvp h1").text("Edit RSVP");
   additional_guests = parseInt(additional_guests) - 1;
   $("input.attendance-choice[value='" + rsvp + "']").prop("checked", true);
+  if($("input.attendance-choice[value='yes']").prop("checked") === true)
+    going = true;
   $(".additional-guests select option[value='" + additional_guests + "']").prop("selected", true);
   addRsvpForms(additional_guests);
   var mealPeople = meal_choices.split("&amp;");
@@ -55,8 +59,6 @@ function setRsvp(rsvp, additional_guests, meal_choices){
   }
 
 }
-
-var going = false;
 
 $(document).ready(function() {
   $(".reload").click(function() {
