@@ -384,7 +384,7 @@ app.post('/admin/db/generate-codes', auth, function(req, res){
       var rawResult = JSON.stringify({ data: result });
       var peopleWhoNeedCodes = JSON.parse(rawResult).data;
       for(var i = 0; i < peopleWhoNeedCodes.length; i++) {
-        var tempPasscode = randomstring.generate(5);
+        var tempPasscode = randomstring.generate(5).toLowerCase();
         var addPasscodeQuery = "UPDATE people SET passcode = '" + tempPasscode + "' WHERE id = " + peopleWhoNeedCodes[i].id + ";";
         connection.query(addPasscodeQuery, function(err, result) {
           if (err) {
@@ -405,7 +405,7 @@ app.get('/rsvp', function(req, res){
   if(req.query.code) {
     var code = base32.decode(req.query.code);
     var email = code.split("|")[0];
-    var passcode = code.split("|")[1];
+    var passcode = code.split("|")[1].toLowerCase();
 
     var rsvpQuery = "SELECT * FROM people WHERE email = '" + email + "' AND passcode = '" + passcode + "';";
 
