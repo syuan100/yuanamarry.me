@@ -6,7 +6,24 @@ html(lang='en')
     include ./includes/head.jade
   body.home
     include ./includes/header.jade
-    .content
+    .content.wedding-details
+      .registry.section
+        h1.styled Registry
+        p.paragraph
+          | If you'd like to give us a gift, we ask for a monetary gift to help us start our lives together. Can't wait to see you at the wedding :)
       .honeyfund(style="width:200px;margin:0 auto;")
-        a(href="http://www.honeyfund.com/wedding/yuanamarryme" style="text-align:left;background:url('http://www.honeyfund.com/share/honeyfund3.png') no-repeat;display:block;width:200px;height:100px;text-indent:-9999em;")
-         | Visit our honeyfund at Honeyfund.com, the free honeymoon registry
+        a.button(href="http://www.honeyfund.com/wedding/yuanamarryme", target="_blank")
+         | View our Honeyfund
+      .details.section
+        h1.styled Details
+        p.paragraph
+          | Ceremony begins at 5:00pm
+        p.paragraph
+          | Address:
+          br
+          | Hiddenbrooke Golf Club
+          br
+          | 1095 Hiddenbrooke Pkwy
+          | Vallejo, CA  94591
+      .map.section
+        iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11115.821139646348!2d-122.18156736372471!3d38.15550379975248!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x916b0ee1c9c64977!2sHiddenbrooke+Golf+Club!5e0!3m2!1sen!2sus!4v1456815248691', width='600', height='450', frameborder='0', style='border:0', allowfullscreen='')
