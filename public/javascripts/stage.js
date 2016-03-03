@@ -57,7 +57,7 @@ $(document).ready(function(){
   });
 
   $(".update-guest-list-button").click(function(){
-    var updateObject = {};
+    var updateObject = [];
 
     var $rows = $(".row:not(:first)");
     $.each($rows, function(i,e){
@@ -65,13 +65,12 @@ $(document).ready(function(){
         email: $(e).find(".email").text(),
         additional_guests: $(e).find(".guests-input input").val()
       }
-      updateObject[i.toString()] = rowObject;
+      updateObject.push(JSON.stringify(rowObject));
     });
 
     $.ajax({
       method: "POST",
       url: "/admin/db/set_additional_guests",
-      type: "application/json",
       data: updateObject,
       success: function(data){
         console.log("success");
