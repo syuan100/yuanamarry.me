@@ -462,7 +462,7 @@ app.post('/rsvp-submit', function(req, res){
 });
 
 app.post('/admin/db/set_additional_guests', auth, function(req,res){
-  console.log(req.body);
+  console.log(JSON.stringify(req.body));
   res.status(200).json({ success: "success"});
 });
 

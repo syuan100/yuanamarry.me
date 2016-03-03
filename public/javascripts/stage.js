@@ -71,6 +71,7 @@ $(document).ready(function(){
     $.ajax({
       method: "POST",
       url: "/admin/db/set_additional_guests",
+      type: "application/json",
       data: updateObject,
       success: function(data){
         console.log("success");
