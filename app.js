@@ -463,6 +463,7 @@ app.post('/rsvp-submit', function(req, res){
 
 app.post('/admin/db/set_additional_guests', auth, function(req,res){
   var updateObject = req.body;
+  console.log(updateObject);
   for(var i=0; i<updateObject.length; i++){
     var rowObject = updateObject[i.toString()];
     var rowEmail = rowObject.email;
