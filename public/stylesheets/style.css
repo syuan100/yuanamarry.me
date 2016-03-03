@@ -346,6 +346,11 @@ input.subject {
   color: white;
 }
 
+.guests-input {
+  width: 30px;
+  margin: 5px;
+}
+
 /* HOME PAGE */
 .home .header {
   padding: 0 2%;

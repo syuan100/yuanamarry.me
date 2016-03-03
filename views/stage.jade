@@ -47,9 +47,8 @@ html
             .cell.name=recipient.name
             .cell.email=recipient.email
             .cell.std.center!=recipient.std
-            .cell.guests.center.hide!=recipient.guests
             .cell.guests-input.center
-              input.guests-input(type='text', value='#{recipient.guests}')
+              input.guests-input(type='text', value='#{recipient.additional_spots}')
             .cell.rsvp.center(class='#{recipient.rsvp}')!=recipient.rsvp
             .cell.delete.center.remove
               i.fa.fa-trash-o
