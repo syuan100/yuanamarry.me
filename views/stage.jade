@@ -38,7 +38,6 @@ html
             .cell.name Name
             .cell.email Email
             .cell.std.center STD
-            .cell.guests.center
             .cell.rsvp.center RSVP
             .cell.delete.center
         - each recipient in recipients
@@ -63,6 +62,20 @@ html
           .button.generate-code-button
             | Generate
           .codes-generated.hidden
+            | codes generated
+          br
+          br
+          | Total RSVP
+          br
+          .total-rsvp
+          br
+          br
+        .update-guest-list
+          | Update Guest Count
+          br
+          .button.generate-code-button
+            | Update
+          .people-updated.hidden
             | codes generated
           br
           br
