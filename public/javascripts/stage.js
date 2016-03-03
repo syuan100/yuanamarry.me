@@ -63,7 +63,7 @@ $(document).ready(function(){
     $.each($rows, function(i,e){
       var rowObject = {
         email: $(e).find(".email").text(),
-        additional_guests: $(e).find(".guests-input input").val();
+        additional_guests: $(e).find(".guests-input input").val()
       }
       updateObject.push(additional_guests);
     });
