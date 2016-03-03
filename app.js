@@ -468,7 +468,7 @@ app.post('/admin/db/set_additional_guests', auth, function(req,res){
     var rowEmail = rowObject.email;
     var rowGuests = rowObject.additional_guests;
 
-    if (rowGuests === "null" || int(rowGuests) < 0) {
+    if (rowGuests === "null" || parseInt(rowGuests) < 0) {
       rowGuests = 0;
     }
     var rowUpdateQuery = "UPDATE people SET additional_spots='" + rowGuests + "' WHERE email='" + rowEmail +"';";
