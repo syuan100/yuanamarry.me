@@ -57,7 +57,7 @@ $(document).ready(function(){
   });
 
   $(".update-guest-list-button").click(function(){
-    var updateObject = [];
+    var updateObject = {};
 
     var $rows = $(".row:not(:first)");
     $.each($rows, function(i,e){
@@ -65,7 +65,7 @@ $(document).ready(function(){
         email: $(e).find(".email").text(),
         additional_guests: $(e).find(".guests-input input").val()
       }
-      updateObject.push(rowObject);
+      updateObject[i.toString()] = rowObject;
     });
 
     $.ajax({
