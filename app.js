@@ -463,7 +463,9 @@ app.post('/rsvp-submit', function(req, res){
 
 app.post('/admin/db/set_additional_guests', auth, function(req,res){
   var updateObject = req.body;
-  console.log(req.body);
+  console.log(JSON.parse(req.body));
+  console.log(JSON.parse(req.body)[0]);
+  console.log(JSON.parse(JSON.parse(req.body)[0]));
   for(var i=0; i<updateObject.length; i++){
     var rowObject = updateObject[i.toString()];
     var rowEmail = rowObject.email;
@@ -473,7 +475,6 @@ app.post('/admin/db/set_additional_guests', auth, function(req,res){
       rowGuests = 0;
     }
     var rowUpdateQuery = "UDPATE people SET additional_spots='" + rowGuests + "' WHERE email='" + rowEmail +"';";
-    console.log(rowUpdateQuery);
   }
   res.status(200).json({ success: "success"});
 });
