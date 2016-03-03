@@ -38,7 +38,7 @@ html
             .cell.name Name
             .cell.email Email
             .cell.std.center STD
-            .cell.invitation.center Invite
+            .cell.guests.center Guests
             .cell.rsvp.center RSVP
             .cell.delete.center
         - each recipient in recipients
@@ -47,7 +47,9 @@ html
             .cell.name=recipient.name
             .cell.email=recipient.email
             .cell.std.center!=recipient.std
-            .cell.invitation.center!=recipient.invitation
+            .cell.guests.center.hide!=recipient.guests
+            .cell.guests-input.center
+              input.guests-input(type='text', value='#{recipient.guests}')
             .cell.rsvp.center(class='#{recipient.rsvp}')!=recipient.rsvp
             .cell.delete.center.remove
               i.fa.fa-trash-o
