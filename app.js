@@ -481,7 +481,7 @@ app.post('/admin/db/set_additional_guests', auth, function(req,res){
       }
     })
   }
-  res.status(200).json({ success: "success"});
+  res.redirect('/admin/stage');
 });
 
 ///////////////////
