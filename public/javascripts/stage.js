@@ -56,6 +56,31 @@ $(document).ready(function(){
     });
   });
 
+  $(".update-guest-list-button").click(function(){
+    var updateObject = [];
+
+    var $rows = $(".row:not(:first)");
+    $.each($rows, function(i,e){
+      var rowObject = {
+        email: $(e).find(".email").text(),
+        additional_guests: $(e).find(".guests-input input").val();
+      }
+      updateObject.push(additional_guests);
+    });
+
+    $.ajax({
+      method: "POST",
+      url: "/admin/db/set_additional_guests",
+      data: updateObject,
+      success: function(data){
+        console.log("success");
+      },
+      error: function(err){
+        console.log("error");
+      }
+    })
+  });
+
   $(".row .name").click(function(){
     var $detailPane = $(".person-detail");
     var $parentRow = $(this).parents(".row");
