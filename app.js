@@ -471,8 +471,15 @@ app.post('/admin/db/set_additional_guests', auth, function(req,res){
     if (rowGuests === "null") {
       rowGuests = 0;
     }
-    var rowUpdateQuery = "UDPATE people SET additional_spots='" + rowGuests + "' WHERE email='" + rowEmail +"';";
-    console.log(rowUpdateQuery);
+    var rowUpdateQuery = "UPDATE people SET additional_spots='" + rowGuests + "' WHERE email='" + rowEmail +"';";
+    connection.query(rowUpdateQuery, function(err,result){
+      if(err){
+        console.log(err);
+      }
+      if(result){
+        console.log(result);
+      }
+    })
   }
   res.status(200).json({ success: "success"});
 });
