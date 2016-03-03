@@ -74,7 +74,7 @@ $(document).ready(function(){
       data: JSON.stringify(updateObject),
       contentType: "application/json",
       success: function(data){
-        console.log("success");
+        window.location.reload();
       },
       error: function(err){
         console.log("error");
