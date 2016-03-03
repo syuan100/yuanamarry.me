@@ -65,7 +65,7 @@ $(document).ready(function(){
         email: $(e).find(".email").text(),
         additional_guests: $(e).find(".guests-input input").val()
       }
-      updateObject.push(additional_guests);
+      updateObject.push(rowObject);
     });
 
     $.ajax({
