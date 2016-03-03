@@ -64,14 +64,15 @@ $(document).ready(function(){
       var rowObject = {
         email: $(e).find(".email").text(),
         additional_guests: $(e).find(".guests-input input").val()
-      }
+      };
       updateObject.push(JSON.stringify(rowObject));
     });
 
     $.ajax({
       method: "POST",
       url: "/admin/db/set_additional_guests",
-      data: updateObject,
+      data: JSON.stringify(updateObject),
+      contentType: "application/json",
       success: function(data){
         console.log("success");
       },
