@@ -347,8 +347,12 @@ input.subject {
 }
 
 .guests-input {
+  width: 60px;
+}
+
+input.guests-input {
   width: 30px;
-  margin: 5px;
+  margin: 5px 0;
 }
 
 /* HOME PAGE */
