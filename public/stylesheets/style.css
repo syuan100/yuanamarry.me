@@ -398,6 +398,13 @@ input.guests-input {
   padding: 20px 35px;
 }
 
+.home .bride-groom-photo {
+  width: 100%;
+  height: 600px;
+  background-image: url('/img/bride-groom.jpg');
+  background-size: cover;
+}
+
 .home .content {
   clear: both;
 }
