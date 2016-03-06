@@ -504,11 +504,13 @@ input.guests-input {
 
 .wedding-party .person .description {
   margin-top: 8%;
+  height: 84px;
+  overflow: hidden;
 }
 
 .wedding-party .person .expand {
   margin-bottom: 8%;
-  margin-top: 20px;
+  margin-top: 3px;
   color: #4db28b;
   font-size: 10px;
   width: 100%;
@@ -520,7 +522,7 @@ input.guests-input {
 }
 
 .wedding-party .person .expand:hover {
-  background: #ddd;
+  background: #F5F5F5;
   cursor: pointer;
 }
 
