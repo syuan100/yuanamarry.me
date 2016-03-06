@@ -508,7 +508,7 @@ input.guests-input {
 
 .bio p {
   margin: 0;
-  font-size: 26px;
+  font-size: 16px;
 }
 
 .person-detail {
@@ -601,7 +601,7 @@ p.paragraph {
 @media (max-width: 800px){
 
   .bride-groom-photo {
-    display: none;
+    background: white;
   }
 
   .bride-groom-photo-mobile {
