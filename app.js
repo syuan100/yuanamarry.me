@@ -493,6 +493,14 @@ app.get('/wedding', auth, function(req, res) {
 });
 
 /////////////////
+// OUR STORY
+/////////////////
+
+app.get('/ourstory', auth, function(req, res) {
+  res.render('wedding-details-lock');
+});
+
+/////////////////
 // HOME PAGE
 /////////////////
 
