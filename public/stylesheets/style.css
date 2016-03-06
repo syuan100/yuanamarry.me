@@ -598,6 +598,12 @@ h1.styled {
   margin: 60px 0 30px 0;
 }
 
+h1.styled.wedding-details {
+  display: block;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
 p.paragraph {
   width: 100%;
   max-width: 450px;
