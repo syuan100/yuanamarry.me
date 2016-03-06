@@ -36,7 +36,15 @@ $(document).ready(function() {
   }
 
   $(".person .expand").click(function(){
-    debugger;
+    if($(this).text() == "MORE") {
+      var $description = $(this).prev(".description");
+      $description.css("height", "auto");
+      $(this).text("LESS");
+    } else if ($(this).text() == "LESS") {
+      var $description = $(this).prev(".description");
+      $description.css("height", "84px");
+      $(this).text("MORE");
+    }
   });
 
 });
