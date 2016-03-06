@@ -403,6 +403,7 @@ input.guests-input {
   height: 600px;
   background-image: url('/img/bride-groom.jpg');
   background-size: cover;
+  margin-top: 100px;
 }
 
 .home .content {
