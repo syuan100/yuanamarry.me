@@ -36,14 +36,14 @@ $(document).ready(function() {
   }
 
   $(".person .expand").click(function(){
-    if($(this).text() == "MORE") {
+    if($(this).text() == "More") {
       var $description = $(this).prev(".description");
       $description.css("height", "auto");
       $(this).text("LESS");
     } else if ($(this).text() == "LESS") {
       var $description = $(this).prev(".description");
       $description.css("height", "84px");
-      $(this).text("MORE");
+      $(this).text("More");
     }
   });
 
