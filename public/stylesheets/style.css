@@ -419,6 +419,9 @@ input.guests-input {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  margin-top: 25%;
+  background: black;
+  color: white;
 }
 
 .home .content {
