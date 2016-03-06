@@ -497,7 +497,7 @@ app.get('/wedding', auth, function(req, res) {
 /////////////////
 
 app.get('/ourstory', auth, function(req, res) {
-  res.render('wedding-details-lock');
+  res.render('our-story-lock');
 });
 
 /////////////////
