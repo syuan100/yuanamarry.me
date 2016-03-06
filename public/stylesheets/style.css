@@ -415,7 +415,7 @@ input.guests-input {
 .home .bride-groom-photo .bios .bio {
   width: 50%;
   float: left;
-  padding: 30px 0;
+  padding: 30px 30px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -505,6 +505,7 @@ input.guests-input {
 .bio p {
   margin: 0;
   font-size: 16px;
+  padding: 4%;
 }
 
 .person-detail {
@@ -597,7 +598,9 @@ p.paragraph {
 @media (max-width: 800px){
 
   .wedding-party {
+    position: relative;
     margin: 0 auto;
+    top: -100px;
   }
 
   .home .bride-groom-photo {
@@ -619,6 +622,10 @@ p.paragraph {
     padding: 40px 30px;
     background: transparent;
     color: black;
+  }
+
+  .home .bride-groom-photo .bios .bio p {
+    padding: 4%;
   }
 
   .rsvp-window .form .label {
