@@ -508,6 +508,16 @@ input.guests-input {
   padding: 4%;
 }
 
+.bio .button {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 20px;
+  padding: 20px 30px;
+}
+
 .person-detail {
   display: none;
   position: fixed;
