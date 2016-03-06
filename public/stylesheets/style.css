@@ -406,10 +406,6 @@ input.guests-input {
   margin-top: 100px;
 }
 
-.bride-groom-photo {
-  height: 350px;
-}
-
 .home .bride-groom-photo .bios {
   max-width: 800px;
   height: 100%;
@@ -606,6 +602,7 @@ p.paragraph {
 
   .bride-groom-photo-mobile {
     display: block;
+    height: 200px;
   }
 
   .home .bios .bio {
