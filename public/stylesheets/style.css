@@ -406,6 +406,19 @@ input.guests-input {
   margin-top: 100px;
 }
 
+.home .bride-groom-photo .bios {
+  max-width: 800px;
+  height: 100%;
+}
+
+.home .bride-groom-photo .bios .bio {
+  width: 50%;
+  padding: 30px 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .home .content {
   clear: both;
 }
