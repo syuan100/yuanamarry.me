@@ -398,12 +398,16 @@ input.guests-input {
   padding: 20px 35px;
 }
 
-.home .bride-groom-photo {
+.home .bride-groom-photo, .home .bride-groom-photo-mobile {
   width: 100%;
   height: 600px;
   background-image: url('/img/bride-groom.jpg');
   background-size: cover;
   margin-top: 100px;
+}
+
+.bride-groom-photo {
+  height: 350px;
 }
 
 .home .bride-groom-photo .bios {
@@ -502,6 +506,10 @@ input.guests-input {
   clear: both;
 }
 
+.bio p {
+  margin: 0;
+  font-size: 26px;
+}
 
 .person-detail {
   display: none;
@@ -591,6 +599,18 @@ p.paragraph {
 }
 
 @media (max-width: 800px){
+
+  .bride-groom-photo {
+    display: none;
+  }
+
+  .bride-groom-photo-mobile {
+    display: block;
+  }
+
+  .home .bios .bio {
+    width: 100%;
+  }
 
   .rsvp-window .form .label {
     font-size: 20px;
