@@ -506,6 +506,7 @@ input.guests-input {
   margin-top: 8%;
   height: 84px;
   overflow: hidden;
+  text-align: left;
 }
 
 .wedding-party .person .expand {
