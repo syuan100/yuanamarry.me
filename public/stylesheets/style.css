@@ -621,6 +621,11 @@ p.paragraph {
   width: 100%;
 }
 
+.map-iframe {
+  width: 100%;
+  max-width: 600px;
+}
+
 @media (max-width: 800px){
 
   .wedding-party {
