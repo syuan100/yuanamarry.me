@@ -518,6 +518,10 @@ input.guests-input {
   padding: 20px 30px;
 }
 
+.bios .button:hover {
+  cursor: pointer;
+}
+
 .person-detail {
   display: none;
   position: fixed;
