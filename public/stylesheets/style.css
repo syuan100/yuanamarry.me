@@ -627,6 +627,7 @@ p.paragraph {
     background: white;
     background-image: none;
     margin-top: 0;
+    height: 300px
   }
 
   .home .bride-groom-photo-mobile {
@@ -642,6 +643,10 @@ p.paragraph {
     padding: 40px 30px;
     background: transparent;
     color: black;
+  }
+
+  .bios .button {
+    top: 20%;
   }
 
   .home .bride-groom-photo .bios .bio p {
