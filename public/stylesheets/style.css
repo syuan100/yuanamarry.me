@@ -596,6 +596,10 @@ p.paragraph {
 
 @media (max-width: 800px){
 
+  .wedding-party {
+    margin: 0 auto;
+  }
+
   .home .bride-groom-photo {
     background: white;
     background-image: none;
@@ -612,7 +616,9 @@ p.paragraph {
     top: auto;
     transform: none;
     margin-top: 0;
-    padding: 30px 30px;
+    padding: 40px 30px;
+    background: transparent;
+    color: black;
   }
 
   .rsvp-window .form .label {
