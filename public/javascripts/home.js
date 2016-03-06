@@ -35,4 +35,8 @@ $(document).ready(function() {
     $(".rsvp-action").off("click");
   }
 
+  $(".person .expand").click(function(){
+    debugger;
+  });
+
 });
