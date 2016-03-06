@@ -489,13 +489,13 @@ input.guests-input {
   width: 100%;
 }
 
-.wedding-party .person .name {
+.wedding-party .person .name, .bio .name {
   font-size: 20px;
   font-weight: 400;
   margin-top: 15px;
 }
 
-.wedding-party .person .description {
+.wedding-party .person .description, .bio p {
   line-height: 1.8em;
   font-size: 12px;
   padding: 8% 4%;
