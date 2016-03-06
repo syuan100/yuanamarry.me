@@ -507,7 +507,8 @@ input.guests-input {
 }
 
 .wedding-party .person .expand {
-  margin-bottom: 9%;
+  margin-bottom: 8%;
+  margin-top: 20px;
   color: #4db28b;
   font-size: 10px;
   width: 100%;
@@ -516,6 +517,11 @@ input.guests-input {
   text-decoration: underline;
   padding: 5px 0;
   text-align: center;
+}
+
+.wedding-party .person .expand:hover {
+  background: #ddd;
+  cursor: pointer;
 }
 
 .bio p {
