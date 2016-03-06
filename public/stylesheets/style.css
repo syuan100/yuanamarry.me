@@ -637,6 +637,10 @@ p.paragraph {
 }
 
 .our-story-content .pic.first {
+  margin-bottom: 100px;
+}
+
+.our-story-content .pic.first img {
       width: 100%;
     max-width: 400px;
 }
