@@ -596,6 +596,7 @@ h1.styled {
   border-bottom: 1px solid;
   display: inline-block;
   margin: 60px 0 30px 0;
+  padding: 0 20px;
 }
 
 h1.styled.wedding-party-title {
