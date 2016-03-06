@@ -596,17 +596,21 @@ p.paragraph {
 
 @media (max-width: 800px){
 
-  .bride-groom-photo {
+  .home .bride-groom-photo {
     background: white;
+    background-image: none;
   }
 
-  .bride-groom-photo-mobile {
+  .home .bride-groom-photo-mobile {
     display: block;
     height: 200px;
   }
 
-  .home .bios .bio {
+  .home .bride-groom-photo .bios .bio {
     width: 100%;
+    top: auto;
+    transform: none;
+    margin-top: 0;
   }
 
   .rsvp-window .form .label {
