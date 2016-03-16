@@ -637,6 +637,17 @@ p.paragraph {
   padding: 0 20px;
 }
 
+.our-story-content p.paragraph {
+  width: 100%;
+  max-width: 450px;
+  margin: 10px auto;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  line-height: 1.6em;
+  font-size: 20px;
+  text-align: left;
+}
+
 .content.wedding-details h1.styled {
 
 }
