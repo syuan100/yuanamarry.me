@@ -488,7 +488,7 @@ app.post('/admin/db/set_additional_guests', auth, function(req,res){
 // WEDDING DETAILS
 //////////////////
 
-app.get('/wedding', auth, function(req, res) {
+app.get('/wedding', function(req, res) {
   res.render('wedding-details-lock');
 });
 
@@ -496,7 +496,7 @@ app.get('/wedding', auth, function(req, res) {
 // OUR STORY
 /////////////////
 
-app.get('/ourstory', auth, function(req, res) {
+app.get('/ourstory', function(req, res) {
   res.render('our-story-lock');
 });
 
@@ -504,11 +504,11 @@ app.get('/ourstory', auth, function(req, res) {
 // HOME PAGE
 /////////////////
 
-app.get('/', function(req, res){
-  res.render('index');
-});
+// app.get('/', function(req, res){
+//   res.render('index');
+// });
 
-app.get('/homepage', auth, function(req, res){
+app.get('/', function(req, res){
   res.render('index-lock');
 });
 
