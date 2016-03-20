@@ -25,7 +25,7 @@ function addRsvpForms(number) {
   }
   var $mealForm = $(".meal-form")[0].outerHTML;
   $(".form.meal-selection").empty();
-  for(var j=0; j < (parseInt(number) + 1); j++) {
+  for(var j=0; j < (parseInt(number)); j++) {
     $(".form.meal-selection").append($mealForm);
   }
   for(var k=0; k < ($(".meal-form").length); k++) {
