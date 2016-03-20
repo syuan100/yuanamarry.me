@@ -2,7 +2,7 @@ var going = false;
 
 function additionalGuests(n) {
   var $guestBox = $(".additional-guests select");
-  for(var i=0; i<(n + 1); i++){
+  for(var i=1; i<(n + 2); i++){
     $guestBox.append("<option value='"+ i +"'>" + i + "</option>");
   }
   if($guestBox.find("option").length > 1)
@@ -20,7 +20,7 @@ function getParameterByName(name, url) {
 }
 
 function addRsvpForms(number) {
-  if(number === NaN || number < 0) {
+  if(number === NaN || number < 1) {
     number = 0;
   }
   var $mealForm = $(".meal-form")[0].outerHTML;
@@ -43,7 +43,7 @@ function addRsvpForms(number) {
 
 function setRsvp(rsvp, additional_guests, meal_choices){
   $(".rsvp h1").text("Edit RSVP");
-  additional_guests = parseInt(additional_guests) - 1;
+  additional_guests = parseInt(additional_guests);
   $("input.attendance-choice[value='" + rsvp + "']").prop("checked", true);
   if($("input.attendance-choice[value='yes']").prop("checked") === true)
     going = true;
