@@ -8,6 +8,14 @@ $(document).ready(function(){
     $(".delete-row .email").text(userEmail);
   });
 
+  var totalInvited = 0;
+  $.each($("input.guests-input"), function(i,e){
+    var guests = parseInt($(e).val()) + 1;
+    totalInvited += guests;
+  });
+
+  $(".total-invited").text(totalInvited);
+
   var totalRSVP = 0;
   $.each($(".used-spots:not(:empty)"), function(i,e) {
     totalRSVP += parseInt($(e).text());
