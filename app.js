@@ -471,7 +471,7 @@ app.post('/admin/db/set_additional_guests', auth, function(req,res){
     var rowEmail = rowObject.email;
     var rowGuests = rowObject.additional_guests;
 
-    if (rowGuests === "null" || parseInt(rowGuests) < -1 || !parseInt(rowGuests)) {
+    if (rowGuests === "null" || parseInt(rowGuests) < 0 || !parseInt(rowGuests)) {
       rowGuests = 0;
     }
     var rowUpdateQuery = "UPDATE people SET additional_spots='" + parseInt(rowGuests).toString() + "' WHERE email='" + rowEmail +"';";
