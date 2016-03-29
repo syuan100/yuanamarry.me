@@ -12,6 +12,11 @@ $(document).ready(function(){
   $.each($("input.guests-input"), function(i,e){
     var guests = parseInt($(e).val()) + 1;
     totalInvited += guests;
+
+    if($(e).val() === -1) {
+      $(e).parents(".row").find(".rsvp").text("");
+    }
+
   });
 
   $(".total-invited").text(totalInvited);
