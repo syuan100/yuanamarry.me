@@ -13,7 +13,7 @@ $(document).ready(function(){
     var guests = parseInt($(e).val()) + 1;
     totalInvited += guests;
 
-    if($(e).val() === -1) {
+    if(parseInt($(e).val()) === -1) {
       $(e).parents(".row").find(".rsvp").text("");
     }
 
