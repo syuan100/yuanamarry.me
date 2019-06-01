@@ -1,0 +1,792 @@
+/* Universal Box Sizing Implementation */
+html, body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Body styles */
+
+body {
+  font: 14px "Muli", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+#container {
+  padding: 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+body.blue {
+  background-color: #c0f0d8;
+}
+
+
+
+a {
+  color: #00B7FF;
+}
+
+body.fp{
+  text-align: center;
+  background: #c0f0d8;
+  font-weight: 100;
+}
+
+body.home{
+  text-align: center;
+  background: #fff;
+  font-weight: 100;
+}
+
+.rsvp-window {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 234, 229, 0.8);
+  color: black;
+  z-index: 1;
+  font-size: 18px;
+  font-family: 'Lato';
+  text-align: left;
+}
+
+.rsvp-window .form {
+  padding: 50px;
+  position: relative;
+  background-color: rgb(253, 204, 191);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+.rsvp-window .form .label {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.rsvp-window .form input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  border: 3px solid #eaa18f;
+  width: 100%;
+  padding: 10px;
+  font-size: 36px;
+}
+
+.rsvp-window .form table {
+  margin: 0 auto;
+  width: 654px;
+}
+
+.rsvp-window .form table tr td {
+  padding: 10px 20px;
+}
+
+.rsvp-window .submit-button {
+  width: 610px;
+  background-color: #4db28b;
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.rsvp-window .info {
+  padding: 20px;
+  width: 610px;
+  margin: 30px auto;
+  margin-bottom: 10px;
+  background-color: #F7BDAF;
+  color: black;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.4em;
+}
+
+.rsvp-window .info a {
+  color: black;
+  text-decoration: underline;
+}
+
+.rsvp-window .close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.rsvp-window .close-button i {
+  font-size: 60px;
+  color: rgba(0,0,0,0.3);
+  margin: 10px 15px;
+}
+
+.rsvp-window .close-button i:hover {
+  color: rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+#clockdiv{
+  color: #489694;
+  display: inline-block;
+  font-family: 'Lato';  
+  font-weight: 100;
+  text-align: center;
+  font-size: 80px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+#clockdiv h1 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  margin: 20px 0;
+}
+
+#clockdiv > div{
+  padding: 10px;
+  border-radius: 3px;
+  background: transparent;
+  display: inline-block;
+  width: 200px;
+}
+
+#clockdiv div > span{
+  padding: 15px 0;
+  border-radius: 3px;
+  background: transparent;
+  display: inline-block;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 18px;
+  font-family: 'Muli';
+}
+
+
+/* Basic Styles */
+.header {
+  padding-top: 30px;
+  font-size: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px dashed black;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.half {
+  width: 50%;
+  padding: 0 20px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.row {
+  padding: 5px 0;
+  height: 50px;
+  font-weight: 300;
+  font-size: 11px;
+}
+
+.row.first {
+  font-weight: 400;
+}
+
+.cell {
+  float: left;
+  width: 20%;
+  border: 1px solid #c0f0d8;
+  padding: 2px 0;
+}
+
+.cell.opened {
+  background-color: #118900;
+  color: white;
+}
+
+.cell.sent {
+  background-color: #f6f991;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Stage page */
+input.subject {
+  font-size: 20px;
+}
+
+.std, .invitation, .rsvp {
+  width: 15%;
+}
+
+.email {
+  width: 29%;
+}
+
+.cell.id, .cell.delete {
+  width: 3%;
+}
+
+.cell.delete {
+  opacity: 0.5;
+}
+
+.cell.delete:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Preview page */
+.html-preview {
+  padding: 20px;
+  background: white;
+  margin: 10px 0;
+}
+
+#final-emails {
+  width: 200px;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  color: white;
+  background-color: #09617c;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+.preview-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+  z-index: 2;
+}
+
+.preview-box {
+  margin: 0 auto;
+  margin-top: 200px;
+  background-color: #c0f0d8;
+  width: 400px;
+  padding: 40px;
+  text-align: center;
+}
+
+.preview-box .button {
+  margin: 5px auto;
+}
+
+.preview-box input[type='text'] {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.results-box {
+  background: white;
+  height: 75px;
+  overflow: scroll;
+  margin: 14px;
+}
+
+.success-text {
+  color: #0d7212;
+}
+
+.error-text {
+  color: #dd0000;
+}
+
+.rsvp.yes {
+  background: green;
+  color: white;
+}
+
+.rsvp.no {
+  background: red;
+  color: white;
+}
+
+.guests-input {
+  width: 60px;
+}
+
+input.guests-input {
+  width: 30px;
+  margin: 5px 0;
+}
+
+/* HOME PAGE */
+.home .header {
+  padding: 0 2%;
+  top: 0;
+  margin-bottom: 10px;
+  color: #4db28b;
+  font-size: 14px;
+  width: 100%;
+  text-transform: uppercase;
+  border-bottom: none;
+}
+
+.home .header ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.home .header ul li {
+  float: right;
+  width: 33%;
+  padding: 4% 1%;
+  border-bottom: 1px solid #4db28b;
+}
+
+.home .header ul li a {
+  color: #4db28b;
+  text-decoration: none;
+  font-size: 90%;
+}
+
+.home .header ul li a:hover {
+  color: #c0f0d8;
+}
+
+.home .header ul li#home {
+  float: left;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 35px;
+}
+
+.home .bride-groom-photo, .home .bride-groom-photo-mobile {
+  width: 100%;
+  height: 600px;
+  background-image: url('/img/bride-groom.jpg');
+  background-size: cover;
+  margin-top: 100px;
+}
+
+.home .bride-groom-photo .bios {
+  max-width: 800px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.home .bride-groom-photo .bios .bio {
+  width: 50%;
+  float: left;
+  padding: 30px 30px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 10%;
+  background: rgba(0,0,0,0.8);
+  color: white;
+}
+
+.home .content {
+  clear: both;
+}
+
+.home-image {
+  text-align: center;
+  position: relative;
+  clear: both;
+  margin-top: 5%;
+  overflow: hidden;
+}
+
+.home-image #main-image, .home-image #name-image {
+  width: 100%;
+  max-width: 400px;
+  padding: 0 10px;
+}
+
+.home .rsvp-footer {
+  position: relative;
+  margin: 30px 0;
+}
+
+.home .rsvp-footer .rsvp-button {
+  width: 200px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: white;
+  background-color: #4db28b;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.wedding-party {
+  max-width: 800px;
+  margin: 80px auto;
+  overflow: hidden;
+}
+
+.wedding-party .person {
+  padding: 10px;
+}
+
+.wedding-party .girls {
+  width: 50%;
+  float: left;
+}
+
+.wedding-party .boys {
+  width: 50%;
+  float: right;
+}
+
+.wedding-party .person .picture {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.wedding-party .person .picture img {
+  width: 100%;
+}
+
+.wedding-party .person .name, .bio .name {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.wedding-party .person .description, .bio p {
+  line-height: 1.8em;
+  font-size: 12px;
+  padding: 0 4%;
+  clear: both;
+}
+
+.wedding-party .person .description {
+  margin-top: 8%;
+  height: 84px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.wedding-party .person .expand {
+  margin-bottom: 8%;
+  margin-top: 3px;
+  color: #4db28b;
+  font-size: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 100;
+  text-decoration: underline;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.wedding-party .person .expand:hover {
+  background: #F5F5F5;
+  cursor: pointer;
+}
+
+.bio p {
+  margin: 0;
+  font-size: 16px;
+  padding: 4%;
+}
+
+.bios .button {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 20px;
+  padding: 20px 30px;
+}
+
+.bios .button:hover {
+  cursor: pointer;
+}
+
+.person-detail {
+  display: none;
+  position: fixed;
+  padding: 30px;
+  background-color: white;
+  color: black;
+  margin: 30px;
+  right: 0;
+  top: 0;
+  min-width: 300px;
+}
+
+.person-detail:hover {
+  cursor: pointer;
+}
+
+.row:not(.first) .name {
+  text-decoration: underline;
+}
+
+.row:not(.first) .name:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* RSVP Form */
+
+.home .content.rsvp {
+  width: 320px;
+  padding: 60px 15px;
+  background-color: #FFF2F0;
+  margin: 10px auto;
+}
+
+.home .content.rsvp .meal-selection .input {
+  text-align: left;
+}
+
+.home .content.rsvp .meal-selection .input .selection {
+  margin: 12px 0;
+}
+
+.home .content.rsvp .meal-selection .input input {
+  margin-right: 6px;
+}
+
+.home .content.rsvp .rsvp-submit {
+  margin: 30px auto;
+}
+
+.home .content.rsvp .error-message {
+  background: red;
+  color: white;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.home .content.rsvp .button {
+  display: block;
+  margin: 5px auto;
+}
+
+/* Wedding Details */
+.content.wedding-details {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1.styled {
+  color: #999999;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  display: inline-block;
+  margin: 60px 0 30px 0;
+}
+
+h1.styled.wedding-party-title {
+  display: block;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+p.paragraph {
+  width: 100%;
+  max-width: 450px;
+  margin: 10px auto;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.our-story-content p.paragraph {
+  width: 100%;
+  max-width: 450px;
+  margin: 10px auto;
+  margin-bottom: 60px;
+  padding: 0 20px;
+  line-height: 1.6em;
+  font-size: 20px;
+  text-align: left;
+}
+
+.content.wedding-details h1.styled {
+
+}
+
+.footer {
+  height: 100px;
+  width: 100%;
+}
+
+.map-iframe {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* OUR STORY */
+.our-story-content .our-story {
+    width: 100%;
+    max-width: 800px;
+    margin: 100px auto;
+    font-size: 50px;
+    line-height: 1.7em;
+    font-weight: 100;
+}
+
+.our-story-content .pic {
+  margin-bottom: 40px;
+}
+
+.our-story-content .pic.first {
+  margin-bottom: 100px;
+}
+
+.our-story-content .pic img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.our-story-content .pic.first .caption {
+      font-size: 12px;
+    color: #c5c5c5;
+}
+
+@media (max-width: 800px){
+
+  .wedding-party {
+    position: relative;
+    margin: 0 auto;
+    top: -100px;
+  }
+
+  .home .bride-groom-photo {
+    background: white;
+    background-image: none;
+    margin-top: 0;
+    height: 300px
+  }
+
+  .home .bride-groom-photo-mobile {
+    display: block;
+    height: 200px;
+  }
+
+  .home .bride-groom-photo .bios .bio {
+    width: 100%;
+    top: auto;
+    transform: none;
+    margin-top: 0;
+    padding: 40px 30px;
+    background: transparent;
+    color: black;
+  }
+
+  .bios .button {
+    top: 20%;
+  }
+
+  .home .bride-groom-photo .bios .bio p {
+    padding: 4%;
+  }
+
+  .rsvp-window .form .label {
+    font-size: 20px;
+  } 
+
+  .rsvp-window .form input {
+    border: 2px solid #eaa18f;
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .rsvp-window .form table {
+    width: 320px;
+  }
+
+  .rsvp-window .submit-button {
+    width: 300px;
+    font-size: 20px;
+  }
+
+  .rsvp-window .info {
+    width: 300px;
+  }
+
+  .rsvp-window .form table tr td {
+    padding: 5px 10px;
+  }
+
+  .rsvp-window .close-button i {
+    font-size: 30px;
+    margin: 5px 8px;
+  }
+
+  .home .header ul {
+    width: 100%;
+  }
+
+  .home .header ul li a {
+    font-size: 11px;
+  }
+
+  .home .content .home-image {
+    margin-top: 10%;
+  }
+
+  .home .content .home-image #main-image, .home .content .home-image #name-image {
+    max-width: 300px;
+  }
+
+  .wedding-party .boys, .wedding-party .girls {
+    width: 100%;
+  }
+
+  .wedding-party .person {
+    padding: 20px 8%;
+  }
+
+}
+
+@media (max-width: 375px){
+
+}

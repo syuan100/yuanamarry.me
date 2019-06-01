@@ -1,0 +1,112 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+    script(src='//code.jquery.com/jquery-2.1.4.min.js')
+    script(src='/javascripts/stage.js')
+  body.blue
+    .preview-container
+      .preview-box
+        .delete-row.box
+          | Are you sure you want to delete 
+          b
+            span.name
+            |  (
+            span.email
+            | ) 
+          | from the database?
+          br
+          .delete-record.button Yes
+          .cancel.button No
+        .delete-row-error.box.hidden
+          | Error deleting record.
+          br
+          .cancel.button OK
+    .person-detail
+      .close
+        i.fa.fa-close
+      .content
+    #container
+      .header
+        | Tracking
+      .email-list.left.half
+        .row.first
+            .cell.id ID
+            .cell.name Name
+            .cell.email Email
+            .cell.std.center STD
+            .cell.rsvp.center RSVP
+            .cell.delete.center
+        - each recipient in recipients
+          .row(id='#{recipient.id}')
+            .cell.id=recipient.id
+            .cell.name=recipient.name
+            .cell.email=recipient.email
+            .cell.std.center!=recipient.std
+            .cell.guests-input.center
+              input.guests-input(type='text', value='#{recipient.additional_spots}')
+            .cell.rsvp.center(class='#{recipient.rsvp}')!=recipient.rsvp
+            .cell.delete.center.remove
+              i.fa.fa-trash-o
+            .cell.passcode.hidden=recipient.passcode
+            .cell.additional-spots.hidden=recipient.additional_spots
+            .cell.meal-choices.hidden=recipient.meal_choices
+            .cell.used-spots.hidden=recipient.used_spots
+      .action-area.right.half
+        .generate-code
+          | Generate passcodes
+          br
+          .button.generate-code-button
+            | Generate
+          .codes-generated.hidden
+            | codes generated
+          br
+          br
+          | Total RSVP
+          br
+          .total-rsvp
+          br
+          br
+          | Total Invited
+          br
+          .total-invited
+          br
+          br
+        .update-guest-list
+          | Update Guest Count
+          br
+          .button.update-guest-list-button
+            | Update
+          .people-updated.hidden
+            | codes generated
+          br
+          br
+        .upload-csv
+          | Upload CSV of recipients (Name, Email)
+          br
+          br
+          form(action="/admin/stage", method="POST", enctype="multipart/form-data", name="csvfile")
+            input.upload-dialog(type="file", name="csvfile")
+            br
+            input(type="submit", value="Upload CSV", name="csvfile")
+          br
+          br
+        .compose-email
+          | Compose an email to send to recipients
+          br
+          form(action="/admin/stage/preview", method="POST", enctype="multipart/form-data", name="preview")
+            br
+            input.subject(type="text", name="subject", placeholder="Subject")
+            br
+            br
+            textarea.html-area(rows="30", cols="70", name="html_area")
+            br
+            | Image: 
+            input.upload-dialog(type="file", name="image")
+            input.html-submit(type="submit", title="Preview Email")
+            br
+            br
+            | Tip: If you upload an image, you can use it in your email above by using the variable |!IMAGE!|. The application will generate an image tag corresponding to your upload.

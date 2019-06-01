@@ -1,0 +1,72 @@
+doctype html
+html(lang='en')
+  head
+    title #yuanamarryme | 06.11.16
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:100,300,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='//code.jquery.com/jquery-2.1.4.min.js')
+    script(src='/javascripts/base32.js')
+    script(src='/javascripts/rsvp.js')
+  body.home
+    script
+      | $(document).ready(function(){additionalGuests(#{additional_guests});
+      | if('#{rsvp}' != 'Not Yet') { setRsvp("#{rsvp}", "#{usedSpots}", "#{mealChoices}"); }
+      | });
+    .content.rsvp
+      .form-content
+        h1
+          | RSVP
+        .form.attendance
+          h2.label
+            | Will you be attending the wedding?
+          .input
+            input.attendance-choice(type='radio', name='attendance', value='yes')
+            | Yes
+            br
+            input.attendance-choice(type='radio', name='attendance', value='no')
+            | No
+        .rsvp-yes
+          .form.additional-guests.hidden
+            h2.label
+              | How many total guests?
+            .input
+              select
+          .form.meal-selection
+            .meal-form
+              h2.label
+                | Meal Selection
+              .input
+                | Full Name: 
+                input.meal-name(type='text' name='meal-name', placeholder='Full Name', autocapitalize='off')
+                .selection
+                  input.meal-selection-radio(type='radio', name='meal-selection-0', value='1')
+                  | Grilled Sirloin Steak topped with Sauteed Onions and Mushrooms
+                .selection  
+                  input.meal-selection-radio(type='radio', name='meal-selection-0', value='2')
+                  | Grilled Salmon with Green Goddess Dressing
+                .selection  
+                  input.meal-selection-radio(type='radio', name='meal-selection-0', value='3')
+                  | Stuffed Portobello Mushrooms (Vegetarian)
+                .selection  
+                  input.meal-selection-radio(type='radio', name='meal-selection-0', value='4')
+                  | Children's Meal - Chicken Fingers and French Fries
+        .error-message.hidden
+          | Please fill out the entire form.
+        .form.submit-rsvp
+          .button.rsvp-submit
+            | Submit RSVP
+      .finished.hidden
+        | Thank you for your RSVP!
+        br
+        a.button(href='/')
+          | Home
+        a.button.reload
+          | Edit RSVP
+      .error.hidden
+        | Sorry there was an error when submitting your RSVP. Reload the page and try again or email syuan100@gmail.com if you continue to experience problems.
+        br
+        a.button.reload
+          | Start over

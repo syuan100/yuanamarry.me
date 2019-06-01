@@ -1,0 +1,69 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Muli:400,300', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+    script(src='//code.jquery.com/jquery-2.1.4.min.js')
+    script(src='/javascripts/preview.js')
+  body.blue
+    .preview-container
+      .preview-box
+        .initial-box.box
+          h2 Enter destination of test email
+          input(type="text", id="preview-email")
+          br
+          .send-preview-email-button.button Send Preview
+          .cancel-preview-email-button.button Cancel Preview
+        .sending-box.hidden.box
+          h2 Sending Preview...
+          i.fa.fa-spin.fa-spinner
+        .success-box.hidden.box
+          h2 Success!
+          .cancel-preview-email-button.button Close
+        .error-box.hidden.box
+          h2 Error. Please try again.
+          .cancel-preview-email-button.button Close
+        .final-send-confirmation.hidden.box
+          h2
+            | Are you sure you want to send this email to 
+            span.number
+            |  recipient(s)?
+          .final-send-button.button Yes
+          .cancel-preview-email-button.button No
+        .final-send.hidden.box
+          h2 Sent Statistics
+          .results-box
+          .cancel-preview-email-button.home.button Close
+    #container
+      .header
+        | Tracking Preview
+      .preview-area.left.half
+        | HTML Preview
+        br
+        br
+        h1.subject=subject
+        .html-preview!=tmpHtml
+        .send-preview-button.button Send Preview
+      .sendees.right.half
+        .selector
+          h2 Email for
+          input(type="radio", name="sendees", value="std")
+          | Save-the-Dates
+          br
+          input(type="radio", name="sendees", value="invitation")
+          | Invitation
+          br
+          input(type="radio", name="sendees", value="general")
+          | General
+          br
+          input(type="radio", name="sendees", value="custom")
+          | Custom list
+          br
+          input(type="text" name="custom-emails")
+        .email-list
+          h2 Final Email List
+          select(id="final-emails", size="20", multiple)
+          br
+          .send-mail-button.button Send Email

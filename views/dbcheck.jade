@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+  head
+    title dbcheck
+    script(src='//code.jquery.com/jquery-2.1.4.min.js')
+    script(src='/javascripts/dbcheck.js')
+  body
+    .connection
+      | connected as 
+      = connectionid
+    br
+    br
+    .db
+      | Table Integrity
+      br
+      br
+      strong Current Schema for People
+      br
+      table.current-schema
+        tr
+          - each column in columns
+            td(class='#{column.Field}')= column.Field
+      br
+      br
+      strong Desired Schema for People
+      br
+      table.desired-schema
+        tr
+          - each column in desiredcolumns
+            td(width='100px')= column
+        tr.matches
+          - each column in desiredcolumns
+            td(class='#{column}')
+      br
+      br
+      a(href="/admin/db/fix")
+        | Fix DB
+      br
+      br
+      strong FULL LIST
+      br
+      br
+      - each item in fullList
+        - each field in item
+          span= field
+            |  
+          br
+        br
