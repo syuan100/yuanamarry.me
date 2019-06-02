@@ -18,7 +18,7 @@ var basicAuth = require('basic-auth-connect');
 var randomstring = require('randomstring');
 var app = express();
 
-const port = 3000
+// const port = 3000
 
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -518,7 +518,5 @@ app.get('/ourstory', function(req, res) {
 app.get('/', function(req, res){
   res.render('index-lock');
 });
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 module.exports = app;
